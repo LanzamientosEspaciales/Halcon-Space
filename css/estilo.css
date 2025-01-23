@@ -55,12 +55,50 @@ header nav ul li a.active {
     color: #e91e63;
 }
 
-/* Pie de página */
-footer {
-    margin-top: 40px;
-    text-align: center;
-    padding: 10px 20px;
-    background-color: #1c1c1e;
-    border-top: 2px solid #ffffff20;
-    font-size: 14px;
+/* Media Queries para Móviles */
+@media (max-width: 768px) {
+    /* Logo y título */
+    header .logo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header .logo img {
+        width: 40px;
+        margin-bottom: 5px;
+    }
+
+    header .logo h1 {
+        font-size: 20px;
+    }
+
+    /* Menú de navegación */
+    header nav ul {
+        display: block;
+        margin-top: 10px;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        font-size: 18px;
+    }
+}
+
+/* Media Queries para dispositivos muy pequeños (como teléfonos pequeños) */
+@media (max-width: 480px) {
+    header .logo img {
+        width: 35px;
+    }
+
+    header .logo h1 {
+        font-size: 18px;
+    }
+
+    header nav ul li a {
+        font-size: 16px;
+    }
 }
