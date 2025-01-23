@@ -138,3 +138,26 @@ body {
     background-color: #b01c28;
     transform: translateY(0);
 }
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .cta {
+        flex-direction: column; /* Apilar los botones en lugar de alinearlos en fila */
+        padding: 30px 10px; /* Menos padding en móviles */
+    }
+
+    .cta .btn {
+        font-size: 1rem; /* Reducir el tamaño del texto */
+        padding: 12px 25px; /* Ajustar el padding para pantallas más pequeñas */
+        width: 100%; /* Hacer los botones más anchos */
+        margin: 10px 0; /* Espaciado entre botones */
+    }
+}
+
+/* Media Queries para dispositivos muy pequeños (como teléfonos pequeños) */
+@media (max-width: 480px) {
+    .cta .btn {
+        font-size: 0.9rem; /* Reducir más el tamaño del texto */
+        padding: 10px 20px; /* Ajustar más el padding */
+    }
+}
