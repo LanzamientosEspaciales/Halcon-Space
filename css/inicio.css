@@ -1,0 +1,140 @@
+/* Fuente y colores */
+body {
+    font-family: 'Erbaum', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #181818;
+    background-image: url('../img/fotos/Falcon\ 9\ en\ vuelo.png');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.hero h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Galería */
+.gallery {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.gallery h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Estilo para la sección de Servicios en Modo Oscuro */
+.services {
+    background-color: #1c1c1e; /* Fondo oscuro */
+    padding: 50px 20px;
+    text-align: center;
+    color: #ffffff; /* Texto en blanco */
+}
+
+.services h3 {
+    font-size: 2rem;
+    color: #e91e63; /* Título en color destacado */
+    margin-bottom: 30px;
+}
+
+.service {
+    background-color: #2a2a2e; /* Fondo oscuro para las tarjetas */
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #ddd; /* Texto claro dentro de las tarjetas */
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.service h4 {
+    font-size: 1.5rem;
+    color: #ffffff; /* Título de la tarjeta en blanco */
+    margin-bottom: 15px;
+}
+
+.service p {
+    font-size: 1rem;
+    color: #bbb; /* Texto descriptivo en gris claro */
+    line-height: 1.6;
+}
+
+/* Estilo para la sección de Llamadas a la Acción (CTA) en Modo Oscuro */
+.cta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    background-color: #121212; /* Fondo oscuro para la sección CTA */
+    color: #ffffff;
+    text-align: center;
+}
+
+.cta .btn {
+    background-color: #c1272d; /* Botón rojo brillante */
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta .btn:hover {
+    background-color: #9b1d24;
+    transform: translateY(-5px);
+}
+
+.cta .btn:active {
+    background-color: #b01c28;
+    transform: translateY(0);
+}

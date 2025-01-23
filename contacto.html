@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Halcon Space</title>
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo de Halcon Space">
+            <h1>Halcon Space</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="vehiculos.html">Vehículos</a></li>
+                <li><a href="lanzamientos.html">Lanzamientos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="contenedor">
+        <!-- Título -->
+        <h1 class="titulo-contacto">Contacto</h1>
+
+        <!-- Descripción -->
+        <p class="descripcion-contacto">
+            ¿Tienes alguna pregunta, comentario o consulta? No dudes en escribirnos a través del formulario 
+            o visitarnos en nuestra oficina. Estamos aquí para ayudarte.
+        </p>
+
+        <!-- Formulario -->
+        <form class="formulario-contacto" action="mailto:example@domain.com" method="post" enctype="text/plain">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+
+            <label for="email">ID de Discord</label>
+            <input type="text" id="id-Discord" name="idDiscord" placeholder="Ingresa tu ID de Discord" required>
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí" required></textarea>
+
+            <button type="submit">Enviar mensaje</button>
+        </form>
+        <script src="js/contacto.js"></script>
+    </div>
+    <footer>
+        <p>&copy; 2025 Halcon Space. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

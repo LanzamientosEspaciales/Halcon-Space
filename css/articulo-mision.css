@@ -1,0 +1,61 @@
+/* General */
+body {
+    font-family: 'Erbaum', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Misión Header */
+.mision-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #1E1E1E;
+}
+
+.mision-header img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* Secciones */
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #1E1E1E;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Lista de detalles técnicos */
+.detalles-tecnicos ul {
+    list-style: none;
+    padding: 0;
+}
+
+.detalles-tecnicos li {
+    margin: 10px 0;
+}
+
+/* Galería */
+.galeria {
+    display: flex;
+    gap: 10px;
+}
+
+.galeria img {
+    width: 100%;
+    max-width: calc(33% - 10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+}

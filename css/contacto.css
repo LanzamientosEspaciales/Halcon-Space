@@ -1,0 +1,109 @@
+/* General */
+body {
+    font-family: 'Erbaum', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Título */
+.titulo-contacto {
+    text-align: center;
+    font-size: 36px;
+    color: #C1272D;
+    margin-bottom: 20px;
+}
+
+/* Descripción */
+.descripcion-contacto {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* Formulario */
+.formulario-contacto {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #1E1E1E;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.formulario-contacto label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2A2A2A;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.formulario-contacto textarea {
+    height: 150px;
+    resize: none;
+}
+
+.formulario-contacto button {
+    background-color: #C1272D;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.formulario-contacto button:hover {
+    background-color: #A81F25;
+}
+
+/* Mapa */
+.mapa {
+    margin: 40px auto;
+    max-width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .descripcion-contacto {
+        font-size: 16px;
+    }
+
+    .formulario-contacto label {
+        font-size: 14px;
+    }
+
+    .formulario-contacto input,
+    .formulario-contacto textarea {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,123 @@
+/* General */
+body {
+    font-family: 'Erbaum', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1E1E1E;
+    padding: 10px 20px;
+}
+
+header .logo h1 {
+    margin: 0;
+    color: #C1272D;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    color: #C1272D;
+}
+
+/* Sección principal */
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+main h2 {
+    font-size: 36px;
+    color: #C1272D;
+}
+
+main p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Galería de vehículos */
+.galeria-vehiculos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.vehiculo {
+    background-color: #1E1E1E;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.vehiculo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.vehiculo img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.vehiculo h3 {
+    font-size: 24px;
+    margin: 15px 0;
+    color: #C1272D;
+}
+
+.vehiculo p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.boton-detalles {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #C1272D;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.boton-detalles:hover {
+    background-color: #A31F24; /* Oscurecer el color al pasar el cursor */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1E1E1E;
+    color: #ffffff;
+}
