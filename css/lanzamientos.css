@@ -39,6 +39,7 @@ body {
 
 .lanzamiento {
     display: flex;
+    flex-direction: row; /* Para pantallas grandes, mantendremos imagen y texto en línea */
     align-items: center;
     background-color: #2a2a2e;
     padding: 20px;
@@ -93,7 +94,6 @@ body {
     transform: translateY(-2px); /* Efecto de elevación */
 }
 
-
 /* Galería de lanzamientos pasados */
 .galeria-lanzamientos {
     padding: 40px 20px;
@@ -123,4 +123,47 @@ body {
 .galeria-grid img:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    /* Ajuste de la imagen y el texto en los lanzamientos */
+    .lanzamiento {
+        flex-direction: column; /* Apilar la imagen y el texto en dispositivos móviles */
+        align-items: flex-start;
+    }
+
+    .lanzamiento img {
+        width: 100%; /* La imagen ocupa todo el ancho disponible */
+        margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+    }
+
+    .lanzamiento h3 {
+        font-size: 1.25rem; /* Ajustar tamaño de la fuente */
+    }
+
+    .lanzamiento p {
+        font-size: 0.9rem; /* Reducir tamaño de texto */
+    }
+
+    /* Ajustar galería para pantallas más pequeñas */
+    .galeria-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Menor tamaño de las imágenes */
+    }
+}
+
+/* Media Queries para dispositivos muy pequeños (teléfonos pequeños) */
+@media (max-width: 480px) {
+    .lanzamiento h3 {
+        font-size: 1.1rem; /* Reducir más el tamaño del título */
+    }
+
+    .lanzamiento p {
+        font-size: 0.85rem; /* Reducir más el tamaño del texto */
+    }
+
+    .info-lanzamiento a {
+        padding: 8px 15px; /* Botones más pequeños */
+        font-size: 12px; /* Texto más pequeño en botones */
+    }
 }
