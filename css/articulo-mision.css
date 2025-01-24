@@ -43,15 +43,30 @@ section {
 /* Galería */
 .galeria {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias filas */
+    gap: 10px; /* Espacio entre las imágenes */
 }
 
 .galeria img {
     width: 100%;
-    max-width: calc(33% - 10px);
+    max-width: calc(33.33% - 10px); /* Las imágenes ocupan un 33.33% de la fila, con espacio */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .galeria img {
+        max-width: calc(50% - 10px); /* En pantallas medianas, mostramos 2 imágenes por línea */
+    }
+}
+
+/* Media query para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+    .galeria img {
+        max-width: calc(100% - 10px); /* En pantallas pequeñas, mostramos 1 imagen por línea */
+    }
 }
 
 .galeria img:hover {
