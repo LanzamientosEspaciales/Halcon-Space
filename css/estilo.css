@@ -55,50 +55,61 @@ header nav ul li a.active {
     color: #e91e63;
 }
 
-/* Media Queries para Móviles */
+.menu-toggle {
+    display: none;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1E1E1E;
+    color: #ffffff;
+    
+}
+
+/* Menú desplegable en móviles */
 @media (max-width: 768px) {
-    /* Logo y título */
-    header .logo {
+    header {
         flex-direction: column;
-        text-align: center;
+        align-items: flex-start;
     }
 
-    header .logo img {
-        width: 40px;
-        margin-bottom: 5px;
-    }
-
-    header .logo h1 {
-        font-size: 20px;
-    }
-
-    /* Menú de navegación */
-    header nav ul {
+    header .menu-toggle {
         display: block;
-        margin-top: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #ffffff;
+        margin-left: auto;
+    }
+
+    header nav {
+        display: none; /* Ocultamos el menú inicialmente */
+        width: 100%;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0;
     }
 
     header nav ul li {
-        margin: 10px 0;
-        text-align: center;
+        width: 100%;
+        text-align: left;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ffffff20;
     }
 
     header nav ul li a {
-        font-size: 18px;
-    }
-}
-
-/* Media Queries para dispositivos muy pequeños (como teléfonos pequeños) */
-@media (max-width: 480px) {
-    header .logo img {
-        width: 35px;
-    }
-
-    header .logo h1 {
+        display: block;
+        width: 100%;
         font-size: 18px;
     }
 
-    header nav ul li a {
-        font-size: 16px;
+    /* Menú visible cuando se activa */
+    header nav.open {
+        display: block;
     }
 }
