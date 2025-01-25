@@ -35,6 +35,7 @@
             <img src="img/logo.png" alt="Logo de Halcon Space">
             <h1>Halcon Space</h1>
         </div>
+        <span class="menu-toggle">&#9776;</span> <!-- Ícono de menú hamburguesa -->
         <nav>
             <ul>
                 <li><a href="https://halconspace.site" class="active">Inicio</a></li>
@@ -43,6 +44,17 @@
                 <li><a href="contacto">Contacto</a></li>
             </ul>
         </nav>
+        <script>
+            // Selección del botón y el menú
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('header nav');
+
+// Agregar evento de clic al botón
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('open'); // Añade o quita la clase 'open'
+});
+
+        </script>
     </header>
 
     <!-- Contenido Principal -->
