@@ -64,6 +64,37 @@ menuToggle.addEventListener('click', () => {
             <p>Descubre nuestras misiones más esperadas y el futuro de la exploración espacial.</p>
         </section>
 
+        <section id="estadisticas">
+            <h2>Estadísticas de Lanzamientos</h2>
+            <div class="stats-container">
+                <div class="stat">
+                    <h3>Lanzamientos Totales</h3>
+                    <div class="circle">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="bg" cx="50" cy="50" r="45"></circle>
+                            <circle class="progress" cx="50" cy="50" r="45" id="progress-lanzamientos"></circle>
+                        </svg>
+                        <div class="percentage" id="porcentaje-lanzamientos">0%</div>
+                    </div>
+                    <p><strong>Total:</strong> <span id="lanzamientos-totales">0</span></p>
+                </div>
+        
+                <div class="stat">
+                    <h3>Aterrizajes Exitosos</h3>
+                    <div class="circle">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="bg" cx="50" cy="50" r="45"></circle>
+                            <circle class="progress" cx="50" cy="50" r="45" id="progress-aterrizajes"></circle>
+                        </svg>
+                        <div class="percentage" id="porcentaje-aterrizajes">0%</div>
+                    </div>
+                    <p><strong>Exitosos:</strong> <span id="aterrizajes-exitosos">0</span></p>
+                </div>
+            </div>
+        </section>
+
+        <script src="js/lanzamientos.js"></script>
+
         <!-- Lista de lanzamientos -->
         <section class="lista-lanzamientos">
 
