@@ -1,12 +1,10 @@
 {
-    "lanzamientos_globales": {
-        "total_lanzamientos": 0,
-        "exitosos": 0,
-        "fallidos": 0,
-        "aterrizajes": {
-            "total": 0,
-            "exitosos": 0,
-            "fallidos": 0
-        }
+    "lanzamientos": {
+        "exitosos": 4,
+        "fallidos": 0
+    },
+    "aterrizajes": {
+        "exitosos": 1,
+        "fallidos": 3
     }
 }
