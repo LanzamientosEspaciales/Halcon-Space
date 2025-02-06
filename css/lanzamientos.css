@@ -125,6 +125,46 @@ body {
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
+/* Gráficos circulares */
+.circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+svg {
+    transform: rotate(-90deg);
+    width: 100px;
+    height: 100px;
+}
+
+circle {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+}
+
+.bg {
+    stroke: #444;
+}
+
+.progress {
+    stroke: rgb(20, 255, 20);
+    stroke-dasharray: 283; /* Circunferencia del círculo */
+    stroke-dashoffset: 283; /* Inicialmente oculto */
+    transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+}
+
 /* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
     /* Ajuste de la imagen y el texto en los lanzamientos */
