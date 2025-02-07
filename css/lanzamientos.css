@@ -179,7 +179,7 @@ circle {
 }
 
 .bg {
-    stroke: #444;
+    stroke: rgb(255, 20, 20);
 }
 
 .progress {
