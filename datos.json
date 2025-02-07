@@ -1,10 +1,22 @@
 {
     "lanzamientos": {
-        "exitosos": 4,
+        "exitosos": 5,
         "fallidos": 0
     },
     "aterrizajes": {
-        "exitosos": 1,
+        "exitosos": 2,
         "fallidos": 3
+    },
+    "propulsores": {
+        "B1067": {
+            "mision": "CRS-1",
+            "fecha": "20/01/2025",
+            "url": ""
+        },
+        "B1068": {
+            "mision": "NROL-12",
+            "fecha": "07/02/2025",
+            "url": "https://halconspace.site/lanzamientos/NROL-12"
+        }
     }
 }
