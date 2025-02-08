@@ -1,0 +1,93 @@
+/* Estilos Generales */
+body {
+    font-family: 'Erbaum', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sección de Actualizaciones */
+.updates {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #181818;
+}
+
+.updates h3 {
+    font-size: 2rem;
+    color: #e91e63;
+    margin-bottom: 30px;
+}
+
+/* Estilos de cada actualización */
+.update {
+    background-color: #2a2a2e;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Hace que los elementos se apilen verticalmente */
+    align-items: center;
+}
+
+.update:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+h4 {
+    text-align: center;
+}
+
+.update-info {
+    text-align: left;
+    padding-bottom: 15px;
+}
+
+.update-info h4 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.update-info p {
+    font-size: 1rem;
+    color: #bbb;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.date {
+    display: inline-block;
+    font-size: 15px;
+    color: #ee3774;
+    margin-bottom: 5px;
+}
+
+/* Imagen debajo del texto */
+.update img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .update-info p {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+    
+    .update img {
+        max-width: 100%;
+    }
+}

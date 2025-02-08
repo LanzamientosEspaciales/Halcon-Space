@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Erbaum:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 
     <!-- Título de la página -->
   <meta property="og:title" content="GPS-1 • Halcon Space">
@@ -32,32 +33,8 @@
 </head>
 <body>
     <!-- Encabezado -->
-    <header>
-        <div class="logo">
-            <img src="../img/logo.png" alt="Logo de Halcon Space">
-            <h1>Halcon Space</h1>
-        </div>
-        <span class="menu-toggle">&#9776;</span> <!-- Ícono de menú hamburguesa -->
-        <nav>
-            <ul>
-                <li><a href="../index">Inicio</a></li>
-                <li><a href="../vehiculos">Vehículos</a></li>
-                <li><a href="../lanzamientos">Lanzamientos</a></li>
-                <li><a href="../contacto">Contacto</a></li>
-            </ul>
-        </nav>
-        <script>
-            // Selección del botón y el menú
-const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('header nav');
-
-// Agregar evento de clic al botón
-menuToggle.addEventListener('click', () => {
-    nav.classList.toggle('open'); // Añade o quita la clase 'open'
-});
-
-        </script>
-    </header>
+    <div id="menu-container"></div>
+    <script src="../js/menu.js"></script>
 
     <!-- Sección principal -->
     <main>
