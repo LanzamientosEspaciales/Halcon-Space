@@ -1,22 +1,67 @@
 {
     "lanzamientos": {
-        "exitosos": 5,
+        "exitosos": 6,
         "fallidos": 0
     },
     "aterrizajes": {
         "exitosos": 2,
-        "fallidos": 3
+        "fallidos": 4
     },
+
     "propulsores": {
         "B1067": {
-            "mision": "CRS-1",
-            "fecha": "20/01/2025",
-            "url": ""
+            "estado": "activo",
+            "vuelos": {
+                "B1067.1": {
+                    "mision": "CRS-1",
+                    "fecha": "20/01/2025",
+                    "url": ""
+                },
+                "B1067.2": {
+                    "mision": "",
+                    "fecha": "",
+                    "url": ""
+                }
+            }}
+            
         },
+        
         "B1068": {
-            "mision": "NROL-12",
-            "fecha": "07/02/2025",
-            "url": "https://halconspace.site/lanzamientos/NROL-12"
+            "estado": "activo",
+            "vuelos": {
+                "B1068.1": {
+                    "mision": "NROL-12",
+                    "fecha": "07/02/2025",
+                    "url": "https://halconspace.site/lanzamientos/NROL-12"
+                },
+                "B1068.2": {
+                    "mision": "",
+                    "fecha": "",
+                    "url": ""
+                }
+            }
+            
+        },
+
+        "B1069": {
+            "estado": "activo",
+            "vuelos":{
+                "B1069.1": {
+                    "mision": "",
+                    "fecha": "",
+                    "url": ""
+            }}
+        },
+
+        "B1070": {
+            "estado": "destruido",
+            "vuelos":{
+                "B1070.1": {
+                    "mision": "MoonRadar-1",
+                    "fecha": "11/02/2025",
+                    "url": "https://halconspace.site/lanzamientos/MoonRadar-1"
+                }
+            }
         }
     }
-}
+
