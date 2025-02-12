@@ -71,3 +71,24 @@ function filtrarLanzamientos() {
         }
     });
 }
+
+function filtrarLanzamientosVehiculo() {
+    let filtroVehiculo = document.getElementById("vehiculos").value.trim().toLowerCase();
+    let lanzamientos = document.querySelectorAll(".lanzamiento");
+
+    lanzamientos.forEach(lanzamiento => {
+        let vehiculo = lanzamiento.getAttribute("data-vehiculo");
+
+        if (vehiculo) {
+            vehiculo = vehiculo.trim().toLowerCase();
+
+            if (filtroVehiculo === "todos" || vehiculo === filtroVehiculo) {
+                lanzamiento.style.display = "flex";
+            } else {
+                lanzamiento.style.display = "none";
+            }
+        } else {
+            console.warn("Error al obtener el atributo 'data-vehiculo' del lanzamiento:", lanzamiento); // Depuración
+        }
+    });
+}
