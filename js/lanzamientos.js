@@ -73,22 +73,16 @@ function filtrarLanzamientos() {
 }
 
 function filtrarLanzamientosVehiculo() {
-    let filtroVehiculo = document.getElementById("vehiculos").value.trim().toLowerCase();
-    let lanzamientos = document.querySelectorAll(".lanzamiento");
+    const filtroVehiculo = document.getElementById("vehiculos").value;
+    const lanzamientos = document.querySelectorAll(".lanzamiento");
 
     lanzamientos.forEach(lanzamiento => {
-        let vehiculo = lanzamiento.getAttribute("data-vehiculo");
+        const vehiculo = lanzamiento.getAttribute("data-vehiculo");
 
-        if (vehiculo) {
-            vehiculo = vehiculo.trim().toLowerCase();
-
-            if (filtroVehiculo === "todos" || vehiculo === filtroVehiculo) {
-                lanzamiento.style.display = "flex";
-            } else {
-                lanzamiento.style.display = "none";
-            }
+        if (filtroVehiculo === "todos" || vehiculo === filtroVehiculo) {
+            lanzamiento.style.display = "block";
         } else {
-            console.warn("Error al obtener el atributo 'data-vehiculo' del lanzamiento:", lanzamiento); // Depuración
+            lanzamiento.style.display = "none";
         }
     });
 }
