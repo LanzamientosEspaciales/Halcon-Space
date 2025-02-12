@@ -198,6 +198,17 @@ circle {
     font-weight: bold;
 }
 
+.filtro-estado {
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+#estado {
+    padding: 5px;
+    font-size: 1em;
+}
+
+
 
 /* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
