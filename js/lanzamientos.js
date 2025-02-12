@@ -80,7 +80,7 @@ function filtrarLanzamientosVehiculo() {
         const vehiculo = lanzamiento.getAttribute("data-vehiculo");
 
         if (filtroVehiculo === "todos" || vehiculo === filtroVehiculo) {
-            lanzamiento.style.display = "block";
+            lanzamiento.style.display = "flex";
         } else {
             lanzamiento.style.display = "none";
         }
