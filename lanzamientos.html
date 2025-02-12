@@ -74,41 +74,23 @@
         <!-- Lista de lanzamientos -->
         <section class="lista-lanzamientos">
 
-            <!-- Filtro de estado -->
-<section class="filtro-estado">
-    <label for="estado">Filtrar por estado:</label>
-    <select id="estado" onchange="filtrarLanzamientos()">
-        <option value="todos">Todos</option>
-        <option value="exito">Éxito</option>
-        <option value="fallo">Fallo</option>
-        <option value="programado">Programado</option>
-    </select>
-</section>
+            <div class="filtros">
+                <section class="filtro-nombre">
+                    <label for="busqueda">Buscar misión:</label>
+                    <input type="text" id="busqueda" placeholder="Ingrese el nombre de la misión" onkeyup="buscarMision()">
+                </section>
 
-<script>
-    function filtrarLanzamientos() {
-        // Obtener el valor seleccionado
-        const estadoSeleccionado = document.getElementById("estado").value;
-
-        // Obtener todos los elementos de los lanzamientos
-        const lanzamientos = document.querySelectorAll(".lanzamiento");
-
-        // Recorrer todos los lanzamientos
-        lanzamientos.forEach(lanzamiento => {
-            // Obtener el estado de cada lanzamiento
-            const estado = lanzamiento.dataset.estado;
-
-            // Mostrar u ocultar el lanzamiento según el estado seleccionado
-            if (estadoSeleccionado === "todos" || estado.toLowerCase() === estadoSeleccionado) {
-                lanzamiento.style.display = "flex";
-            } else {
-                lanzamiento.style.display = "none";
-            }
-        });
-    }
-</script>
-
-
+                <section class="filtro-estado">
+                    <label for="estado">Filtrar por estado:</label>
+                    <select id="estado" onchange="filtrarLanzamientos()">
+                        <option value="todos">Todos</option>
+                        <option value="exito">Éxito</option>
+                        <option value="fallo">Fallo</option>
+                        <option value="programado">Programado</option>
+                    </select>
+                </section>
+            </div>
+            
 
             <div class="lanzamiento" data-estado="programado">
                 <img src="img/fotos/Falcon 9 en SLC-40.jpg" alt="Crew Dragon">

@@ -29,3 +29,45 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => console.error("Error al cargar las estadísticas:", error));
 });
+
+// FILTROS DE LANZAMIENTOS
+function buscarMision() {
+    // Obtener el texto ingresado en el campo de búsqueda
+    const textoBusqueda = document.getElementById("busqueda").value.toLowerCase();
+
+    // Obtener todos los elementos de los lanzamientos
+    const lanzamientos = document.querySelectorAll(".lanzamiento");
+
+    // Recorrer todos los lanzamientos y verificar si coinciden con el texto ingresado
+    lanzamientos.forEach(lanzamiento => {
+        const nombreMision = lanzamiento.querySelector("h3").textContent.toLowerCase();
+
+        // Mostrar u ocultar el lanzamiento según la búsqueda
+        if (nombreMision.includes(textoBusqueda)) {
+            lanzamiento.style.display = "flex";
+        } else {
+            lanzamiento.style.display = "none";
+        }
+    });
+}
+
+function filtrarLanzamientos() {
+    // Obtener el valor seleccionado
+    const estadoSeleccionado = document.getElementById("estado").value;
+
+    // Obtener todos los elementos de los lanzamientos
+    const lanzamientos = document.querySelectorAll(".lanzamiento");
+
+    // Recorrer todos los lanzamientos
+    lanzamientos.forEach(lanzamiento => {
+        // Obtener el estado de cada lanzamiento
+        const estado = lanzamiento.dataset.estado;
+
+        // Mostrar u ocultar el lanzamiento según el estado seleccionado
+        if (estadoSeleccionado === "todos" || estado.toLowerCase() === estadoSeleccionado) {
+            lanzamiento.style.display = "flex";
+        } else {
+            lanzamiento.style.display = "none";
+        }
+    });
+}
