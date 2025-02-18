@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transporet 1 | Halcon Space</title>
+    <title>Transporter 1 | Halcon Space</title>
     <link rel="stylesheet" href="../css/articulo-mision.css">
     <link rel="stylesheet" href="../css/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,13 +61,56 @@
         </ul>
     </section>
 
-    <!-- Imágenes destacadas -->
-    <section class="imagenes">
-        <h3>Imágenes de la misión</h3>
-        <div class="galeria">
-            <img src="../img/misiones/Transporter-1/Carga Transporter-1.png" alt="Carga de Transporter-1">
-        </div>
-    </section>
+    <section class="mision-header">
+
+     <!-- Tabla de datos -->
+     <table class="tabla-datos">
+        <thead>
+            <h3 style="text-align: center; font-size: 25px;">Satélites de misión</h3>
+            <tr>
+                <th>Puerto</th>
+                <th>Satélite</th>
+                <th>Cliente</th>
+                <th>Orbita</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+</section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    fetch("https://halconspace.site/datos.json")
+        .then(response => response.json())
+        .then(data => {
+            const satelites = data.transporters.transporter1.satelites;
+            const tablaBody = document.querySelector(".tabla-datos tbody");
+
+            // Limpiar la tabla antes de agregar los datos
+            tablaBody.innerHTML = "";
+
+            // Recorrer los puertos del 1 al 21 (aunque algunos no estén en uso)
+            for (let i = 1; i <= 21; i++) {
+                const sat = satelites[i] || {}; // Si no hay satélite en ese puerto, se crea un objeto vacío
+
+                const fila = document.createElement("tr");
+
+                fila.innerHTML = `
+                    <td>${i}</td>
+                    <td>${sat.nombre || ""}</td>
+                    <td>${sat.cliente || "Desconocido"}</td>
+                    <td>${sat.orbita || ""}</td>
+                    <td>${sat.descripcion || ""}</td>
+                `;
+
+                tablaBody.appendChild(fila);
+            }
+        })
+        .catch(error => console.error("Error cargando los datos:", error));
+});
+    </script>
 
     <!-- Pie de página -->
     <footer>
