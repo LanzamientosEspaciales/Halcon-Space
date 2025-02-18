@@ -64,6 +64,7 @@ section {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     overflow: hidden;
+    table-layout: fixed; /* Asegura que las celdas no se desborden */
 }
 
 .tabla-datos th, 
@@ -71,6 +72,7 @@ section {
     padding: 15px;
     text-align: left;
     font-size: 16px;
+    word-wrap: break-word; /* Evita que el texto se desborde */
 }
 
 .tabla-datos th {
@@ -88,6 +90,49 @@ section {
     background-color: #C1272D;
     color: #ffffff;
 }
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .tabla-datos {
+        width: 100%;
+        margin: 15px 0;
+        border-radius: 5px;
+    }
+
+    .tabla-datos th, 
+    .tabla-datos td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .tabla-datos th {
+        font-size: 16px; /* Aumenta el tamaño de los encabezados */
+    }
+
+    /* Para que las celdas se muestren una debajo de la otra en pantallas pequeñas */
+    .tabla-datos, .tabla-datos thead, .tabla-datos tbody, .tabla-datos th, .tabla-datos td, .tabla-datos tr {
+        display: block;
+    }
+
+    .tabla-datos th {
+        display: none; /* Ocultar los encabezados en móvil */
+    }
+
+    .tabla-datos td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        font-size: 14px;
+        border-bottom: 1px solid #444;
+    }
+
+    .tabla-datos td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #C1272D;
+    }
+}
+
 
 /* Media query para pantallas más pequeñas */
 @media (max-width: 768px) {
