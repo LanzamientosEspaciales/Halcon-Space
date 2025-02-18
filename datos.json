@@ -73,33 +73,33 @@
                     "descripcion": "Primer satélite de la constelación JebSat-Link, diseñado para proporcionar comunicaciones de banda ancha y telemetría a vehículos en órbita baja."
                 },
                 "2": {
-                    "cliente": "",
-                    "nombre": "",
-                    "orbita": "",
+                    "cliente": "SaTech SS",
+                    "nombre": "Eagle",
+                    "orbita": "550 km",
                     "descripcion": ""
                 },
                 "3": {
-                    "cliente": "",
-                    "nombre": "",
-                    "orbita": "",
+                    "cliente": "SaTech SS",
+                    "nombre": "Eagle",
+                    "orbita": "550 km",
                     "descripcion": ""
                 },
                 "4": {
-                    "cliente": "",
-                    "nombre": "",
-                    "orbita": "",
+                    "cliente": "SaTech SS",
+                    "nombre": "Eagle",
+                    "orbita": "550 km",
                     "descripcion": ""
                 },
                 "5": {
-                    "cliente": "",
-                    "nombre": "",
-                    "orbita": "",
+                    "cliente": "SaTech SS",
+                    "nombre": "Eagle",
+                    "orbita": "550 km",
                     "descripcion": ""
                 },
                 "6": {
-                    "cliente": "",
-                    "nombre": "",
-                    "orbita": "",
+                    "cliente": "SaTech SS",
+                    "nombre": "Eagle",
+                    "orbita": "550 km",
                     "descripcion": ""
                 },
                 "7": {
@@ -109,9 +109,9 @@
                     "descripcion": "Nodo intermedio de la red JebSat-Link, optimizado para mejorar la cobertura en la superficie del planeta y permitir la transmisión de datos científicos en tiempo real."
                 },
                 "8": {
-                    "cliente": "",
-                    "nombre": "",
-                    "orbita": "",
+                    "cliente": "SaTech SS",
+                    "nombre": "Eagle",
+                    "orbita": "550 km",
                     "descripcion": ""
                 },
                 "9": {
