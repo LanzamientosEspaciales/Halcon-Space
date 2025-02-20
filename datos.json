@@ -1,10 +1,10 @@
 {
     "lanzamientos": {
-        "exitosos": 6,
+        "exitosos": 7,
         "fallidos": 0
     },
     "aterrizajes": {
-        "exitosos": 2,
+        "exitosos": 3,
         "fallidos": 4
     },
     "propulsores": {
@@ -42,6 +42,11 @@
             "estado": "activo",
             "vuelos": {
                 "B1069.1": {
+                    "mision": "MunStrider-1",
+                    "fecha": "19/02/2025",
+                    "url": "https://halconspace.site/lanzamientos/MoonStrider-1"
+                },
+                "B1069.2": {
                     "mision": "",
                     "fecha": "",
                     "url": ""

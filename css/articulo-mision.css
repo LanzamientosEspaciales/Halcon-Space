@@ -47,7 +47,7 @@ section {
     gap: 10px; /* Espacio entre las imágenes */
 }
 
-.galeria img {
+.galeria img, .galeria video {
     width: 100%;
     max-width: calc(33.33% - 10px); /* Las imágenes ocupan un 33.33% de la fila, con espacio */
     border-radius: 10px;
@@ -136,19 +136,19 @@ section {
 
 /* Media query para pantallas más pequeñas */
 @media (max-width: 768px) {
-    .galeria img {
+    .galeria img, .galeria video {
         max-width: calc(50% - 10px); /* En pantallas medianas, mostramos 2 imágenes por línea */
     }
 }
 
 /* Media query para pantallas aún más pequeñas */
 @media (max-width: 480px) {
-    .galeria img {
+    .galeria img, .galeria video {
         max-width: calc(100% - 10px); /* En pantallas pequeñas, mostramos 1 imagen por línea */
     }
 }
 
-.galeria img:hover {
+.galeria img:hover, .galeria video:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
     border-radius: 25px;
