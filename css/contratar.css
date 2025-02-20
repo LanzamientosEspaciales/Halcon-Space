@@ -1,0 +1,122 @@
+/* General */
+body {
+    font-family: 'Erbaum', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Título */
+.titulo-contacto {
+    text-align: center;
+    font-size: 36px;
+    color: #C1272D;
+    margin-bottom: 20px;
+}
+
+/* Descripción */
+.descripcion-contacto {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* Sección de Formulario */
+.launch-form {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #181818;
+}
+
+.launch-form .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.launch-form h3 {
+    font-size: 2rem;
+    color: #e91e63;
+    margin-bottom: 30px;
+}
+
+/* Estilos para los campos del formulario */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1.1rem;
+    color: #ddd;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #2a2a2e;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #ddd;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input::placeholder, 
+.form-group select::placeholder, 
+.form-group textarea::placeholder {
+    color: #aaa;
+}
+
+/* Botón de envío */
+.btn {
+    background-color: #c1272d;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #9b1d24;
+    transform: translateY(-5px);
+}
+
+.btn:active {
+    background-color: #b01c28;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .launch-form .container {
+        padding: 0 15px;
+    }
+    
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+        font-size: 1rem;
+    }
+}

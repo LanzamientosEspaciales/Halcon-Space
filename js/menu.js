@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Ahora que el menú está cargado, activar la página actual
             const currentPath = window.location.pathname.split("/").pop(); // Obtiene el nombre del archivo actual
             const menuLinks = document.querySelectorAll("#menu a");
+            const navo = document.querySelector("header nav");
 
             menuLinks.forEach(link => {
                 const page = link.getAttribute("data-page"); // Obtiene el data-page
@@ -21,6 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
             menuToggle.addEventListener("click", () => {
                 nav.classList.toggle("open"); // Muestra o esconde el menú
+
+                
+                if (nav.classList.contains("open")) {
+                    menuToggle.innerHTML = "✖";
+                } else {
+                    menuToggle.innerHTML = "☰";
+                }
             });
 
         })

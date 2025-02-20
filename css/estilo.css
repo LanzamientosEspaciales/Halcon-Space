@@ -70,46 +70,101 @@ footer {
 
 /* Menú desplegable en móviles */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
+
+    #logoEmpresa {
+        display: block; /* Asegurar que el logo se vea en el menú */
     }
 
+    header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative; /* Para mantener la estructura */
+        z-index: 101;
+    }
+
+    header .logo {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        position: relative;
+        z-index: 102; /* Asegura que esté arriba */
+    }
+
+    header .logo h1 {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    /* Botón hamburguesa */
     header .menu-toggle {
         display: block;
-        font-size: 24px;
+        font-size: 28px;
         cursor: pointer;
         color: #ffffff;
-        margin-left: auto;
+        position: relative;
+        z-index: 103; /* Para que esté encima */
     }
 
+    /* Menú desplegable */
     header nav {
-        display: none; /* Ocultamos el menú inicialmente */
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: auto;
+        background-color: #1c1c1e;
+        padding-top: 60px; /* Espacio para el logo y el h1 */
+        text-align: center;
+        z-index: 99;
     }
 
+    /* Mostrar el menú cuando está abierto */
+    header nav.open {
+        display: block;
+    }
+
+    /* Ajuste para que los enlaces no se mezclen con el logo */
     header nav ul {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         width: 100%;
-        padding: 0;
+        padding: 20px 0;
     }
 
     header nav ul li {
         width: 100%;
-        text-align: left;
-        padding: 10px 20px;
+        padding: 15px 0;
         border-bottom: 1px solid #ffffff20;
     }
 
     header nav ul li a {
-        display: block;
-        width: 100%;
         font-size: 18px;
+        display: block;
     }
 
-    /* Menú visible cuando se activa */
-    header nav.open {
-        display: block;
+    /* Posición fija para la "X" */
+    .menu-toggle.open {
+        position: fixed;
+        top: 15px;
+        right: 20px;
+        font-size: 32px;
+        z-index: 105;
+    }
+
+    /* Fijar el logo y el título dentro del menú */
+    .menu-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #1c1c1e;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        z-index: 104;
+        border-bottom: 2px solid #ffffff20;
     }
 }

@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Contenido del mensaje a enviar
         const payload = {
-            username: "Formulario de Contacto",
-            avatar_url: "https://i.imgur.com/AfFp7pu.png", // Opcional: URL del avatar
+            username: "Halcon Space",
+            avatar_url: "https://halconspace.site/img/logo.png", // Opcional: URL del avatar
             embeds: [
                 {
                     title: "Nuevo mensaje de contacto",

@@ -64,6 +64,11 @@ h4 {
     margin: 0 auto;
 }
 
+.update-info a {
+    color: #e91e63;
+    text-decoration: none;
+}
+
 .date {
     display: inline-block;
     font-size: 15px;

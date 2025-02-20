@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contratar - Halcon Space</title>
+    <link rel="stylesheet" href="css/contratar.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+
+    <!-- Título de la página -->
+  <meta property="og:title" content="Contacto • Halcon Space">
+  
+  <!-- Descripción que aparecerá en el embed -->
+  <meta property="og:description" content="Contrata un lanzamiento con Halcon Space">
+  
+  <!-- URL de la página -->
+  <meta property="og:url" content="https://halconspace.site/contratar">
+  
+  <!-- Imagen para el embed (recomendado 1200x630 píxeles) -->
+  <meta property="og:image" content="https://halconspace.site/img/fotos/Falcon%209%20en%20SLC-40.jpg">
+  
+  <!-- Tipo de contenido (website, article, video, etc.) -->
+  <meta property="og:type" content="website">
+  
+  <!-- Idioma y región opcionales -->
+  <meta property="og:locale" content="es_ES">
+</head>
+<body>
+    <!-- Encabezado -->
+    <div id="menu-container"></div>
+    <script src="js/menu.js"></script>
+
+    <div class="contenedor">
+        <!-- Título -->
+        <h1 class="titulo-contacto">Contacto</h1>
+
+        <!-- Descripción -->
+        <p class="descripcion-contacto">
+            ¿Te interesaría contratar un lanzamiento con Halcon Space?
+        </p>
+
+        <!-- Formulario -->
+        <!-- Sección de Contratación de Lanzamiento -->
+    <section class="launch-form">
+        <div class="container">
+            <h3>Contratar un Lanzamiento con Halcon Space</h3>
+
+            <form class="formulario-contacto" method="post">
+                <div class="form-group">
+                    <label for="discord">@ de Discord</label>
+                    <input type="text" id="discord" name="discord" required placeholder="Tu @ de Discord">
+                </div>
+
+                <div class="form-group">
+                    <label for="cliente">Nombre de Cliente</label>
+                    <input type="text" id="cliente" name="cliente" required placeholder="Nombre completo de la empresa">
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo-mision">Tipo de Misión</label>
+                    <select id="tipo-mision" name="tipo-mision" required>
+                        <option value="Tripulada">Tripulada</option>
+                        <option value="Clasificado">Clasificado</option>
+                        <option value="Transporter">Transporter</option>
+                        <option value="Especifica">Especificar</option>
+                    </select>
+                    <input type="text" id="tipo-mision-especifica" name="tipo-mision-especifica" placeholder="Especifica si seleccionaste 'Especifica'">
+                </div>
+
+                <div class="form-group">
+                    <label for="orbita">Tipo de Órbita</label>
+                    <select id="orbita" name="orbita" required>
+                        <option value="LEO">LEO (Órbita baja terrestre)</option>
+                        <option value="GEO">GEO (Órbita geoestacionaria)</option>
+                        <option value="TLI">TLI (Inyección de trayectoria trans-lunar)</option>
+                        <option value="Otra">Otra (Especificar)</option>
+                    </select>
+                    <input type="text" id="orbita-especifica" name="orbita-especifica" placeholder="Especifica si seleccionaste 'Otra'">
+                </div>
+
+                <div class="form-group">
+                    <label for="vehiculo">Vehículo a Contratar</label>
+                    <select id="vehiculo" name="vehiculo" required>
+                        <option value="Falcon 9 Block 5">Falcon 9 Block 5</option>
+                        <option value="Falcon Heavy">Falcon Heavy</option>
+                        <option value="Falcon 9 Dragon">Falcon 9 Dragon</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="carga-util">Carga Útil</label>
+                    <input type="text" id="carga-util" name="carga-util" required placeholder="Especifica la carga útil del lanzamiento">
+                </div>
+
+                <div class="form-group">
+                    <label for="datos-mision">Datos de Misión</label>
+                    <textarea id="datos-mision" name="datos-mision" rows="4" required placeholder="Proporcione detalles de la misión"></textarea>
+                </div>
+
+                <button type="submit" class="btn">Enviar Solicitud</button>
+            </form>
+        </div>
+    </section>
+    </div>
+    <script src="js/contratar.js"></script>
+    <footer>
+        <p>&copy; 2025 Halcon Space. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
