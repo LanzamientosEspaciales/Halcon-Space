@@ -134,6 +134,7 @@ body {
     background-color: #1c1c1e;
     border-radius: 10px;
     width: 80%;
+    animation: countUp 0.8s ease-out forwards;
 }
 
 .stats-container {
@@ -147,6 +148,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     width: 250px;
+    animation: countUp 0.8s ease-out forwards;
 }
 
 .stat h3 {
@@ -156,6 +158,26 @@ body {
 
 .stat p {
     font-size: 18px;
+}
+
+.stat h4 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    opacity: 0; /* Oculto al inicio */
+    animation: countUp 0.8s ease-out forwards;
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Gráficos circulares */

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("https://halconspace.site/datos.json")
+    fetch("../datos.json")
         .then(response => response.json())
         .then(data => {
             // Calcular lanzamientos totales y porcentaje de éxito
@@ -10,12 +10,21 @@ document.addEventListener("DOMContentLoaded", () => {
             let aterrizajesTotales = data.aterrizajes.exitosos + data.aterrizajes.fallidos;
             let porcentajeAterrizajes = aterrizajesTotales > 0 ? (data.aterrizajes.exitosos / aterrizajesTotales) * 100 : 0;
 
+            let vuelosFalcon9 = data.vuelosVehiculos.falcon9;
+            let vuelosFalconHeavy = data.vuelosVehiculos.falconHeavy;
+            
+
             // Actualizar valores en la página
             document.getElementById("lanzamientos-totales").textContent = lanzamientosTotales;
             document.getElementById("aterrizajes-exitosos").textContent = data.aterrizajes.exitosos;
 
             document.getElementById("porcentaje-lanzamientos").textContent = Math.round(porcentajeLanzamientos) + "%";
             document.getElementById("porcentaje-aterrizajes").textContent = Math.round(porcentajeAterrizajes) + "%";
+
+
+            document.getElementById('lanzamientos-falcon-9').textContent = vuelosFalcon9;
+            document.getElementById('lanzamientos-falcon-heavy').textContent = vuelosFalconHeavy;
+            document.getElementById('intentos-aterrizaje').textContent = aterrizajesTotales;
 
             // Animar gráficos circulares
             let circleLanzamientos = document.getElementById("progress-lanzamientos");
