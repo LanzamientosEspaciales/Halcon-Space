@@ -91,6 +91,7 @@ section {
     color: #ffffff;
 }
 
+
 /* Estilos para móviles */
 @media (max-width: 768px) {
     .tabla-datos {

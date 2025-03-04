@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propulsores • Halcon Space</title>
+    <link rel="stylesheet" href="css/propulsores.css"> <!-- Archivo CSS externo -->
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+
+    <!-- Título de la página -->
+  <meta property="og:title" content="Propulsores • Halcon Space">
+  
+  <!-- Descripción que aparecerá en el embed -->
+  <meta property="og:description" content="Propulsores de Halcon Space">
+  
+  <!-- URL de la página -->
+  <meta property="og:url" content="https://halconspace.site/propulsores/">
+  
+  <!-- Imagen para el embed (recomendado 1200x630 píxeles) -->
+  <meta property="og:image" content="https://halconspace.site/img/misiones/MunStrider-1/Landing%20burn.png">
+  
+  <!-- Tipo de contenido (website, article, video, etc.) -->
+  <meta property="og:type" content="website">
+
+  <meta property="website:author" content="Halcon Space">
+  <meta property="website:section" content="Propulsores">
+  
+  <!-- Idioma y región opcionales -->
+  <meta property="og:locale" content="es_ES">
+
+</head>
+<body>
+    <!-- Encabezado -->
+    <div id="menu-container"></div>
+    <script src="../js/menu.js"></script>
+
+    <h2 style="text-align: center;">Selecciona un propulsor</h2>
+
+    <!-- Dropdown para elegir el propulsor -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <select id="selectorPropulsor">
+            <option value="">-- Selecciona un propulsor --</option>
+        </select>
+    </div>
+
+
+    <section>
+    <!-- Tabla de vuelos -->
+    <table class="tabla-datos" id="vuelos">
+        <thead>
+            <h3 id="tituloTablaVuelos" style="text-align: center; font-size: 25px;">Vuelos del propulsor</h3>
+            <h4 class="subTitleVuelos" style="text-align: center; font-size: 18px;">Estado: <strong id="estadoPropulsor"></strong></h4>
+            <tr>
+                <th>Vuelo</th>
+                <th>Misión</th>
+                <th>Fecha</th>
+                <th>Artículo</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+</section>
+
+    <script src="js/propulsores.js"></script> <!-- Archivo JS externo -->
+    
+</body>
+</html>
