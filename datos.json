@@ -66,7 +66,45 @@
                     "url": "https://halconspace.site/lanzamientos/MoonRadar-1"
                 }
             }
+        },
+        "B1071": {
+            "estado": "destruido",
+            "vuelos": {
+                "B1071.1": {
+                    "mision": "USSF-15",
+                    "fecha": "26/02/2025",
+                    "url": "https://halconspace.site/lanzamientos/ussf-15"
+                }
+            }
+        },
+        "B1072": {
+            "estado": "destruido",
+            "vuelos": {
+                "B1071.1": {
+                    "mision": "USSF-15",
+                    "fecha": "26/02/2025",
+                    "url": "https://halconspace.site/lanzamientos/ussf-15"
+                }
+            }
+        },
+        "B1073": {
+            "estado": "destruido",
+            "vuelos": {
+                "B1071.1": {
+                    "mision": "USSF-15",
+                    "fecha": "26/02/2025",
+                    "url": "https://halconspace.site/lanzamientos/ussf-15"
+                }
+            }
         }
+
+        
+
+
+
+
+
+
     },
     "transporters": {
         "transporter1": {
