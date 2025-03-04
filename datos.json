@@ -21,10 +21,16 @@
                     "url": ""
                 },
                 "B1067.2": {
+                    "mision": "Eyes above the Horizon 2",
+                    "fecha": "04/03/2025",
+                    "url": "https://halconspace.site/lanzamientos/eath1"
+                },
+                "B1067.3": {
                     "mision": "",
                     "fecha": "",
                     "url": ""
                 }
+
             }
         },
         "B1068": {
