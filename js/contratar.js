@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        const webhookURL = "https://discord.com/api/webhooks/1222751609830903819/PyYz-sP37OvkMUFYMdnYshSUGQRNgsMwSUaRpSc4jFA9CLh7TwCU-O9RjIUt4E2q-W1d"; // Reemplaza esto con tu URL del webhook
+        const webhookURL = "https://discord.com/api/webhooks/1346829307636613182/1SzfeZDjZfijRIbzjZCfhPwrhe8os7WWzm4pdvsoqokOQcHeYagpgXZXHoXixlOqq-e2"; // Reemplaza esto con tu URL del webhook
 
         // Contenido del mensaje a enviar
         const payload = {
