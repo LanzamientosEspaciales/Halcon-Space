@@ -1,6 +1,6 @@
 {
     "lanzamientos": {
-        "exitosos": 10,
+        "exitosos": 11,
         "fallidos": 0
     },
     "aterrizajes": {
@@ -8,10 +8,20 @@
         "fallidos": 4
     },
     "vuelosVehiculos": {
-        "falcon9": 9,
+        "falcon9": 10,
         "falconHeavy": 1
     },
     "propulsores": {
+        "B1066": {
+            "estado": "destruido",
+            "vuelos": {
+                "B1066.1": {
+                    "mision": "TASTN-1",
+                    "fecha": "22/03/2025",
+                    "url": "https://halconspace.site/lanzamientos/tastn1"
+                }
+            }
+        },
         "B1067": {
             "estado": "activo",
             "vuelos": {
@@ -91,7 +101,7 @@
         "B1072": {
             "estado": "destruido",
             "vuelos": {
-                "B1071.1": {
+                "B1072.1": {
                     "mision": "USSF-15",
                     "fecha": "26/02/2025",
                     "url": "https://halconspace.site/lanzamientos/ussf-15"
@@ -101,7 +111,7 @@
         "B1073": {
             "estado": "destruido",
             "vuelos": {
-                "B1071.1": {
+                "B1073.1": {
                     "mision": "USSF-15",
                     "fecha": "26/02/2025",
                     "url": "https://halconspace.site/lanzamientos/ussf-15"
