@@ -35,13 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => console.error("Error al cargar el menú:", error));
 });
 
-
-// Crear el loader dinámicamente
+// Crear el contenedor del loader dinámicamente
 const loader = document.createElement("div");
-loader.id = "loader";
+loader.id = "custom-loader";
 loader.innerHTML = `
-    <svg viewBox="25 25 50 50">
-        <circle r="20" cy="50" cx="50"></circle>
+    <svg id="custom-loader-svg" viewBox="25 25 50 50">
+        <circle id="custom-loader-circle" r="20" cy="50" cx="50"></circle>
     </svg>
 `;
 
@@ -51,7 +50,7 @@ document.body.insertAdjacentElement("afterbegin", loader);
 // Crear y agregar el CSS del loader dinámicamente
 const styles = document.createElement("style");
 styles.innerHTML = `
-    #loader {
+    #custom-loader {
         position: fixed;
         top: 0;
         left: 0;
@@ -64,27 +63,27 @@ styles.innerHTML = `
         z-index: 9999;
     }
 
-    svg {
+    #custom-loader-svg {
         width: 3.25em;
         transform-origin: center;
-        animation: rotate4 2s linear infinite;
+        animation: custom-rotate 2s linear infinite;
     }
 
-    circle {
+    #custom-loader-circle {
         fill: none;
         stroke: hsl(214, 97%, 59%);
         stroke-width: 2;
         stroke-dasharray: 1, 200;
         stroke-dashoffset: 0;
         stroke-linecap: round;
-        animation: dash4 1.5s ease-in-out infinite;
+        animation: custom-dash 1.5s ease-in-out infinite;
     }
 
-    @keyframes rotate4 {
+    @keyframes custom-rotate {
         100% { transform: rotate(360deg); }
     }
 
-    @keyframes dash4 {
+    @keyframes custom-dash {
         0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; }
         50% { stroke-dasharray: 90, 200; stroke-dashoffset: -35px; }
         100% { stroke-dashoffset: -125px; }
@@ -94,5 +93,5 @@ document.head.appendChild(styles);
 
 // Ocultar el loader cuando la página haya cargado completamente
 window.addEventListener("load", function () {
-    document.getElementById("loader").style.display = "none";
+    document.getElementById("custom-loader").style.display = "none";
 });
