@@ -1,14 +1,14 @@
 {
     "lanzamientos": {
-        "exitosos": 12,
+        "exitosos": 13,
         "fallidos": 0
     },
     "aterrizajes": {
-        "exitosos": 6,
+        "exitosos": 7,
         "fallidos": 4
     },
     "vuelosVehiculos": {
-        "falcon9": 11,
+        "falcon9": 12,
         "falconHeavy": 1
     },
     "propulsores": {
@@ -127,6 +127,21 @@
                     "url": "https://halconspace.site/lanzamientos/NROL-101"
                 },
                 "B1074.2": {
+                    "mision": "",
+                    "fecha": "",
+                    "url": ""
+                }
+            }
+        },
+        "B1075": {
+            "estado": "activo",
+            "vuelos": {
+                "B1075.1": {
+                    "mision": "CRS-2",
+                    "fecha": "18/04/2025",
+                    "url": "https://halconspace.site/lanzamientos/crs-2"
+                },
+                "B1075.2": {
                     "mision": "",
                     "fecha": "",
                     "url": ""
