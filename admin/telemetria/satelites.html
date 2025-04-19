@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/satelites.css">
     <link rel="stylesheet" href="../../css/estilo.css">
     <link rel="shortcut icon" href="../../img/logo.png" type="image/x-icon">
-    <script src="js/telemetria.js"></script>
 </head>
 <body>
     <!-- Encabezado -->
@@ -29,11 +28,20 @@
     
     <section class="telemetria">
         <h2>Telemetría de Satélites</h2>
+        <div class="filtros">
+            <select id="filtro-cuerpo">
+                <option value="">Todos los cuerpos</option>
+                <option value="Kerbin">Kerbin</option>
+                <option value="Muna">Muna</option>
+            </select>
+        </div>
+              
         <div id="contenedor-satelites" class="satelite-grid"></div>
       </section>
 
     <footer>
         <p>&copy; 2025 Halcon Space. Todos los derechos reservados.</p>
     </footer>
+    <script src="js/telemetria.js"></script>
 </body>
 </html>
