@@ -3,42 +3,49 @@
     "nombre": "GPS-1",
     "perigeo": 2862.720,
     "apogeo": 2889.270,
-    "cuerpo": "Kerbin"
+    "cuerpo": "Kerbin",
+    "programa": "gps"
   },
   {
     "nombre": "GPS-2",
     "perigeo": 2874.769,
     "apogeo": 2862.695,
-    "cuerpo": "Kerbin"
+    "cuerpo": "Kerbin",
+    "programa": "gps"
   },
   {
     "nombre": "GPS-3",
     "perigeo": 2863.768,
     "apogeo": 2866.402,
-    "cuerpo": "Kerbin"
+    "cuerpo": "Kerbin",
+    "programa": "gps"
   },
   {
     "nombre": "NROL-45",
     "perigeo": 1010.825,
     "apogeo": 1059.359,
-    "cuerpo": "Kerbin"
+    "cuerpo": "Kerbin",
+    "programa": "nrol"
   },
   {
     "nombre": "NROL-101",
     "perigeo": 1017.830,
     "apogeo": 1003.162,
-    "cuerpo": "Kerbin"
+    "cuerpo": "Kerbin",
+    "programa": "nrol"
   },
   {
     "nombre": "MoonRadar 1",
     "perigeo": 213.077,
     "apogeo": 221.191,
-    "cuerpo": "Muna"
+    "cuerpo": "Muna",
+    "programa": "moonradar"
   },
   {
     "nombre": "Halcon Station",
     "perigeo": 406.790,
     "apogeo": 407.280,
-    "cuerpo": "Kerbin"
+    "cuerpo": "Kerbin",
+    "programa": "station"
   }
 ]

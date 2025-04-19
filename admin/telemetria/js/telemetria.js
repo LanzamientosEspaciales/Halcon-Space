@@ -69,14 +69,17 @@ function renderizarSatelites(data) {
 
 function aplicarFiltros() {
     const cuerpo = document.getElementById("filtro-cuerpo").value;
+    const programa = document.getElementById("filtro-programa").value;
 
     const filtrados = satelites.filter(sat => {
         const coincideCuerpo = cuerpo === "" || sat.cuerpo === cuerpo;
-        return coincideCuerpo;
+        const coincidePrograma = programa === "" || sat.programa === programa;
+        return coincideCuerpo && coincidePrograma;
     });
 
     renderizarSatelites(filtrados);
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
     fetch("../json/satelites.json")
@@ -89,7 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
             renderizarSatelites(satelites);
 
             // Agregamos listeners
-            const filtroCuerpo = document.getElementById("filtro-cuerpo");
+            document.getElementById("filtro-cuerpo").addEventListener("change", aplicarFiltros);
+            document.getElementById("filtro-programa").addEventListener("change", aplicarFiltros);
+
 
             if (filtroCuerpo) {
                 filtroCuerpo.addEventListener("change", aplicarFiltros);
