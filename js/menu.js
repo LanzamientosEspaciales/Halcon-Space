@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
 const loader = document.createElement("div");
 loader.id = "loader";
 loader.innerHTML = `
-    <svg viewBox="25 25 50 50">
-        <circle r="20" cy="50" cx="50"></circle>
+    <svg id="svg1" viewBox="25 25 50 50">
+        <circle id="circle1" r="20" cy="50" cx="50"></circle>
     </svg>
 `;
 
@@ -63,13 +63,13 @@ styles.innerHTML = `
         z-index: 9999;
     }
 
-    svg {
+    #svg1 {
         width: 3.25em;
         transform-origin: center;
         animation: rotate4 2s linear infinite;
     }
 
-    circle {
+    #circle1 {
         fill: none;
         stroke: hsl(214, 97%, 59%);
         stroke-width: 2;
