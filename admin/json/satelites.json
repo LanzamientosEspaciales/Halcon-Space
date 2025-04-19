@@ -1,0 +1,18 @@
+[
+    {
+      "nombre": "GPS-1",
+      "perigeo": 2862.720,
+      "apogeo": 2889.270
+    },
+    {
+      "nombre": "GPS-2",
+      "perigeo": 2874.769,
+      "apogeo": 2862.695
+    },
+    {
+      "nombre": "GPS-3",
+      "perigeo": 2863.768,
+      "apogeo": 2866.402
+    }
+  ]
+  

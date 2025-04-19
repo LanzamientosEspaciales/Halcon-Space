@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telemetria satélites • Halcon Space</title>
+    <link rel="stylesheet" href="css/satelites.css">
+    <link rel="stylesheet" href="../../css/estilo.css">
+    <link rel="shortcut icon" href="../../img/logo.png" type="image/x-icon">
+    <script src="js/telemetria.js"></script>
+</head>
+<body>
+    <!-- Encabezado -->
+    <div id="menu-container"></div>
+    <script src="../js/menu.js"></script>
+
+    <script>
+        // Se ejecuta apenas se carga la página
+        const contraseña = "halcon2025"; // Cambia esto por tu contraseña
+        const intento = prompt("🔒 Página protegida\nPor favor ingresa la contraseña:");
+
+        if (intento !== contraseña) {
+            alert("Contraseña incorrecta. No tienes acceso.");
+            // Redirige o cierra el contenido
+            document.write("<h1 style='color:white; text-align:center;'>Acceso denegado.</h1>");
+            throw new Error("Acceso denegado.");
+        }
+    </script>
+    
+    <section class="telemetria">
+        <h2>Telemetría de Satélites</h2>
+        <div id="contenedor-satelites" class="satelite-grid"></div>
+      </section>
+
+    <footer>
+        <p>&copy; 2025 Halcon Space. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
