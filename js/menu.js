@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const loader = document.createElement("div");
 loader.id = "custom-loader";
 loader.innerHTML = `
-    <div class="solar">
+<div class="solar" id="solar">
                 <i class="mercury"></i>
                 <i class="venus"></i>
                 <i class="earth"></i>
@@ -290,5 +290,5 @@ document.head.appendChild(styles);
 
 // Ocultar el loader cuando la página haya cargado completamente
 window.addEventListener("load", function () {
-    document.getElementById("custom-loader").style.display = "none";
+    document.getElementById("solar").style.display = "none";
 });
