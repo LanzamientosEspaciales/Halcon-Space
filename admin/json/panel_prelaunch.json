@@ -1,9 +1,13 @@
 {
     "general": {
-      "vehiculo": "Falcon 9",
-      "mision": "Misión A",
-      "plataforma": "Plataforma 10",
-      "vehiculo-estado": "GO"
+      "vehiculo": "Falcon 9 Block 5",
+      "mision": "Halcyon Ascent",
+      "plataforma": "SLC-40",
+      "vehiculo-estado": "GO",
+      "comunicaciones": "GO",
+      "navegacion": "GO",
+      "camaras": "GO",
+      "range": "GO"
     },
     "etapa-2": {
       "propulsion": "GO",
