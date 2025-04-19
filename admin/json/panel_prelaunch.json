@@ -1,0 +1,32 @@
+{
+    "general": {
+      "vehiculo": "Falcon 9",
+      "mision": "Misión A",
+      "plataforma": "Plataforma 10",
+      "vehiculo-estado": "GO"
+    },
+    "etapa-2": {
+      "propulsion": "GO",
+      "rp1-2": 100,
+      "lox-2": 95,
+      "navegacion": "GO",
+      "comunicaciones": "GO",
+      "baterias": 92
+    },
+    "etapa-1": {
+      "propulsion": "GO",
+      "rp1-1": 100,
+      "lox-1": 98,
+      "navegacion": "GO",
+      "comunicaciones": "GO",
+      "baterias": 95,
+      "recuperacion": "GO"
+    },
+    "meteorologia": {
+      "viento": 15,
+      "temperatura": 25,
+      "humedad": 60,
+      "nubosidad": "Despejado"
+    }
+  }
+  

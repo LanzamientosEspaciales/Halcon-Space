@@ -2,12 +2,151 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Control - Halcon Space</title>
     <link rel="stylesheet" href="../../css/estilo.css">
-    <script src="js/panel.js" defer></script>
+    <link rel="stylesheet" href="css/panel.css">
 </head>
 <body>
-    <h1>Panel de Control - Pre-Lanzamiento</h1>
-    <div id="contenedor-datos"></div>
+
+    <div id="menu-container"></div>
+    <script src="js/menu.js"></script>
+
+    <section class="control-panel">
+        <h2>Panel de Control Pre-Lanzamiento</h2>
+
+        <div class="panel-grid">
+            <!-- General -->
+            <div class="panel-item">
+                <h3>Nombre de Vehículo</h3>
+                <p class="estado" id="vehiculo">Falcon 9 Block 5</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Nombre de Misión</h3>
+                <p class="estado" id="mision">Lanzamiento GPS-3</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Plataforma de Lanzamiento</h3>
+                <p class="estado" id="plataforma">LZ-39A</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Estado del Vehículo</h3>
+                <p id="vehiculo-estado">GO</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Comunicaciones</h3>
+                <p id="comunicaciones">GO</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Cámaras</h3>
+                <p id="camaras">GO</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Range</h3>
+                <p id="range">1000 km</p>
+            </div>
+
+            <!-- Etapa 2 -->
+            <div class="panel-item">
+                <h3>Propulsión (Etapa 2)</h3>
+                <p id="propulsion-2">GO</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Carga de Queroseno Líquido (RP1) (Etapa 2)</h3>
+                <p id="rp1-2">85%</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Carga de Oxígeno Líquido (LOx) (Etapa 2)</h3>
+                <p id="lox-2">90%</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Navegación (Etapa 2)</h3>
+                <p id="navegacion-2">GO</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Comunicaciones (Etapa 2)</h3>
+                <p id="comunicaciones-2">GO</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Baterías (Etapa 2)</h3>
+                <p id="baterias-2">90%</p>
+            </div>
+
+            <!-- Etapa 1 -->
+            <div class="panel-item">
+                <h3>Propulsión (Etapa 1)</h3>
+                <p id="propulsion-1">GO</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Carga de Queroseno Líquido (RP1) (Etapa 1)</h3>
+                <p id="rp1-1">80%</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Carga de Oxígeno Líquido (LOx) (Etapa 1)</h3>
+                <p id="lox-1">85%</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Navegación (Etapa 1)</h3>
+                <p id="navegacion-1">GO</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Comunicaciones (Etapa 1)</h3>
+                <p id="comunicaciones-1">GO</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Baterías (Etapa 1)</h3>
+                <p id="baterias-1">88%</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Recuperación (Etapa 1)</h3>
+                <p id="recuperacion-1">GO</p>
+            </div>
+
+            <!-- Meteorología -->
+            <div class="panel-item">
+                <h3>Velocidad del Viento</h3>
+                <p id="viento">25 km/h</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Temperatura</h3>
+                <p id="temperatura-meteorologica">20 °C</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Humedad</h3>
+                <p id="humedad">65%</p>
+            </div>
+
+            <div class="panel-item">
+                <h3>Nubosidad</h3>
+                <p id="nubosidad">50%</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Halcon Space. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/panel.js"></script>
 </body>
 </html>
