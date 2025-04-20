@@ -47,5 +47,12 @@
     "apogeo": 407.280,
     "cuerpo": "Kerbin",
     "programa": "station"
+  },
+  {
+    "nombre": "Aurora Halcyon",
+    "perigeo": 599.958,
+    "apogeo": 598.570,
+    "cuerpo": "Kerbin",
+    "programa": "station"
   }
 ]
