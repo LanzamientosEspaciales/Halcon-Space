@@ -1,6 +1,6 @@
 {
     "lanzamientos": {
-        "exitosos": 13,
+        "exitosos": 14,
         "fallidos": 0
     },
     "aterrizajes": {
@@ -8,7 +8,7 @@
         "fallidos": 4
     },
     "vuelosVehiculos": {
-        "falcon9": 12,
+        "falcon9": 13,
         "falconHeavy": 1
     },
     "propulsores": {
@@ -23,7 +23,7 @@
             }
         },
         "B1067": {
-            "estado": "activo",
+            "estado": "destruido",
             "vuelos": {
                 "B1067.1": {
                     "mision": "CRS-1",
@@ -36,9 +36,9 @@
                     "url": "https://halconspace.site/lanzamientos/eath2"
                 },
                 "B1067.3": {
-                    "mision": "",
-                    "fecha": "",
-                    "url": ""
+                    "mision": "Halycon Ascent",
+                    "fecha": "20/04/2025",
+                    "url": "https://halconspace.site/lanzamientos/halcyonascent"
                 }
 
             }
@@ -52,9 +52,9 @@
                     "url": "https://halconspace.site/lanzamientos/NROL-12"
                 },
                 "B1068.2": {
-                    "mision": "",
-                    "fecha": "",
-                    "url": ""
+                    "mision": "Dawn Assembly",
+                    "fecha": "NET 20/04/2025",
+                    "url": "https://halconspace.site/lanzamientos/dawnassembly"
                 }
             }
         },
