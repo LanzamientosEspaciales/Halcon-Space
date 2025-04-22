@@ -28,6 +28,13 @@
     "programa": "gps"
   },
   {
+    "nombre": "GPS-5",
+    "perigeo": 2863.222,
+    "apogeo": 2864.033,
+    "cuerpo": "Kerbin",
+    "programa": "gps"
+  },
+  {
     "nombre": "NROL-45",
     "perigeo": 1010.825,
     "apogeo": 1059.359,
