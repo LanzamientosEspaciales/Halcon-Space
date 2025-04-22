@@ -1,43 +1,93 @@
-(function() {
-    const contraseña = "halcon2025";
-
-    // Verificamos si ya está autenticado
-    if (localStorage.getItem("autenticado") === "true") {
-        return; // Si está autenticado, no hacemos nada y dejamos que la página se muestre
-    }
-
-    // Si no está autenticado, bloqueamos la página y pedimos contraseña
-    document.body.innerHTML = `
-        <div style="
+document.addEventListener("DOMContentLoaded", () => {
+    // Estilos CSS
+    const style = document.createElement("style");
+    style.textContent = `
+        #password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 1);
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
-            background-color: black;
-            color: white;
-            font-family: sans-serif;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .password-box {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
             text-align: center;
-        ">
-            <h2>🔒 Página protegida</h2>
-            <p>Por favor ingresa la contraseña:</p>
-            <input type="password" id="passwordInput" placeholder="Contraseña" style="padding: 10px; font-size: 1em; margin-bottom: 10px;">
-            <br>
-            <button id="accederBtn" style="padding: 10px 20px; font-size: 1em;">Acceder</button>
-            <p id="mensaje" style="color: red; margin-top: 10px;"></p>
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+        }
+
+        .password-box h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .password-box input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 250px;
+            font-size: 16px;
+        }
+
+        .password-box button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #007bff;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .password-box button:hover {
+            background: #0056b3;
+        }
+
+        .password-box p {
+            color: red;
+            margin-top: 10px;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // HTML del formulario
+    const overlay = document.createElement("div");
+    overlay.id = "password-overlay";
+    overlay.innerHTML = `
+        <div class="password-box">
+            <h2>Acceso restringido</h2>
+            <input type="password" id="password-input" placeholder="Contraseña">
+            <button id="password-submit">Entrar</button>
+            <p id="password-error" style="display:none;">Contraseña incorrecta</p>
         </div>
     `;
+    document.body.appendChild(overlay);
 
-    document.getElementById("accederBtn").addEventListener("click", () => {
-        const intento = document.getElementById("passwordInput").value;
-        const mensaje = document.getElementById("mensaje");
+    const input = document.getElementById("password-input");
+    const submit = document.getElementById("password-submit");
+    const errorMsg = document.getElementById("password-error");
 
-        if (intento === contraseña) {
-            localStorage.setItem("autenticado", "true"); // Marcamos que ya pasó
-            location.reload(); // Recargamos la página para mostrar el contenido real
+    function checkPassword() {
+        const password = input.value.trim();
+        if (password === "halcon2025") {
+            overlay.remove();
         } else {
-            mensaje.textContent = "❌ Contraseña incorrecta.";
-            document.getElementById("passwordInput").value = "";
+            errorMsg.style.display = "block";
+            input.value = "";
+            input.focus();
         }
+    }
+
+    submit.addEventListener("click", checkPassword);
+    input.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") checkPassword();
     });
-})();
+});
