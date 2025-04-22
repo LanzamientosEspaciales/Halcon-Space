@@ -1,14 +1,14 @@
 {
     "lanzamientos": {
-        "exitosos": 15,
+        "exitosos": 16,
         "fallidos": 0
     },
     "aterrizajes": {
-        "exitosos": 8,
+        "exitosos": 9,
         "fallidos": 4
     },
     "vuelosVehiculos": {
-        "falcon9": 14,
+        "falcon9": 15,
         "falconHeavy": 1
     },
     "propulsores": {
@@ -72,6 +72,11 @@
                     "url": "https://halconspace.site/lanzamientos/eath1"
                 },
                 "B1069.3": {
+                    "mision": "GPS-5",
+                    "fecha": "22/04/2025",
+                    "url": "https://halconspace.site/lanzamientos/gps-5"
+                },
+                "B1069.4": {
                     "mision": "",
                     "fecha": "",
                     "url": ""
