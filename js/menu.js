@@ -50,10 +50,6 @@ loader.innerHTML = `
   <div id="l7">D</div>
   <div id="l8">O</div>
 </div>
-
-    <svg id="svg1" viewBox="25 25 50 50">
-        <circle id="circle1" r="20" cy="50" cx="50"></circle>
-    </svg>
 `;
 
 // Agregar el loader al cuerpo del documento
@@ -123,45 +119,6 @@ styles.innerHTML = `
 #box div:nth-child(8) {
   animation-delay: 0.7s;
 }
-
-    #loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-    }
-
-    #svg1 {
-        width: 3.25em;
-        transform-origin: center;
-        animation: rotate4 2s linear infinite;
-    }
-
-    #circle1 {
-        fill: none;
-        stroke: hsl(214, 97%, 59%);
-        stroke-width: 2;
-        stroke-dasharray: 1, 200;
-        stroke-dashoffset: 0;
-        stroke-linecap: round;
-        animation: dash4 1.5s ease-in-out infinite;
-    }
-
-    @keyframes rotate4 {
-        100% { transform: rotate(360deg); }
-    }
-
-    @keyframes dash4 {
-        0% { stroke-dasharray: 1, 200; stroke-dashoffset: 0; }
-        50% { stroke-dasharray: 90, 200; stroke-dashoffset: -35px; }
-        100% { stroke-dashoffset: -125px; }
-    }
 `;
 document.head.appendChild(styles);
 
