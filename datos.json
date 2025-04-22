@@ -53,7 +53,7 @@
                 },
                 "B1068.2": {
                     "mision": "Dawn Assembly",
-                    "fecha": "NET 20/04/2025",
+                    "fecha": "NET 23/04/2025",
                     "url": "https://halconspace.site/lanzamientos/dawnassembly"
                 }
             }
@@ -142,6 +142,11 @@
                     "url": "https://halconspace.site/lanzamientos/crs-2"
                 },
                 "B1075.2": {
+                    "mision": "GPS-4",
+                    "fecha": "22/04/2025",
+                    "url": "https://halconspace.site/lanzamientos/gps-4"
+                },
+                "B1075.3": {
                     "mision": "",
                     "fecha": "",
                     "url": ""
