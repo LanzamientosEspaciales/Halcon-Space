@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const style = document.createElement("style");
     style.textContent = `
         body {
-            overflow-y: auto;
+            overflow: hidden;
         }
         #password-overlay {
             position: fixed;
