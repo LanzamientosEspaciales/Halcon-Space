@@ -58,7 +58,7 @@ document.body.insertAdjacentElement("afterbegin", loader);
 // Crear y agregar el CSS del loader dinámicamente
 const styles = document.createElement("style");
 styles.innerHTML = `
-    /* From Uiverse.io by wojtek_4284 */ 
+
 #box div {
   display: inline-block;
   margin: 5px;
