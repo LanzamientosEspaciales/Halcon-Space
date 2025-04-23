@@ -4,9 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Estilos CSS
     const style = document.createElement("style");
     style.textContent = `
-        body {
-            overflow: hidden;
-        }
         #password-overlay {
             position: fixed;
             top: 0;
@@ -18,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             justify-content: center;
             align-items: center;
             z-index: 9999;
+            overflow: hidden;
         }
 
         .password-box {
