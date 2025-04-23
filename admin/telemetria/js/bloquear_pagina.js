@@ -1,3 +1,5 @@
+var contraseña = "aF9@qW1#zXp3Lr8$Tm6*Bs0!KvD4&EyNcU7^Go5+JhMi2%RdSwZCxVnHbAjLtQg"
+
 document.addEventListener("DOMContentLoaded", () => {
     // Estilos CSS
     const style = document.createElement("style");
@@ -77,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function checkPassword() {
         const password = input.value.trim();
-        if (password === "halcon2025") {
+        if (password === contraseña) {
             overlay.remove();
         } else {
             errorMsg.style.display = "block";
