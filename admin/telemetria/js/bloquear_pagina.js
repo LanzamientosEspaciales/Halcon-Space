@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             justify-content: center;
             align-items: center;
             z-index: 9999;
+            overflow-y: auto;
         }
 
         .password-box {
