@@ -7,88 +7,105 @@ body {
     color: #2c3e50;
 }
 
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado de la galería */
 h2 {
     text-align: center;
-    padding: 20px;
-    font-size: 28px;
+    font-size: 2.5em;
+    margin-top: 30px;
     color: white;
 }
 
-/* Contenedor principal de la galería */
+/* Contenedor de la galería */
 .gallery {
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
     padding: 20px;
 }
 
 /* Contenedor de imágenes */
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
-    justify-content: center;
-    align-items: start;
+    margin-top: 30px;
 }
 
+/* Imágenes */
 .gallery-img {
     width: 100%;
     height: auto;
-    max-height: 500px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
+/* Efecto de hover sobre las imágenes */
 .gallery-img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
-
-/* Lightbox / Modal */
+/* Estilos del Lightbox (modal) */
 .lightbox {
-    display: none;
     position: fixed;
-    z-index: 1000;
-    padding-top: 60px;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.lightbox.active {
+    display: flex;
 }
 
 .lightbox-content {
-    margin: auto;
-    display: block;
     max-width: 90%;
-    max-height: 80vh;
+    max-height: 90%;
+    object-fit: contain;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-    animation: fadeIn 0.5s ease;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-/* Botón para cerrar el modal */
+/* Botón de cierre del Lightbox */
 .close {
     position: absolute;
     top: 20px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
+    right: 20px;
+    font-size: 2em;
+    color: #fff;
     cursor: pointer;
+    z-index: 110;
 }
 
-.close:hover,
-.close:focus {
-    color: #f39c12;
-    text-decoration: none;
+.close:hover {
+    color: red;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.lightbox-content {
+    animation: fadeIn 0.5s ease-in-out;
 }
