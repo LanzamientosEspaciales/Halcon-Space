@@ -12,6 +12,16 @@
         "falconHeavy": 2
     },
     "propulsores": {
+        "B1065": {
+            "estado": "activo",
+            "vuelos": {
+                "B1065.1": {
+                    "mision": "Eyes Above The Horizon 4",
+                    "fecha": "NET 30/04/2025",
+                    "url": "https://halconspace.site/lanzamientos/tastn1"
+                }
+            }
+        },
         "B1066": {
             "estado": "destruido",
             "vuelos": {
@@ -31,7 +41,7 @@
                     "url": ""
                 },
                 "B1067.2": {
-                    "mision": "Eyes above the Horizon 2",
+                    "mision": "Eyes Above The Horizon 2",
                     "fecha": "04/03/2025",
                     "url": "https://halconspace.site/lanzamientos/eath2"
                 },
@@ -67,7 +77,7 @@
                     "url": "https://halconspace.site/lanzamientos/MunStrider"
                 },
                 "B1069.2": {
-                    "mision": "Eyes above the Horizon 1",
+                    "mision": "Eyes Above The Horizon 1",
                     "fecha": "04/03/2025",
                     "url": "https://halconspace.site/lanzamientos/eath1"
                 },
