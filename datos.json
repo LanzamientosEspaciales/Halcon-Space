@@ -1,15 +1,15 @@
 {
     "lanzamientos": {
-        "exitosos": 17,
+        "exitosos": 18,
         "fallidos": 0
     },
     "aterrizajes": {
-        "exitosos": 10,
+        "exitosos": 12,
         "fallidos": 4
     },
     "vuelosVehiculos": {
         "falcon9": 16,
-        "falconHeavy": 1
+        "falconHeavy": 2
     },
     "propulsores": {
         "B1066": {
@@ -129,7 +129,7 @@
             }
         },
         "B1074": {
-            "estado": "activo",
+            "estado": "destruido",
             "vuelos": {
                 "B1074.1": {
                     "mision": "NROL-101",
@@ -137,9 +137,9 @@
                     "url": "https://halconspace.site/lanzamientos/NROL-101"
                 },
                 "B1074.2": {
-                    "mision": "",
-                    "fecha": "",
-                    "url": ""
+                    "mision": "Eyes above the Horizon 3",
+                    "fecha": "28/04/2025",
+                    "url": "https://halconspace.site/lanzamientos/eath3"
                 }
             }
         },
@@ -156,14 +156,18 @@
                     "fecha": "22/04/2025",
                     "url": "https://halconspace.site/lanzamientos/gps-4"
                 },
-                "B1075.3": {
-                    "mision": "",
-                    "fecha": "",
-                    "url": ""
+                "B1075.3.1": {
+                    "mision": "Eyes above the Horizon 3",
+                    "fecha": "28/04/2025",
+                    "url": "https://halconspace.site/lanzamientos/eath3"
+                },
+                "B1075.3.2": {
+                    "mision": "Eyes above the Horizon 3",
+                    "fecha": "28/04/2025",
+                    "url": "https://halconspace.site/lanzamientos/eath3"
                 }
             }
         }
-
 
 
     },
