@@ -156,12 +156,17 @@
                     "fecha": "22/04/2025",
                     "url": "https://halconspace.site/lanzamientos/gps-4"
                 },
-                "B1075.3.1": {
+                "B1075.3": {
                     "mision": "Eyes above the Horizon 3",
                     "fecha": "28/04/2025",
                     "url": "https://halconspace.site/lanzamientos/eath3"
-                },
-                "B1075.3.2": {
+                }
+            }
+        },
+        "B1076": {
+            "estado": "activo",
+            "vuelos": {
+                "B1076.1": {
                     "mision": "Eyes above the Horizon 3",
                     "fecha": "28/04/2025",
                     "url": "https://halconspace.site/lanzamientos/eath3"
