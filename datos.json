@@ -1,17 +1,27 @@
 {
     "lanzamientos": {
-        "exitosos": 18,
+        "exitosos": 19,
         "fallidos": 0
     },
     "aterrizajes": {
-        "exitosos": 12,
+        "exitosos": 13,
         "fallidos": 4
     },
     "vuelosVehiculos": {
-        "falcon9": 16,
+        "falcon9": 17,
         "falconHeavy": 2
     },
     "propulsores": {
+        "B1061": {
+            "estado": "activo",
+            "vuelos": {
+                "B1064.1": {
+                    "mision": "NROL-13",
+                    "fecha": "02/05/2025",
+                    "url": "https://halconspace.site/lanzamientos/NROL-13"
+                }
+            }
+        },
         "B1065": {
             "estado": "activo",
             "vuelos": {
