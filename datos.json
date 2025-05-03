@@ -209,6 +209,8 @@
         },
         "B1076": {
             "estado": "activo",
+            "img": "https://halconspace.site/img/propulsores/B1076.png",
+            "tipo": "Falcon Heavy",
             "vuelos": {
                 "B1076.1": {
                     "mision": "Eyes above the Horizon 3",
