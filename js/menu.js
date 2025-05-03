@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     fetch("https://halconspace.site/menu")
+    //fetch("../menu.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("menu-container").innerHTML = data;

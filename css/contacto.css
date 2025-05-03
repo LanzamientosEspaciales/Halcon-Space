@@ -83,6 +83,32 @@ body {
     background-color: #A81F25;
 }
 
+.btn-contratar {
+    display: block; /* para que respete el centrado con margin */
+    width: fit-content; /* para que no ocupe todo el ancho */
+    margin: 0 auto;
+    background-color: #ff4500;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-contratar:hover {
+    background-color: #e03e00;
+    transform: translateY(-2px);
+}
+
+.btn-contratar:active {
+    transform: scale(0.97);
+}
+
+
+
 /* Mapa */
 .mapa {
     margin: 40px auto;
