@@ -26,6 +26,8 @@
         },
         "B1065": {
             "estado": "activo",
+            "img": "https://halconspace.site/img/propulsores/B1065.png",
+            "tipo": "Falcon 9",
             "vuelos": {
                 "B1065.1": {
                     "mision": "Eyes Above The Horizon 4",
@@ -36,6 +38,8 @@
         },
         "B1066": {
             "estado": "destruido",
+            "img": "https://halconspace.site/img/propulsores/B1066.png",
+            "tipo": "Falcon 9",
             "vuelos": {
                 "B1066.1": {
                     "mision": "TASTN-1",
@@ -46,6 +50,8 @@
         },
         "B1067": {
             "estado": "destruido",
+            "img": "https://halconspace.site/img/propulsores/B1067.png",
+            "tipo": "Falcon 9",
             "vuelos": {
                 "B1067.1": {
                     "mision": "CRS-1",
@@ -67,6 +73,8 @@
         },
         "B1068": {
             "estado": "activo",
+            "img": "https://halconspace.site/img/propulsores/B1068.png",
+            "tipo": "Falcon 9",
             "vuelos": {
                 "B1068.1": {
                     "mision": "NROL-12",
@@ -82,6 +90,8 @@
         },
         "B1069": {
             "estado": "activo",
+            "img": "https://halconspace.site/img/propulsores/B1069.png",
+            "tipo": "Falcon 9",
             "vuelos": {
                 "B1069.1": {
                     "mision": "MunStrider-1",
@@ -112,6 +122,8 @@
         },
         "B1070": {
             "estado": "destruido",
+            "img": "https://halconspace.site/img/propulsores/B1070.png",
+            "tipo": "Falcon 9",
             "vuelos": {
                 "B1070.1": {
                     "mision": "MoonRadar-1",
@@ -122,6 +134,8 @@
         },
         "B1071": {
             "estado": "destruido",
+            "img": "https://halconspace.site/img/propulsores/B1071.png",
+            "tipo": "Falcon Heavy",
             "vuelos": {
                 "B1071.1": {
                     "mision": "USSF-15",
@@ -132,6 +146,8 @@
         },
         "B1072": {
             "estado": "destruido",
+            "img": "https://halconspace.site/img/propulsores/B1072.png",
+            "tipo": "Falcon Heavy",
             "vuelos": {
                 "B1072.1": {
                     "mision": "USSF-15",
@@ -142,6 +158,8 @@
         },
         "B1073": {
             "estado": "destruido",
+            "img": "https://halconspace.site/img/propulsores/B1073.png",
+            "tipo": "Falcon Heavy",
             "vuelos": {
                 "B1073.1": {
                     "mision": "USSF-15",
@@ -152,6 +170,8 @@
         },
         "B1074": {
             "estado": "destruido",
+            "img": "https://halconspace.site/img/propulsores/B1074.png",
+            "tipo": "Falcon Heavy",
             "vuelos": {
                 "B1074.1": {
                     "mision": "NROL-101",
@@ -167,6 +187,8 @@
         },
         "B1075": {
             "estado": "activo",
+            "img": "https://halconspace.site/img/propulsores/B1075.png",
+            "tipo": "Falcon Heavy",
             "vuelos": {
                 "B1075.1": {
                     "mision": "CRS-2",
