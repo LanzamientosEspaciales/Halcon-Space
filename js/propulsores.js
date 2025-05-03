@@ -1,102 +1,99 @@
-const statusPropulsor = document.getElementById("estadoPropulsor");
-const titulo = document.getElementById("tituloTablaVuelos");
-
-statusPropulsor.innerHTML = "Desconocido";
-
-titulo.textContent = `Seleccione un propulsor para obtener su información`;
-async function cargarPropulsores() {
-    try {
-        const response = await fetch("https://halconspace.site/datos.json");
-        if (!response.ok) throw new Error("No se pudo cargar el JSON");
-
-        const jsonData = await response.json();
-        const selector = document.getElementById("selectorPropulsor");
-
-        // Limpiar opciones previas
-        selector.innerHTML = '<option value="">-- Selecciona un propulsor --</option>';
-
-        // Llenar el selector con los propulsores disponibles
-        for (const propulsor in jsonData.propulsores) {
-            const opcion = document.createElement("option");
-            opcion.value = propulsor;
-            opcion.textContent = propulsor;
-            selector.appendChild(opcion);
-        }
-
-        // Agregar evento para cuando el usuario seleccione un propulsor
-        selector.addEventListener("change", function () {
-            const propulsorSeleccionado = this.value;
-            if (propulsorSeleccionado) {
-                cargarDatos(propulsorSeleccionado);
-            } else {
-                limpiarTabla();
-            }
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("https://halconspace.site/datos.json")
+      .then(response => {
+        if (!response.ok) throw new Error("Error al cargar el JSON");
+        return response.json();
+      })
+      .then(data => {
+        const galeria = document.getElementById("gallery");
+        const modal = document.getElementById("modal");
+        const modalTitle = document.getElementById("modal-title");
+        const modalVuelos = document.getElementById("modal-vuelos");
+        const closeButton = document.querySelector(".close-button");
+  
+        // Cerrar el modal al hacer clic en la X
+        closeButton.addEventListener("click", () => {
+          modal.classList.add("oculto");
+          modalVuelos.innerHTML = "";
         });
-
-    } catch (error) {
-        console.error("Error al cargar los propulsores:", error);
-    }
-}
-
-async function cargarDatos(etapa) {
-    try {
-        const response = await fetch("https://halconspace.site/datos.json");
-        if (!response.ok) throw new Error("No se pudo cargar el JSON");
-
-        const jsonData = await response.json();
-        const tabla = document.querySelector("#vuelos tbody");
-        const titulo = document.getElementById("tituloTablaVuelos");
-        const statusPropulsor = document.getElementById("estadoPropulsor");
-
-        // Limpiar la tabla antes de insertar nuevos datos
-        tabla.innerHTML = "";
-        titulo.textContent = `Vuelos de ${etapa}`;
-
-        const propulsorSeleccionado = etapa; // Esto puede venir de un select u otra fuente
-        const estado = jsonData.propulsores[propulsorSeleccionado]?.estado || "Desconocido";
-
-        statusPropulsor.innerHTML = estado;
-
-        // Verificar si la etapa existe
-        if (!jsonData.propulsores[etapa]) {
-            tabla.innerHTML = "<tr><td colspan='4' style='text-align:center;'>No hay datos disponibles</td></tr>";
-            return;
+  
+        // Cerrar modal si se hace clic fuera del contenido
+        window.addEventListener("click", (e) => {
+          if (e.target === modal) {
+            modal.classList.add("oculto");
+            modalVuelos.innerHTML = "";
+          }
+        });
+  
+        for (const [id, propulsor] of Object.entries(data.propulsores)) {
+          const cantidadVuelos = Object.keys(propulsor.vuelos).length;
+  
+          const item = document.createElement("div");
+          item.className = "gallery-item";
+  
+          item.innerHTML = `
+            <img src="${propulsor.img}" alt="Propulsor ${id}">
+            <div class="gallery-item-overlay">
+              <div class="gallery-item-title">${id}</div>
+              <div class="gallery-item-desc">
+                <span>Cantidad de vuelos: <span>${cantidadVuelos}</span></span><br>
+                <span>Tipo: <span class="tipoPropulsor">${propulsor.tipo}</span></span>
+                <div class="gallery-item-estado-${propulsor.estado === "activo" ? "activo" : "retirado"}">
+                  ${propulsor.estado === "activo" ? "Activo" : "Retirado"}
+                </div>
+              </div>
+              <button class="gallery-item-button">Ver más</button>
+            </div>
+          `;
+  
+          // Manejar clic en "Ver más"
+          const button = item.querySelector(".gallery-item-button");
+          button.addEventListener("click", () => {
+            modalTitle.textContent = `Vuelos del propulsor ${id}`;
+            modalVuelos.innerHTML = "";
+          
+            const vuelos = propulsor.vuelos;
+            for (const vueloId in vuelos) {
+              const vuelo = vuelos[vueloId];
+          
+              // Solo agregar el vuelo si la misión, fecha o URL no están vacíos
+              if (vuelo.mision || vuelo.fecha || vuelo.url) {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                  <strong>${vuelo.mision || "Misión sin nombre"}</strong> — ${vuelo.fecha || "Fecha no disponible"}
+                  ${vuelo.url ? ` - <a href="${vuelo.url}" target="_blank">Ver misión</a>` : ""}
+                `;
+                modalVuelos.appendChild(li);
+              }
+            }
+          
+            // Mostrar el modal
+            modal.classList.remove("oculto");
+          });
+          
+  
+          galeria.appendChild(item);
         }
-
-        const vuelos = jsonData.propulsores[etapa].vuelos;
-
-        for (const vuelo in vuelos) {
-            const { mision, fecha, url } = vuelos[vuelo];
-
-            // Evitar mostrar vuelos sin datos
-            if (!mision.trim() && !fecha.trim()) continue;
-
-            const fila = document.createElement("tr");
-
-            fila.innerHTML = `
-                <td>${vuelo}</td>
-                <td>${mision || "Desconocido"}</td>
-                <td>${fecha || "Desconocida"}</td>
-                <td style="text-align: center;">
-                    ${url && url.trim() ? `<a href="${url}" target="_blank" class="btn-enlace">Ver artículo</a>` : "No disponible"}
-                </td>
-            `;
-
-            tabla.appendChild(fila);
-        }
-    } catch (error) {
-        console.error("Error al cargar los datos:", error);
-    }
-}
-
-function limpiarTabla() {
-    const tabla = document.querySelector("#vuelos tbody");
-    const titulo = document.getElementById("tituloTablaVuelos");
-    const statusPropulsor = document.getElementById("estadoPropulsor");
-    tabla.innerHTML = "";
-    titulo.textContent = `Seleccione un propulsor para obtener su información`;
-    statusPropulsor.innerHTML = "Desconocido";
-}
-
-// Ejecutar al cargar la página
-document.addEventListener("DOMContentLoaded", cargarPropulsores);
+      })
+      .catch(error => {
+        console.error("Ocurrió un error al cargar el JSON:", error);
+      });
+  });
+  
+  // Filtro de búsqueda
+  document.getElementById('searchInput').addEventListener('input', function () {
+    const keyword = this.value.trim().toLowerCase();
+    const cards = document.querySelectorAll('.gallery-item');
+  
+    cards.forEach(card => {
+      const serialBooster = card.querySelector('.gallery-item-title').innerText.toLowerCase();
+      const tipoBooster = card.querySelector('.tipoPropulsor').innerText.toLowerCase();
+  
+      if (serialBooster.includes(keyword) || tipoBooster.includes(keyword)) {
+        card.classList.remove('oculto');
+      } else {
+        card.classList.add('oculto');
+      }
+    });
+  });
+  

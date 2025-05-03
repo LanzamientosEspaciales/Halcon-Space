@@ -1,74 +1,245 @@
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .gallery-item {
+    position: relative;
+    width: 300px;
+    height: 450px;
     margin: 20px;
-    background-color: #f4f4f4;
-}
-
-/* Secciones */
-section {
-    margin: 20px;
-    padding: 20px;
-    background-color: #1E1E1E;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-}
-
-/* Tabla de datos */
-.tabla-datos {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 30px 0;
-    background-color: #1E1E1E;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    overflow: hidden;
-    table-layout: fixed; /* Asegura que las celdas no se desborden */
-}
-
-.tabla-datos th, 
-.tabla-datos td {
-    padding: 15px;
-    text-align: left;
-    font-size: 16px;
-    word-wrap: break-word; /* Evita que el texto se desborde */
-}
-
-.tabla-datos th {
-    background-color: #C1272D;
-    color: #ffffff;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.tabla-datos tr:nth-child(even) {
-    background-color: #2A2A2A;
-}
-
-.tabla-datos tr:hover {
-    background-color: #C1272D;
-    color: #ffffff;
-}
-
-/* Estilos del botón */
-.btn-enlace {
-    display: inline-block;  /* Para respetar centrado */
-    padding: 8px 12px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 14px;
     text-align: center;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+  }
+  
+  .gallery-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 30px;
+  }
+  
+  .gallery-item:hover .gallery-item-overlay {
+    opacity: 1;
+    border-radius: 30px;
+  }
+  
+  .gallery-item-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+  
+  .gallery-item-desc {
+    color: #fff;
+  }
+  
+  .gallery-item-estado-retirado {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #fff;
+    padding: 5px 10px;
+    margin-top: 10px;
+    background-color: red;
+    border-radius: 20px;
+  }
+  
+  .gallery-item-estado-activo {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #fff;
+    padding: 5px 10px;
+    margin-top: 10px;
+    background-color: green;
+    border-radius: 20px;
+  }
+  
+  .gallery-item-button {
+    border-radius: 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .gallery-item-button:hover {
+      color: #fff;
+    background-color: #555;
+  }
+
+  .oculto {
+    display: none;
+    transition: all 0.5s ease-in-out;
+  }
+  
+
+  .searchInput{
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 5px;
+    }
+
+    /* Modal por defecto oculto */
+.modal.oculto {
+  display: none;
 }
 
-/* Efecto hover */
-.btn-enlace:hover {
-    background-color: #0056b3;
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+/* Estilos del modal */
+.modal-content {
+  background-color: #f5f5f5;
+  padding: 2rem;
+  max-width: 700px;
+  width: 85%;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  transition: transform 0.3s ease-out;
+  text-align: center;
 }
 
-/* Centrar el botón dentro de la celda */
-td {
-    text-align: center; /* Centra el contenido dentro de la celda */
-    vertical-align: middle; /* Asegura alineación vertical correcta */
+/* Imagen dentro del modal */
+.modal-content img {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del modal */
+.modal-content h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 8px;
+}
+
+/* Lista de vuelos */
+#modal-vuelos {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+#modal-vuelos li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+#modal-vuelos li:hover {
+  transform: translateY(-4px);
+}
+
+#modal-vuelos li a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease-in-out;
+}
+
+#modal-vuelos li a:hover {
+  color: #0056b3;
+}
+
+/* Botón de cerrar */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #555;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #d9534f;
+}
+
+#modal-vuelos li {
+  color: #333;
+}
+
+/* Estilo cuando no hay vuelos */
+#modal-vuelos li.empty-message {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/* Estilo de los enlaces dentro de cada vuelo */
+#modal-vuelos li strong {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1.6rem;
+  }
+
+  #modal-vuelos li {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
 }
