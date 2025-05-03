@@ -235,6 +235,11 @@
 
 /* Diseño responsive */
 @media (max-width: 768px) {
+
+  .gallery-item-overlay > *{
+    opacity: 1;
+  }
+
   .modal-content {
     width: 90%;
     padding: 1.5rem;
