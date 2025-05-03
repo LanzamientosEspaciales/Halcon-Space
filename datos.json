@@ -135,7 +135,7 @@
         "B1071": {
             "estado": "destruido",
             "img": "https://halconspace.site/img/propulsores/B1071.png",
-            "tipo": "Falcon Heavy",
+            "tipo": "Falcon Heavy Side",
             "vuelos": {
                 "B1071.1": {
                     "mision": "USSF-15",
@@ -147,7 +147,7 @@
         "B1072": {
             "estado": "destruido",
             "img": "https://halconspace.site/img/propulsores/B1072.png",
-            "tipo": "Falcon Heavy",
+            "tipo": "Falcon Heavy Side",
             "vuelos": {
                 "B1072.1": {
                     "mision": "USSF-15",
@@ -171,7 +171,7 @@
         "B1074": {
             "estado": "destruido",
             "img": "https://halconspace.site/img/propulsores/B1074.png",
-            "tipo": "Falcon Heavy",
+            "tipo": "Falcon Heavy (Antes F9)",
             "vuelos": {
                 "B1074.1": {
                     "mision": "NROL-101",
@@ -188,7 +188,7 @@
         "B1075": {
             "estado": "activo",
             "img": "https://halconspace.site/img/propulsores/B1075.png",
-            "tipo": "Falcon Heavy",
+            "tipo": "Falcon Heavy Side (Antes F9)",
             "vuelos": {
                 "B1075.1": {
                     "mision": "CRS-2",
@@ -210,7 +210,7 @@
         "B1076": {
             "estado": "activo",
             "img": "https://halconspace.site/img/propulsores/B1076.png",
-            "tipo": "Falcon Heavy",
+            "tipo": "Falcon Heavy Side",
             "vuelos": {
                 "B1076.1": {
                     "mision": "Eyes above the Horizon 3",
