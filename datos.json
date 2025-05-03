@@ -73,7 +73,7 @@
         },
         "B1068": {
             "estado": "activo",
-            "img": "https://halconspace.site/img/propulsores/B1068.png",
+            "img": "https://halconspace.site/img/propulsores/B1068.jpg",
             "tipo": "Falcon 9",
             "vuelos": {
                 "B1068.1": {
@@ -122,7 +122,7 @@
         },
         "B1070": {
             "estado": "destruido",
-            "img": "https://halconspace.site/img/propulsores/B1070.png",
+            "img": "https://halconspace.site/img/propulsores/B1070.jpg",
             "tipo": "Falcon 9",
             "vuelos": {
                 "B1070.1": {
