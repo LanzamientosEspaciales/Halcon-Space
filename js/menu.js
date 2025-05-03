@@ -1,13 +1,5 @@
-var enlaceAUsarr = "1";
-
-if(enlaceAUsarr == "1") {
-    var enlaceAUsar = "https://halconspace.site/menu";
-} else if(enlaceAUsarr == "2") {
-    var enlaceAUsar = "../menu.html";
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-    fetch(enlaceAUsar)
+    fetch("https://halconspace.site/menu")
     //fetch("../menu.html")
         .then(response => response.text())
         .then(data => {
@@ -48,17 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
 const loader = document.createElement("div");
  loader.id = "loader";
  loader.innerHTML = `
-     <svg viewBox="25 25 50 50">
-         <circle r="20" cy="50" cx="50"></circle>
-     </svg>
- `;
- 
- // Agregar el loader al cuerpo del documento
- const loader = document.createElement("div");
- loader.id = "loader";
- loader.innerHTML = `
-     <svg viewBox="25 25 50 50">
-         <circle r="20" cy="50" cx="50"></circle>
+     <svg class="svgg" viewBox="25 25 50 50">
+         <circle class="circle" r="20" cy="50" cx="50"></circle>
      </svg>
  `;
  
@@ -81,13 +64,13 @@ const loader = document.createElement("div");
          z-index: 9999;
      }
  
-     svg {
+     .svgg {
          width: 3.25em;
          transform-origin: center;
          animation: rotate4 2s linear infinite;
      }
  
-     circle {
+     .circlee {
          fill: none;
          stroke: hsl(214, 97%, 59%);
          stroke-width: 2;
