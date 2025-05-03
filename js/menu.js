@@ -1,6 +1,14 @@
+var enlaceAUsarr = "1";
+
+if(enlaceAUsarr == "1") {
+    var enlaceAUsar = "https://halconspace.site/menu";
+} else if(enlaceAUsarr == "2") {
+    var enlaceAUsar = "../menu.html";
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-    //fetch("https://halconspace.site/menu")
-    fetch("../menu.html")
+    fetch(enlaceAUsar)
+    //fetch("../menu.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("menu-container").innerHTML = data;
