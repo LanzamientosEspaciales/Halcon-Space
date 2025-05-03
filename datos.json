@@ -14,6 +14,8 @@
     "propulsores": {
         "B1061": {
             "estado": "activo",
+            "img": "https://halconspace.site/img/propulsores/B1061.png",
+            "tipo": "Falcon 9",
             "vuelos": {
                 "B1064.1": {
                     "mision": "NROL-13",
