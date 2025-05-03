@@ -9,13 +9,28 @@ body {
 
 /* Hero Section */
 .hero {
+    position: relative;
     text-align: center;
     padding: 60px 20px;
     background-color: #181818;
-    background-image: url('../img/fotos/Falcon\ 9\ en\ vuelo.png');
+    overflow: hidden; /* para ocultar el desbordamiento del pseudo-elemento */
+    z-index: 0;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/fotos/Falcon 9 en vuelo.png');
     background-size: cover;
     background-position: center;
+    filter: blur(8px);
+    z-index: -1;
 }
+
 
 
 .hero h2 {
