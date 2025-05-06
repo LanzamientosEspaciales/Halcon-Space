@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  //fetch("../json/propulsores.json")  
-  fetch("https://halconspace.site/json/propulsores.json")
+  fetch("../json/propulsores.json")  
+  //fetch("https://halconspace.site/json/propulsores.json")
       .then(response => {
         if (!response.ok) throw new Error("Error al cargar el JSON");
         return response.json();
@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
   
           const item = document.createElement("div");
           item.className = "gallery-item";
+          item.className += ` estado-${propulsor.estado === "activo" ? "activo" : "retirado"}`;
+          item.id = `propulsor-item`;
   
           item.innerHTML = `
             <img src="${propulsor.img}" alt="Propulsor ${id}">
@@ -98,3 +100,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   
+  document.addEventListener("DOMContentLoaded", function () {
+    const filtro = document.getElementById("estado");
+  
+    filtro.addEventListener("change", function () {
+      const valor = this.value;
+      const items = document.querySelectorAll(".gallery-item"); // Actualizamos aquí
+  
+      items.forEach(item => {
+        const coincide =
+          valor === "todos" ||
+          item.classList.contains(`estado-${valor}`);
+        item.classList.toggle("oculto", !coincide);
+      });
+    });
+  });

@@ -132,6 +132,44 @@
     color: white;
   }
 
+  .filtros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Para que se acomode bien en pantallas pequeñas */
+  }
+  
+  .filtro-estado {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: inherit;
+  }
+  
+  .filtro-estado label {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .filtro-estado select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 150px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .filtro-estado select:hover,
+  .filtro-estado select:focus {
+    border-color: white;
+    border-radius: 15px;
+  }
+  
+
     /* Modal por defecto oculto */
 .modal.oculto {
   display: none;
@@ -245,6 +283,7 @@
   color: #333;
   font-weight: 600;
 }
+
 
 /* Diseño responsive */
 @media (max-width: 768px) {

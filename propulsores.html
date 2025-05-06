@@ -35,7 +35,20 @@
     <script src="../js/menu.js"></script>
 
     <h2 style="text-align: center;">Selecciona un propulsor</h2>
-    <input type="text" id="searchInput" class="searchInput" placeholder="Buscar por tipo o numero de serie">
+    <div class="filtros">
+      <section class="filtro-nombre">
+          <input type="text" id="searchInput" class="searchInput" placeholder="Buscar por tipo o numero de serie">
+      </section>
+
+      <section class="filtro-estado">
+        <select id="estado">
+          <option value="todos">Todos</option>
+          <option value="activo">Activo</option>
+          <option value="retirado">Retirado</option>
+        </select>
+      </section>
+    
+  </div>
 
     <section>
     <!-- Tarjetas de vuelos -->
