@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("https://halconspace.site/datos.json")
+  //fetch("../json/propulsores.json")  
+  fetch("https://halconspace.site/json/propulsores.json")
       .then(response => {
         if (!response.ok) throw new Error("Error al cargar el JSON");
         return response.json();

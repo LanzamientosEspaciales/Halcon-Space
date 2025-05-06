@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("https://halconspace.site/datos.json")
+    //fetch("../json/estadisticas.json")
+    fetch("https://halconspace.site/json/estadisticas.json")
         .then(response => response.json())
         .then(data => {
             // Calcular lanzamientos totales y porcentaje de éxito
