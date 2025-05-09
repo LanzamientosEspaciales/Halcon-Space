@@ -2,7 +2,7 @@
     "transporters": {
         "transporter1": {
             "estado": "programado",
-            "fecha": "abril de 2025",
+            "fecha": "2025",
             "url": "https://halconspace.site/lanzamientos/transporter-1",
             "vehiculo": "Falcon 9 Block 5",
             "satelites": {
