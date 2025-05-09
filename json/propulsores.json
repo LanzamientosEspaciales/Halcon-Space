@@ -17,10 +17,22 @@
             "img": "https://halconspace.site/img/propulsores/B1061.png",
             "tipo": "Falcon 9",
             "vuelos": {
-                "B1064.1": {
+                "B1061.1": {
                     "mision": "NROL-13",
                     "fecha": "02/05/2025",
                     "url": "https://halconspace.site/lanzamientos/NROL-13"
+                }
+            }
+        },
+        "B1062": {
+            "estado": "activo",
+            "img": "https://halconspace.site/img/propulsores/B1062.png",
+            "tipo": "Falcon 9",
+            "vuelos": {
+                "B1062.1": {
+                    "mision": "New Destiny",
+                    "fecha": "09/05/2025",
+                    "url": "https://halconspace.site/lanzamientos/newdestiny"
                 }
             }
         },
