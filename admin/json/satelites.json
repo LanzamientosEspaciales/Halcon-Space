@@ -63,6 +63,13 @@
     "programa": "moonradar"
   },
   {
+    "nombre": "KALYPSO 3",
+    "perigeo": 248.326,
+    "apogeo": 252.516,
+    "cuerpo": "Kerbin",
+    "programa": "kalypso"
+  },
+  {
     "nombre": "Halcon Station",
     "perigeo": 406.790,
     "apogeo": 407.280,
