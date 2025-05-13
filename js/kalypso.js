@@ -6,7 +6,7 @@ async function cargarEstadoKalypso() {
       const status = data.kalypso_status;
 
       document.getElementById("sat-activos").textContent = `${status.satellites_active} / ${status.satellites_total}`;
-      document.getElementById("planos-operativos").textContent = `${status.operational_planes} / 24`;
+      document.getElementById("planos-operativos").textContent = `${status.operational_planes} / ${status.total_planes}`;
       if (status.latency_ms_avg === null) {
         document.getElementById("latencia").textContent = "-- ms";
       } else {
