@@ -2,8 +2,8 @@
     "kalypso_status": {
       "satellites_total": 480,
       "satellites_active": 0,
-      "total_planes": 8,
       "operational_planes": 0,
+      "total_planes": 8,
       "latency_ms_avg": null,
       "last_ping": "13/05/2025",
       "status": "En espera de lanzamiento"
