@@ -1,0 +1,50 @@
+{
+    "launchpad": {
+        "latitude": -0.0972,
+        "longitude": 10.5577,
+        "name": "Kerbal Space Center"
+    },
+    "landing": {
+        "latitude": -0.0972,
+        "longitude": -74.5577,
+        "name": "KSC Runway"
+    },
+    "satellites": [
+        {
+            "name": "KALYPSO-1",
+            "program": "KALYPSO",
+            "orbit": {
+                "semiMajorAxis": 8,
+                "eccentricity": 0.1,
+                "inclination": 0
+            }
+        },
+        {
+            "name": "KALYPSO-2",
+            "program": "KALYPSO",
+            "orbit": {
+                "semiMajorAxis": 8.5,
+                "eccentricity": 0.15,
+                "inclination": 30
+            }
+        },
+        {
+            "name": "GPS-1",
+            "program": "GPS",
+            "orbit": {
+                "semiMajorAxis": 9,
+                "eccentricity": 0.05,
+                "inclination": 45
+            }
+        },
+        {
+            "name": "GPS-2",
+            "program": "GPS",
+            "orbit": {
+                "semiMajorAxis": 9.2,
+                "eccentricity": 0.1,
+                "inclination": 60
+            }
+        }
+    ]
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa 3D de Kerbin - Empresa KSP</title>
+    <style>
+        body { margin: 0; overflow: hidden; background: #1a1a1a; color: #fff; font-family: Arial, sans-serif; }
+        #scene-container { width: 100vw; height: 100vh; }
+        #controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        #controls h2 { margin: 0 0 10px; font-size: 18px; }
+        #controls label { display: block; margin: 5px 0; }
+        #controls select, #controls input { margin-left: 10px; color: #000; }
+        #info {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="scene-container"></div>
+    <div id="controls">
+        <h2>Controles del Mapa</h2>
+        <label>Programa:
+            <select id="program-filter">
+                <option value="all">Todos</option>
+                <option value="KALYPSO">KALYPSO</option>
+                <option value="GPS">GPS</option>
+            </select>
+        </label>
+        <label>Satélite:
+            <select id="satellite-filter">
+                <option value="all">Todos</option>
+            </select>
+        </label>
+        <label><input type="checkbox" id="show-launchpad" checked> Mostrar Plataforma de Lanzamiento</label>
+        <label><input type="checkbox" id="show-landing" checked> Mostrar Sitio de Aterrizaje</label>
+        <label><input type="checkbox" id="show-orbits" checked> Mostrar Órbitas</label>
+    </div>
+    <div id="info">Cargando datos...</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/controls/OrbitControls.js"></script>
+    <script>
+        // Configuración de la escena
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('scene-container').appendChild(renderer.domElement);
+
+        // Controles de órbita
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+
+        // Iluminación
+        const ambientLight = new THREE.AmbientLight(0xffffff);
+        scene.add(ambientLight);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+        directionalLight.position.set(5, 5, 5);
+        //scene.add(directionalLight);
+
+        // Cargar texturas
+const textureLoader = new THREE.TextureLoader();
+const kerbinTexture = textureLoader.load('img/mapa/Kerbin00.jpeg'); // Mapa difuso
+const kerbinNormalMap = textureLoader.load(''); // Mapa normal (opcional)
+
+        // Modelo de Kerbin (esfera simple con textura básica)
+        const kerbinGeometry = new THREE.SphereGeometry(6, 32, 32);
+        const kerbinMaterial = new THREE.MeshStandardMaterial({
+            map: kerbinTexture, // Aplica la textura difusa
+            normalMap: kerbinNormalMap, // Aplica el mapa normal (opcional)
+            roughness: 0.7,
+            metalness: 0.2
+        });
+        const kerbin = new THREE.Mesh(kerbinGeometry, kerbinMaterial);
+        scene.add(kerbin);
+
+        // Objetos de la escena
+        let launchpad, landingSite, satellites = [], orbitLines = [];
+        let data = {};
+
+        // Cargar datos JSON
+        async function loadData() {
+            try {
+                const response = await fetch('json/mapa.json');
+                data = await response.json();
+                setupScene();
+                populateSatelliteFilter();
+                updateInfo();
+            } catch (error) {
+                console.error('Error al cargar JSON:', error);
+                document.getElementById('info').innerText = 'Error al cargar datos';
+            }
+        }
+
+        // Configurar la escena con los datos
+        function setupScene() {
+            // Plataforma de lanzamiento
+            const launchpadGeometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
+            const launchpadMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+            launchpad = new THREE.Mesh(launchpadGeometry, launchpadMaterial);
+            const launchpadPos = latLonToVector3(data.launchpad.latitude, data.launchpad.longitude, 6.01);
+            launchpad.position.copy(launchpadPos);
+            scene.add(launchpad);
+
+            // Sitio de aterrizaje
+            const landingGeometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
+            const landingMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+            landingSite = new THREE.Mesh(landingGeometry, landingMaterial);
+            const landingPos = latLonToVector3(data.landing.latitude, data.landing.longitude, 6.01);
+            landingSite.position.copy(landingPos);
+            scene.add(landingSite);
+
+            // Satélites y órbitas
+            data.satellites.forEach(sat => {
+                const satGeometry = new THREE.SphereGeometry(0.05, 16, 16);
+                const satMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+                const satellite = new THREE.Mesh(satGeometry, satMaterial);
+                satellites.push({ mesh: satellite, data: sat });
+                scene.add(satellite);
+
+                // Crear órbita
+                const orbitPoints = createOrbitPoints(sat.orbit.semiMajorAxis, sat.orbit.eccentricity, sat.orbit.inclination);
+                const orbitGeometry = new THREE.BufferGeometry().setFromPoints(orbitPoints);
+                const orbitMaterial = new THREE.LineBasicMaterial({ color: 0x888888 });
+                const orbitLine = new THREE.Line(orbitGeometry, orbitMaterial);
+                orbitLines.push({ line: orbitLine, data: sat });
+                scene.add(orbitLine);
+            });
+
+            updateScene();
+        }
+
+        // Convertir latitud/longitud a vector 3D
+        function latLonToVector3(lat, lon, radius) {
+            const phi = (90 - lat) * Math.PI / 180;
+            const theta = (lon + 180) * Math.PI / 180;
+            return new THREE.Vector3(
+                -radius * Math.sin(phi) * Math.cos(theta),
+                radius * Math.cos(phi),
+                radius * Math.sin(phi) * Math.sin(theta)
+            );
+        }
+
+        // Crear puntos de órbita elíptica
+        function createOrbitPoints(semiMajorAxis, eccentricity, inclination) {
+            const points = [];
+            for (let i = 0; i <= 100; i++) {
+                const theta = (i / 100) * 2 * Math.PI;
+                const r = semiMajorAxis * (1 - eccentricity * eccentricity) / (1 + eccentricity * Math.cos(theta));
+                const x = r * Math.cos(theta);
+                const z = r * Math.sin(theta);
+                const point = new THREE.Vector3(x, 0, z);
+                point.applyAxisAngle(new THREE.Vector3(1, 0, 0), inclination * Math.PI / 180);
+                points.push(point);
+            }
+            return points;
+        }
+
+        // Poblar el filtro de satélites
+        function populateSatelliteFilter() {
+            const select = document.getElementById('satellite-filter');
+            select.innerHTML = '<option value="all">Todos</option>';
+            data.satellites.forEach(sat => {
+                const option = document.createElement('option');
+                option.value = sat.name;
+                option.textContent = sat.name;
+                select.appendChild(option);
+            });
+        }
+
+        // Actualizar visibilidad de la escena
+        function updateScene() {
+            const programFilter = document.getElementById('program-filter').value;
+            const satelliteFilter = document.getElementById('satellite-filter').value;
+            const showLaunchpad = document.getElementById('show-launchpad').checked;
+            const showLanding = document.getElementById('show-landing').checked;
+            const showOrbits = document.getElementById('show-orbits').checked;
+
+            launchpad.visible = showLaunchpad;
+            landingSite.visible = showLanding;
+
+            satellites.forEach(sat => {
+                const visible = (programFilter === 'all' || sat.data.program === programFilter) &&
+                               (satelliteFilter === 'all' || sat.data.name === satelliteFilter);
+                sat.mesh.visible = visible;
+            });
+
+            orbitLines.forEach(orbit => {
+                const visible = showOrbits &&
+                               (programFilter === 'all' || orbit.data.program === programFilter) &&
+                               (satelliteFilter === 'all' || orbit.data.name === satelliteFilter);
+                orbit.line.visible = visible;
+            });
+        }
+
+        // Actualizar información
+        function updateInfo() {
+            const programFilter = document.getElementById('program-filter').value;
+            const satelliteFilter = document.getElementById('satellite-filter').value;
+            let infoText = `Programa: ${programFilter === 'all' ? 'Todos' : programFilter}\n`;
+            infoText += `Satélite: ${satelliteFilter === 'all' ? 'Todos' : satelliteFilter}`;
+            document.getElementById('info').innerText = infoText;
+        }
+
+        // Manejo de eventos
+        document.getElementById('program-filter').addEventListener('change', () => {
+            updateScene();
+            updateInfo();
+        });
+        document.getElementById('satellite-filter').addEventListener('change', () => {
+            updateScene();
+            updateInfo();
+        });
+        document.getElementById('show-launchpad').addEventListener('change', updateScene);
+        document.getElementById('show-landing').addEventListener('change', updateScene);
+        document.getElementById('show-orbits').addEventListener('change', updateScene);
+
+        // Animación
+        camera.position.z = 15;
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            // Animar satélites (simplificado)
+            satellites.forEach(sat => {
+                const t = Date.now() * 0.001;
+                const theta = t * 0.1;
+                const r = sat.data.orbit.semiMajorAxis * (1 - sat.data.orbit.eccentricity * sat.data.orbit.eccentricity) /
+                         (1 + sat.data.orbit.eccentricity * Math.cos(theta));
+                const x = r * Math.cos(theta);
+                const z = r * Math.sin(theta);
+                sat.mesh.position.set(x, 0, z);
+                sat.mesh.position.applyAxisAngle(new THREE.Vector3(1, 0, 0), sat.data.orbit.inclination * Math.PI / 180);
+            });
+            renderer.render(scene, camera);
+        }
+
+        // Manejo de redimensionamiento
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Iniciar
+        loadData();
+        animate();
+    </script>
+</body>
+</html>
