@@ -199,15 +199,58 @@ table {
     border: 1px solid #2c334d;
     border-radius: 12px;
     color: #ffffff;
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.07);
+    box-shadow: 0 0 25px #111827;
     text-align: center;
   }
 
-  #realtime-status h2 {
-    color: #e91e63;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+  .live-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
   }
+  
+  .live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: sans-serif;
+    color: #00ff7f;
+    font-weight: bold;
+  }
+  
+  .pulse-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #00ff7f;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(0, 255, 127, 0.7);
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 255, 127, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(0, 255, 127, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 255, 127, 0);
+    }
+  }  
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 255, 127, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(0, 255, 127, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 255, 127, 0);
+    }
+  }
+  
 
   .status-grid {
     display: grid;
@@ -234,6 +277,16 @@ table {
     font-weight: bold;
     color: #ffffff;
   }
+
+  .dato-actualizado {
+    animation: resaltarCambio 1s ease-out;
+  }
+  
+  @keyframes resaltarCambio {
+    0% { background-color: rgba(0, 255, 127, 0.3); }
+    100% { background-color: transparent; }
+  }
+
 
   @media (max-width: 768px) {
     #hero, #hero-2, section, #tablePlanos {
