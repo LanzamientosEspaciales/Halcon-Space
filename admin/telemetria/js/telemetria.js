@@ -81,7 +81,8 @@ function aplicarFiltros() {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
+setInterval(() => {
+    document.addEventListener("DOMContentLoaded", () => {
     fetch("../json/satelites.json")
         .then(res => res.json())
         .then(data => {
@@ -103,4 +104,5 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => {
             console.error("Error al cargar la telemetría:", error);
         });
-});
+    });
+}, 5000) // Actualizamos la telemetría cada 5 segundos
