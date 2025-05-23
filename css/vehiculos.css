@@ -64,6 +64,8 @@ main p {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
+    padding: 10px;
 }
 
 .vehiculo {
@@ -73,10 +75,11 @@ main p {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s, box-shadow 0.3s;
-    max-width: 35%;
-    margin: 0 auto;
-    
+    flex: 1 1 calc(50% - 10px); /* 2 tarjetas por fila considerando el gap */
+    max-width: calc(50% - 10px);
+    box-sizing: border-box;
 }
+
 
 .vehiculo:hover {
     transform: translateY(-5px);
@@ -86,6 +89,7 @@ main p {
 .vehiculo img {
     max-width: 100%;
     border-radius: 10px;
+    height: auto;
 }
 
 .vehiculo h3 {
@@ -111,15 +115,36 @@ main p {
 }
 
 .boton-detalles:hover {
-    background-color: #A31F24; /* Oscurecer el color al pasar el cursor */
+    background-color: #A31F24;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
-    transform: translateY(-2px); /* Efecto de elevación */
+    transform: translateY(-2px);
 }
 
-/* Pie de página */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #1E1E1E;
-    color: #ffffff;
+/* Responsive: Tablets */
+@media (max-width: 768px) {
+    .vehiculo {
+        flex: 1 1 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+}
+
+/* Responsive: Móviles */
+@media (max-width: 480px) {
+    .vehiculo {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .vehiculo h3 {
+        font-size: 20px;
+    }
+
+    .vehiculo p {
+        font-size: 14px;
+    }
+
+    .boton-detalles {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }
