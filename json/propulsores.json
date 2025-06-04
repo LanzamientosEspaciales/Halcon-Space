@@ -134,6 +134,11 @@
                     "mision": "GPS-6",
                     "fecha": "22/05/2025",
                     "url": "https://halconspace.site/lanzamientos/gps-5"
+                },
+                "B1069.6": {
+                    "mision": "NROL-10",
+                    "fecha": "04/06/2025",
+                    "url": "https://halconspace.site/lanzamientos/NROL-10"
                 }
             }
         },
