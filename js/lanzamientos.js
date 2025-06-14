@@ -96,3 +96,109 @@ function filtrarLanzamientosVehiculo() {
         }
     });
 }
+
+async function cargarLanzamientos() {
+    try {
+      const response = await fetch('/json/lanzamientos.json');
+      const lanzamientos = await response.json();
+      const contenedor = document.getElementById('contenedor-lanzamientos');
+
+      // Convertir fechas y ordenar descendente
+      lanzamientos.sort((a, b) => {
+        const fechaA = parseFecha(a.fecha);
+        const fechaB = parseFecha(b.fecha);
+        return fechaB - fechaA; // Más reciente primero
+      });
+
+      lanzamientos.forEach(lanzamiento => {
+
+          if (lanzamiento.vehiculo === "Falcon 9 Block 5") {
+            var vehiculo = "falcon9";
+          } else if (lanzamiento.vehiculo === "Falcon Heavy") {
+            var vehiculo = "falconh";
+          } else if (lanzamiento.vehiculo === "Cargo Dragon") {
+            var vehiculo = "dragon";
+          } else if (lanzamiento.vehiculo === "Crew Dragon") {
+            var vehiculo = "dragon";
+          }
+        const div = document.createElement('div');
+        div.classList.add('lanzamiento');
+        div.setAttribute('data-estado', lanzamiento.estado.toLowerCase());
+        div.setAttribute('data-vehiculo', vehiculo);
+
+        if(lanzamiento.ocultar === true) {
+          div.style.display = "none";
+        }
+
+        var fechaLanzamiento = formatearFecha(lanzamiento.fecha);
+
+        if (fechaLanzamiento === "Fecha inválida") {
+          fechaLanzamiento = lanzamiento.fecha;
+        }
+
+        let html = `
+          <img src="${lanzamiento.imagen}" alt="${lanzamiento.alt}">
+          <div class="info-lanzamiento">
+              <h3>${lanzamiento.nombre}</h3>
+              <p><strong>Fecha:</strong> ${fechaLanzamiento}</p>
+              <p><strong>Vehículo:</strong> ${lanzamiento.vehiculo}</p>
+              <p><strong>Estado:</strong> ${capitalizar(lanzamiento.estado)}</p>
+        `;
+
+        if (lanzamiento.detalleUrl) {
+          html += `<p><a href="${lanzamiento.detalleUrl}">Ver detalles</a></p>`;
+        }
+
+        html += `</div>`;
+        div.innerHTML = html;
+        contenedor.appendChild(div);
+      });
+
+    } catch (error) {
+      console.error("Error al cargar los lanzamientos:", error);
+    }
+  }
+
+  // Convierte fecha tipo "10 de junio, 2025" a objeto Date
+  function parseFecha(fechaTexto) {
+    const meses = {
+      enero: 0, febrero: 1, marzo: 2, abril: 3,
+      mayo: 4, junio: 5, julio: 6, agosto: 7,
+      septiembre: 8, octubre: 9, noviembre: 10, diciembre: 11
+    };
+
+    const match = fechaTexto.match(/(\d{1,2}) de (\w+), (\d{4})/);
+    if (!match) return new Date(0); // Fallback para fechas mal formateadas
+
+    const dia = parseInt(match[1]);
+    const mes = meses[match[2].toLowerCase()];
+    const año = parseInt(match[3]);
+
+    return new Date(año, mes, dia);
+  }
+
+  function capitalizar(texto) {
+    return texto.charAt(0).toUpperCase() + texto.slice(1);
+  }
+
+  document.addEventListener('DOMContentLoaded', cargarLanzamientos);
+
+  function formatearFecha(fechaStr) {
+    const meses = [
+      "enero", "febrero", "marzo", "abril",
+      "mayo", "junio", "julio", "agosto",
+      "septiembre", "octubre", "noviembre", "diciembre"
+    ];
+  
+    const partes = fechaStr.split("/"); // Divide por /
+    if (partes.length !== 3) return "Fecha inválida";
+  
+    const dia = partes[0].padStart(2, '0');
+    const mes = parseInt(partes[1], 10) - 1;
+    const año = partes[2];
+  
+    if (mes < 0 || mes > 11) return "Fecha inválida";
+  
+    return `${dia} de ${meses[mes]}, ${año}`;
+  }
+  
