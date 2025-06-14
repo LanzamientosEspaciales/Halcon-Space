@@ -201,4 +201,3 @@ async function cargarLanzamientos() {
   
     return `${dia} de ${meses[mes]}, ${año}`;
   }
-  
