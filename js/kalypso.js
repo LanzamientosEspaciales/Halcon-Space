@@ -5,7 +5,11 @@ async function cargarEstadoKalypso() {
       const data = await response.json();
       const status = data.kalypso_status;
 
-      document.getElementById("sat-activos").textContent = `${status.satellites_active} / ${status.satellites_total}`;
+      document.getElementById('estado-general').textContent = status.status;
+
+      document.getElementById("sat-lanzados").textContent = `${status.satellites_lanzados} / ${status.satellites_total}`;
+      document.getElementById("sat-orbita").textContent = `${status.satellites_orbitando} / ${status.satellites_lanzados}`;
+      document.getElementById("sat-operativos").textContent = `${status.satellites_operativos} / ${status.satellites_orbitando}`;
       document.getElementById("planos-operativos").textContent = `${status.operational_planes} / ${status.total_planes}`;
       if (status.latency_ms_avg === null) {
         document.getElementById("latencia").textContent = "-- ms";

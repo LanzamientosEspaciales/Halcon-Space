@@ -1,6 +1,8 @@
 {
     "kalypso_status": {
-      "satellites_active": 0,
+      "satellites_lanzados": 0,
+      "satellites_orbitando": 0,
+      "satellites_operativos": 0,
       "satellites_total": 480,
       "operational_planes": 0,
       "total_planes": 8,
