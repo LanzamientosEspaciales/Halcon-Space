@@ -20,23 +20,23 @@
       "ocultar": true
     },
     {
-        "nombre": "Sentinel 1A & SNIPE-EYE 1",
-        "fecha": "15/06/2025",
-        "vehiculo": "Falcon 9 Block 5",
-        "estado": "programado",
-        "imagen": "/img/fotos/Falcon 9 en SLC-40.jpg",
-        "alt": "Falcon 9 en SLC-40",
-        "detalleUrl": null
-
-    },
-    {
       "nombre": "Eyes Above The Horizon 6",
-      "fecha": "16/06/2025",
+      "fecha": "NET Junio, 2025",
       "vehiculo": "Falcon 9 Block 5",
       "estado": "programado",
       "imagen": "/img/fotos/Falcon 9 en LC-39A.png",
       "alt": "Falcon 9 en LC-39A",
       "detalleUrl": null
+    },
+    {
+        "nombre": "Sentinel 1A & SNIPE-EYE 1",
+        "fecha": "15/06/2025",
+        "vehiculo": "Falcon 9 Block 5",
+        "estado": "exito",
+        "imagen": "/img/fotos/Falcon 9 en SLC-40.jpg",
+        "alt": "Falcon 9 en SLC-40",
+        "detalleUrl": "lanzamientos/sentinel-1A"
+
     },
     {
       "nombre": "GPS-7 & Otros",

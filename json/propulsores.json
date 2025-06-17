@@ -1,14 +1,19 @@
 {
     "propulsores": {
         "B1059": {
-            "estado": "activo",
+            "estado": "destruido",
             "img": "https://halconspace.site/img/propulsores/B1059.png",
             "tipo": "Falcon 9",
             "vuelos": {
-                "B1060.1": {
+                "B1059.1": {
                     "mision": "KALYPSO-3",
                     "fecha": "09/05/2025",
                     "url": "https://halconspace.site/lanzamientos/kalypso3"
+                },
+                "B1059.2": {
+                    "mision": "Sentinel 1A & SNIPE-EYE 1",
+                    "fecha": "15/06/2025",
+                    "url": "https://halconspace.site/lanzamientos/sentinel-1A"
                 }
             }
         },
