@@ -38,6 +38,15 @@
       "detalleUrl": "/kalypso"
     },
     {
+      "nombre": "SI-SAT 1",
+      "fecha": "NET Julio 2025",
+      "vehiculo": "Falcon 9 Block 5",
+      "estado": "programado",
+      "imagen":"/img/fotos/Falcon 9 en LC-39A.png",
+      "alt": "Falcon 9 en LC-39A",
+      "detalleUrl": null
+    },
+    {
         "nombre": "Sentinel 1A & SNIPE-EYE 1",
         "fecha": "15/06/2025",
         "vehiculo": "Falcon 9 Block 5",
