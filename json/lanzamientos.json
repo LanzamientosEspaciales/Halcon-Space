@@ -39,12 +39,12 @@
     },
     {
       "nombre": "SI-SAT 1",
-      "fecha": "NET Julio 2025",
+      "fecha": "01/07/2025",
       "vehiculo": "Falcon 9 Block 5",
       "estado": "programado",
       "imagen":"/img/fotos/Falcon 9 en LC-39A.png",
       "alt": "Falcon 9 en LC-39A",
-      "detalleUrl": null
+      "detalleUrl": "/si-sat-1"
     },
     {
         "nombre": "Sentinel 1A & SNIPE-EYE 1",
