@@ -30,6 +30,12 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
+section a {
+    text-decoration: none;
+    color: #C1272D;
+    font-weight: bold;
+}
+
 /* Lista de detalles técnicos */
 .detalles-tecnicos ul {
     list-style: none;
