@@ -74,6 +74,16 @@
     color: #fff;
     padding: 5px 10px;
     margin-top: 10px;
+    background-color: #7a0c00;
+    border-radius: 20px;
+  }
+
+  .gallery-item-estado-destruido {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #fff;
+    padding: 5px 10px;
+    margin-top: 10px;
     background-color: red;
     border-radius: 20px;
   }
