@@ -111,7 +111,7 @@
             }
         },
         "B1069": {
-            "estado": "activo",
+            "estado": "destruido",
             "img": "https://halconspace.site/img/propulsores/B1069.png",
             "tipo": "Falcon 9",
             "vuelos": {
@@ -144,6 +144,11 @@
                     "mision": "NROL-10",
                     "fecha": "04/06/2025",
                     "url": "https://halconspace.site/lanzamientos/NROL-10"
+                },
+                "B1069.7": {
+                    "mision": "SI-SAT 1",
+                    "fecha": "01/07/2025",
+                    "url": "https://halconspace.site/lanzamientos/si-sat-1"
                 }
             }
         },

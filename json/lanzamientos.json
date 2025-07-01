@@ -41,8 +41,8 @@
       "nombre": "SI-SAT 1",
       "fecha": "01/07/2025",
       "vehiculo": "Falcon 9 Block 5",
-      "estado": "programado",
-      "imagen":"/img/fotos/Falcon 9 en LC-39A.png",
+      "estado": "exito",
+      "imagen":"/img/misiones/SI-SAT 1/Despegue.png",
       "alt": "Falcon 9 en LC-39A",
       "detalleUrl": "/lanzamientos/si-sat-1"
     },
