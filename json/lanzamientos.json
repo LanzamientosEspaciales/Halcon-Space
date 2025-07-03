@@ -38,6 +38,15 @@
       "detalleUrl": "/kalypso"
     },
     {
+      "nombre": "GPS-8",
+      "fecha": "02/07/2025",
+      "vehiculo": "Falcon 9 Block 5",
+      "estado": "exito",
+      "imagen": "/img/misiones/GPS-8/Despegue.png",
+      "alt": "Despegue de GPS-8",
+      "detalleUrl": "/lanzamientos/gps-8"
+    },
+    {
       "nombre": "SI-SAT 1",
       "fecha": "01/07/2025",
       "vehiculo": "Falcon 9 Block 5",
