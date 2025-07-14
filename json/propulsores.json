@@ -256,7 +256,19 @@
                 }
             }
         }
-
-
+    },
+    "capsulas": {
+        "C210": {
+            "estado": "activo",
+            "tipo": "Crew",
+            "img": "https://halconspace.site/img/capsulas/C210.png",
+            "vuelos": {
+                "C210.1": {
+                    "mision": "Crew Demo 2",
+                    "fecha": "25/01/2025",
+                    "url": "https://halconspace.site/lanzamientos/Crew-demo-2"
+                }
+            }
+        }
     }
 }
