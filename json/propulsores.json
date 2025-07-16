@@ -261,12 +261,24 @@
         "C210": {
             "estado": "activo",
             "tipo": "Crew",
-            "img": "https://halconspace.site/img/capsulas/C210.png",
+            "img": "https://halconspace.site/img/capsulas/C210.jpg",
             "vuelos": {
                 "C210.1": {
                     "mision": "Crew Demo 2",
                     "fecha": "25/01/2025",
                     "url": "https://halconspace.site/lanzamientos/Crew-demo-2"
+                }
+            }
+        },
+        "C211": {
+            "estado": "activo",
+            "tipo": "Crew",
+            "img": "https://halconspace.site/img/Capsulas/C211.png",
+            "vuelos": {
+                "C211.1": {
+                    "mision": "Polaris Dawn",
+                    "fecha": "16/07/2025",
+                    "url": "https://halconspace.site/lanzamientos/polaris-dawn"
                 }
             }
         }
