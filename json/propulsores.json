@@ -1,5 +1,17 @@
 {
     "propulsores": {
+        "B1057": {
+            "estado": "destruido",
+            "img": "https://halconspace.site/img/propulsores/B1057.png",
+            "tipo": "Falcon 9",
+            "vuelos": {
+                "B1057.1": {
+                    "mision": "Polaris Dawn",
+                    "fecha": "16/07/2025",
+                    "url": "https://halconspace.site/lanzamientos/polaris-dawn"
+                }
+            }
+        },
         "B1059": {
             "estado": "destruido",
             "img": "https://halconspace.site/img/propulsores/B1059.png",
