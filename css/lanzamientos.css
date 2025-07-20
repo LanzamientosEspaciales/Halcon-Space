@@ -53,7 +53,8 @@ body {
     border-radius: 8px;
     margin-right: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 100%; height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 .lanzamiento img:hover {
