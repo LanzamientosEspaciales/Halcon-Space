@@ -85,6 +85,27 @@ h4 {
     margin-top: 15px;
 }
 
+/* Botón secundario (estilo borde) */
+.button-update {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid #e91e63;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.button-update:hover {
+    background-color: #e91e63;
+    color: #ffffff;
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
     .update-info p {
