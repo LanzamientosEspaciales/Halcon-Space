@@ -38,6 +38,16 @@
       "detalleUrl": "/kalypso"
     },
     {
+      "nombre": "GPS-10",
+      "fecha": "22/07/2025",
+      "vehiculo": "Falcon 9 Block 5",
+      "estado": "exito",
+      "imagen": "/img/misiones/GPS-10/5.png",
+      "alt": "Despegue de GPS-10",
+      "detalleUrl": "/lanzamientos/gps-10",
+      "stream": "https://youtube.com/live/g1G6gO7rMlQ"
+    },
+    {
       "nombre": "Polaris Dawn",
       "fecha": "16/07/2025",
       "vehiculo": "Falcon 9 Block 5 • Crew Dragon",

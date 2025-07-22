@@ -119,6 +119,11 @@
                     "mision": "GPS-7",
                     "fecha": "10/06/2025",
                     "url": "https://halconspace.site/lanzamientos/gps-7"
+                },
+                "B1068.3": {
+                    "mision": "GPS-10",
+                    "fecha": "22/07/2025",
+                    "url": "https://halconspace.site/lanzamientos/gps-10"
                 }
             }
         },
