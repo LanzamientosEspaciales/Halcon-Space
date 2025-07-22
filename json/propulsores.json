@@ -237,7 +237,7 @@
         "B1075": {
             "estado": "activo",
             "img": "https://halconspace.site/img/propulsores/B1075.png",
-            "tipo": "Falcon Heavy Side (Antes F9)",
+            "tipo": "Falcon 9",
             "vuelos": {
                 "B1075.1": {
                     "mision": "CRS-2",

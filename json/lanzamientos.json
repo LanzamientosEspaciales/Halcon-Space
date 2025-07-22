@@ -38,6 +38,16 @@
       "detalleUrl": "/kalypso"
     },
     {
+      "nombre": "StarReach I",
+      "fecha": "22/07/2025",
+      "vehiculo": "Falcon 9 Block 5",
+      "estado": "programado",
+      "imagen": "/img/fotos/Falcon 9 en LC-39A.png",
+      "alt": "Falcon 9 en LC-39A",
+      "detalleUrl": "/lanzamientos/starreach-1",
+      "stream": "https://www.youtube.com/live/qr-JGiAMZgo"
+    },
+    {
       "nombre": "GPS-10",
       "fecha": "22/07/2025",
       "vehiculo": "Falcon 9 Block 5",
