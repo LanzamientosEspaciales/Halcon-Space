@@ -149,6 +149,10 @@ async function cargarLanzamientos() {
           html += `<p><a href="${lanzamiento.detalleUrl}">Ver detalles</a></p>`;
         }
 
+        if (lanzamiento.stream) {
+          html += `<p><a href="${lanzamiento.stream}">Ver directo</a></p>`;
+        }
+
         html += `</div>`;
         div.innerHTML = html;
         contenedor.appendChild(div);
