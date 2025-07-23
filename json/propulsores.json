@@ -258,6 +258,11 @@
                     "mision": "GPS-8",
                     "fecha": "02/07/2025",
                     "url": "https://halconspace.site/lanzamientos/gps-8"
+                },
+                "B1075.5": {
+                    "mision": "StarReach I",
+                    "fecha": "22/07/2025",
+                    "url": "https://halconspace.site/lanzamientos/starreach-1"
                 }
             }
         },
