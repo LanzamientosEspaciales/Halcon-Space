@@ -12,6 +12,18 @@
                 }
             }
         },
+        "B1058": {
+            "estado": "activo",
+            "img": "https://halconspace.site/img/propulsores/B1058.png",
+            "tipo": "Falcon 9",
+            "vuelos": {
+                "B1058.1": {
+                    "mision": "Eagle Arrival",
+                    "fecha": "06/08/2025",
+                    "url": "https://halconspace.site/lanzamientos/ev-01"
+                }
+            }
+        },
         "B1059": {
             "estado": "destruido",
             "img": "https://halconspace.site/img/propulsores/B1059.png",

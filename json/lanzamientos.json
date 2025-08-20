@@ -41,9 +41,9 @@
       "nombre": "Eagle Arrival",
       "fecha": "06/08/2025",
       "vehiculo": "Falcon 9 Block 5",
-      "estado": "programado",
-      "imagen": "/img/misiones/EV-01/Mission-patch.png",
-      "alt": "Mission patch",
+      "estado": "exito",
+      "imagen": "/img/misiones/EV-01/Despegue.png",
+      "alt": "Despegue EV-01",
       "detalleUrl": "/lanzamientos/ev-01",
       "stream": "https://youtube.com/live/wVijKU0pg2E"
     },
