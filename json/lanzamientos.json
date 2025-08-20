@@ -38,6 +38,15 @@
       "detalleUrl": "/kalypso"
     },
     {
+      "nombre": "EV-02",
+      "fecha": "NET 20/08/2025",
+      "vehiculo": "Falcon 9 Block 5",
+      "estado": "programado",
+      "imagen": "/img/misiones/EV-02/En_espera.png",
+      "alt": "En espera EV-02",
+      "detalleUrl": "/lanzamientos/ev-02"
+    },
+    {
       "nombre": "Eagle Arrival",
       "fecha": "06/08/2025",
       "vehiculo": "Falcon 9 Block 5",
