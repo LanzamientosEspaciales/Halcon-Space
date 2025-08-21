@@ -1,131 +1,190 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halcon Space</title>
-    <link rel="stylesheet" href="css/inicio.css">
-    <link rel="stylesheet" href="css/estilo.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Erbaum:wght@400;500;600&display=Erbaum" rel="stylesheet">
-    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-    <meta property="og:title" content="Halcon Space">
-    <meta property="og:description" content="Web oficial de Halcon Space">
-    <meta property="og:url" content="https://halconspace.site/">
-    <meta property="og:image" content="https://halconspace.site/img/fotos/Falcon%209%20en%20SLC-40.jpg">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_ES">
-    <style>
-        .nextLaunch {
-            background-color: #2a2a2e; /* Fondo oscuro para las tarjetas */
-            border: 1px solid #444;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            color: #ddd; /* Texto claro dentro de las tarjetas */
-            text-align: center;
-            max-width: 50%;
-        }
-        .nextLaunch h3 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halcon Space</title>
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Erbaum:wght@400;500;600&display=swap" rel="stylesheet">
 
-        .launch-info h5 {
-            font-size: 1rem;
-        }
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Erbaum', sans-serif; background:#0f0f0f; color:#e0e0e0; line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
+    #menu-container { position:fixed; top:0; width:100%; z-index:1000; }
 
-        .launch-info p {
-            font-size: 0.8rem;
-        }
+    section h2 { text-align: center;}
 
-        .launch-info img {
-            max-width: 50%;
-            height: auto;
-            aspect-ratio: 16/9;
-            border-radius: 10px;
-        }
+    .hero { width:100%; min-height:80vh; background:url('img/fotos/Falcon 9 en SLC-40.jpg') center/cover no-repeat; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding-top:60px; position:relative; }
+    .hero::after { content:""; position:absolute; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.5); }
+    .hero h2, .hero p { position:relative; z-index:2; max-width:800px; padding:0 20px; }
+    .hero h2 { font-size:3rem; margin-bottom:20px; }
+    .hero p { font-size:1.2rem; margin-bottom:30px; }
 
-        .launch-info a {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #ffffff;
-    background-color: #C1272D; /* Color distintivo para destacar */
-    text-decoration: none;
-    font-family: 'Erbaum', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
+    .nextLaunch-grid { display:flex; justify-content:center; margin:50px auto; flex-wrap:wrap; gap:30px; max-width:900px; }
+    .launch-info { background:#1a1a1a; border-radius:12px; padding:20px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.5); max-width:300px; }
+    .launch-info img { width:100%; height:auto; aspect-ratio:16/9; border-radius:10px; margin-bottom:10px; }
+    .launch-info h5 { font-size:1.2rem; margin:10px 0; }
+    .launch-info p { margin:5px 0; }
+    .launch-info .countdown { color:#C1272D; font-weight:bold; margin-top:10px; }
+    .launch-info a { display:inline-block; margin-top:10px; padding:10px 20px; background:#C1272D; color:#fff; border-radius:6px; transition:0.3s; }
+    .launch-info a:hover { background:#A31F24; transform:translateY(-3px); }
 
-.launch-info a:hover {
-    background-color: #A31F24; /* Oscurecer el color al pasar el cursor */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
-    transform: translateY(-2px); /* Efecto de elevación */
-}
-    </style>
+    .gallery-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:15px; max-width:900px; margin:auto; }
+    .gallery-grid img { width:100%; aspect-ratio:16/9; border-radius:10px; object-fit:cover; transition: transform 0.3s; }
+    .gallery-grid img:hover { transform: scale(1.05); }
+
+    .services { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; text-align:center; max-width:900px; margin:auto; }
+    .service { background:#1f1f1f; padding:20px; border-radius:8px; transition:0.3s; }
+    .service:hover { background:#272727; transform:translateY(-5px); }
+
+    /* Estadísticas */
+    .statistics { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:30px; max-width:900px; margin:50px auto; justify-items:center; }
+    .chart-container { width:100%; max-width:300px; background:#1a1a1a; padding:20px; border-radius:12px; text-align:center; }
+    .chart-container canvas { width:100% !important; height:auto !important; display:block; }
+    .chart-vehiculos { max-width:300px; }
+
+    /* Números debajo de cada gráfico */
+    .stat-numbers { display:flex; justify-content:center; gap:15px; margin-top:15px; flex-wrap:wrap; }
+    .stat-numbers div { flex:1; padding:10px; border-radius:8px; font-weight:bold; font-size:1.1rem; text-align:center; background:#272727; color:#fff; box-shadow:0 0 15px rgba(0,0,0,0.5); }
+    .stat-numbers .exito { box-shadow:0 0 15px #14ff14; }
+    .stat-numbers .fallo { box-shadow:0 0 15px #C1272D; }
+    .stat-numbers .vehiculo-f9 { box-shadow:0 0 15px #555; }
+    .stat-numbers .vehiculo-fh { box-shadow:0 0 15px #555; }
+
+    .stat-numbers div span:first-child { display:block; font-size:0.9rem; color:#ccc; margin-bottom:5px; }
+    .stat-numbers div span:last-child { display:block; font-size:1.5rem; }
+
+    .cta { text-align:center; margin:50px 0; }
+    .btn { display:inline-block; background:#C1272D; padding:12px 25px; margin:10px; border-radius:6px; font-weight:bold; color:#fff; transition:0.3s; }
+    .btn:hover { background:#A31F24; transform:translateY(-3px); }
+
+    footer { background:#111; padding:30px 20px; text-align:center; font-size:0.9rem; color:#aaa; }
+    footer nav { margin-top:10px; }
+    footer a { margin:0 10px; color:#aaa; }
+    footer a:hover { color:#fff; }
+
+    @media(max-width:768px){
+      .hero h2{ font-size:2.2rem; }
+      .hero p{ font-size:1rem; }
+      .stat-numbers { flex-direction:column; }
+    }
+  </style>
 </head>
 <body>
-    <div id="menu-container"></div>
-    <script src="js/menu.js"></script>
 
-    <main>
-        <div class="espaciado"></div>
-        <section class="hero">
-            <h2>Conectando el universo desde Kerbin</h2>
-            <p>Halcon Space es líder en exploración y conectividad espacial. Con tecnología de vanguardia y misiones visionarias, seguimos expandiendo los horizontes del espacio.</p>
-        </section>
+<div id="menu-container"></div>
+<script src="js/menu.js"></script>
 
-        <section class="nextLaunch">
-            <h3>Próximo Lanzamiento</h3>
-            <div class="nextLaunch-grid" id="proximo-lanzamiento">
-            </div>
-              <script src="js/inicio.js"></script>
-        </section>
+<section class="hero">
+  <h2>Conectando el universo desde Kerbin</h2>
+  <p>Halcon Space es líder en exploración y conectividad espacial. Con tecnología de vanguardia y misiones visionarias, seguimos expandiendo los horizontes del espacio.</p>
+</section>
+<div class="nextLaunch-grid" id="proximo-lanzamiento"></div>
+<script src="js/inicio.js"></script>
 
-        <section class="gallery">
-            <h3>Algunas Imágenes</h3>
-            <div class="gallery-grid">
-                <img src="img/fotos/Falcon 9 en SLC-40.jpg" alt="Foto 1">
-                <img src="img/fotos/image 1.png" alt="Foto 2">
-                <img src="img/fotos/image 3.png" alt="Foto 3">
-                <img src="img/fotos/image2.png" alt="Foto 4">
-                <img src="img/fotos/Falcon 9 aterrizaje [1].png" alt="Foto 5">
-                <img src="img/misiones/Crew Demo 2/Falcon 9 Crew.jpg" alt="Foto 6">
-                <img src="img/misiones/NROL-12/Landing.jpg" alt="Foto 7">
-                <img src="img/vehiculos/Falcon Heavy/Falcon Heavy 1.jpg" alt="Foto 8">
-                <img src="img/misiones/MoonRadar-1/Falcon 9 en plataforma.jpg" alt="Foto 9">
-            </div>
-        </section>
-    </main>
+<section>
+  <h2>Galería</h2>
+  <div class="gallery-grid">
+    <img src="img/fotos/Falcon 9 en SLC-40.jpg" alt="Foto 1">
+    <img src="img/fotos/image 1.png" alt="Foto 2">
+    <img src="img/fotos/image 3.png" alt="Foto 3">
+    <img src="img/fotos/image2.png" alt="Foto 4">
+    <img src="img/fotos/Falcon 9 aterrizaje [1].png" alt="Foto 5">
+    <img src="img/misiones/Crew Demo 2/Falcon 9 Crew.jpg" alt="Foto 6">
+    <img src="img/misiones/NROL-12/Landing.jpg" alt="Foto 7">
+    <img src="img/vehiculos/Falcon Heavy/Falcon Heavy 1.jpg" alt="Foto 8">
+    <img src="img/misiones/Eyes above the Horizon 2/Reentrada.png" alt="">
+  </div>
+</section>
 
-    <section class="services">
-        <h3>Servicios</h3>
-        <div class="service">
-            <h4>Lanzamientos Espaciales</h4>
-            <p>Ofrecemos lanzamientos de cohetes para misiones comerciales, científicas y exploración espacial.</p>
-        </div>
-        <div class="service">
-            <h4>Sistemas de Comunicación Satelital</h4>
-            <p>Instalamos y mantenemos satélites en órbita para ofrecer conectividad global.</p>
-        </div>
-    </section>
-    
-    <section class="cta">
-        <a href="lanzamientos" class="btn">Lanzamientos</a>
-        <a href="vehiculos" class="btn">Vehículos</a>
-        <a href="contacto" class="btn">Contáctanos</a>
-        <a href="contratar" class="btn">Contratar</a>
-        <a href="discord" class="btn">Discord</a>
-    </section>
+<section>
+  <h2>Servicios</h2>
+  <div class="services">
+    <div class="service">
+      <h4>🚀 Lanzamientos Espaciales</h4>
+      <p>Misiones comerciales, científicas y de exploración con vehículos reutilizables.</p>
+    </div>
+    <div class="service">
+      <h4>🛰️ Comunicación Satelital</h4>
+      <p>Constelaciones para garantizar cobertura y conectividad en todo Kerbin.</p>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>© 2025 Halcon Space. Todos los derechos reservados.</p>
-    </footer>
+<section>
+  <h2>Estadísticas</h2>
+  <div class="statistics">
+    <div class="chart-container">
+      <canvas id="lanzamientosChart"></canvas>
+      <div class="stat-numbers">
+        <div class="exito"><span>Éxitosos</span><span id="lanzamientosExitosos">0</span></div>
+        <div class="fallo"><span>Fallidos</span><span id="lanzamientosFallidos">0</span></div>
+      </div>
+    </div>
+    <div class="chart-container">
+      <canvas id="aterrizajesChart"></canvas>
+      <div class="stat-numbers">
+        <div class="exito"><span>Éxitosos</span><span id="aterrizajesExitosos">0</span></div>
+        <div class="fallo"><span>Fallidos</span><span id="aterrizajesFallidos">0</span></div>
+      </div>
+    </div>
+    <div class="chart-container chart-vehiculos">
+      <canvas id="vuelosChart"></canvas>
+      <div class="stat-numbers">
+        <div class="vehiculo-f9"><span>F9</span><span id="falcon9Count">0</span></div>
+        <div class="vehiculo-fh"><span>FH</span><span id="falconHeavyCount">0</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <a href="lanzamientos" class="btn">Lanzamientos</a>
+  <a href="vehiculos" class="btn">Vehículos</a>
+  <a href="contacto" class="btn">Contacto</a>
+  <a href="contratar" class="btn">Contratar</a>
+  <a href="discord" class="btn">Discord</a>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+async function cargarEstadisticas() {
+  const response = await fetch('https://halconspace.site/json/estadisticas.json');
+  const data = await response.json();
+
+  // Lanzamientos
+  new Chart(document.getElementById('lanzamientosChart'), {
+    type:'doughnut',
+    data:{ labels:['Éxitosos','Fallidos'], datasets:[{ data:[data.lanzamientos.exitosos, data.lanzamientos.fallidos], backgroundColor:['#14ff14','#C1272D'] }]},
+    options:{ plugins:{ legend:{ labels:{ color:'#fff' }}}}
+  });
+  document.getElementById('lanzamientosExitosos').textContent = data.lanzamientos.exitosos;
+  document.getElementById('lanzamientosFallidos').textContent = data.lanzamientos.fallidos;
+
+  // Aterrizajes
+  new Chart(document.getElementById('aterrizajesChart'), {
+    type:'doughnut',
+    data:{ labels:['Éxitosos','Fallidos'], datasets:[{ data:[data.aterrizajes.exitosos, data.aterrizajes.fallidos], backgroundColor:['#14ff14','#C1272D'] }]},
+    options:{ plugins:{ legend:{ labels:{ color:'#fff' }}}}
+  });
+  document.getElementById('aterrizajesExitosos').textContent = data.aterrizajes.exitosos;
+  document.getElementById('aterrizajesFallidos').textContent = data.aterrizajes.fallidos;
+
+  // Vehículos
+  new Chart(document.getElementById('vuelosChart'), {
+    type:'doughnut',
+    data:{ labels:['F9','FH'], datasets:[{ data:[data.vuelosVehiculos.falcon9, data.vuelosVehiculos.falconHeavy], backgroundColor:['#14ff14','#555'] }]},
+    options:{ plugins:{ legend:{ labels:{ color:'#fff' }}}}
+  });
+  document.getElementById('falcon9Count').textContent = data.vuelosVehiculos.falcon9;
+  document.getElementById('falconHeavyCount').textContent = data.vuelosVehiculos.falconHeavy;
+}
+cargarEstadisticas();
+</script>
+
 </body>
 </html>

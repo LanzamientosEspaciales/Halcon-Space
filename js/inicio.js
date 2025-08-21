@@ -1,83 +1,82 @@
-async function obtenerProximoLanzamiento() {
+document.addEventListener("DOMContentLoaded", () => {
+  const nextLaunchContainer = document.getElementById("proximo-lanzamiento");
+
+  async function cargarLanzamientos() {
     try {
-      const respuesta = await fetch('/json/lanzamientos.json');
-      if (!respuesta.ok) throw new Error('Error al cargar el archivo JSON');
+      const response = await fetch('json/lanzamientos.json');
+      const lanzamientos = await response.json();
 
-      const lanzamientos = await respuesta.json();
+      // Filtramos solo lanzamientos visibles
+      const visibles = lanzamientos.filter(l => !l.ocultar);
 
-      function parseFecha(fechaStr) {
-        const match = fechaStr.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
-        if (!match) return null;
-        const [_, day, month, year] = match;
-        const fecha = new Date(`${year}-${month}-${day}`);
-        fecha.setHours(0, 0, 0, 0);
-        return fecha;
-      }
-
-      function formatearFecha(fechaStr) {
-        const meses = [
-          "enero", "febrero", "marzo", "abril",
-          "mayo", "junio", "julio", "agosto",
-          "septiembre", "octubre", "noviembre", "diciembre"
-        ];
-        const partes = fechaStr.split("/");
-        if (partes.length !== 3) return "Fecha inválida";
-        const dia = partes[0].padStart(2, '0');
-        const mes = parseInt(partes[1], 10) - 1;
-        const año = partes[2];
-        if (mes < 0 || mes > 11) return "Fecha inválida";
-        return `${dia} de ${meses[mes]}, ${año}`;
-      }
-
-      const proximos = lanzamientos
-        .map(l => ({ ...l, fechaObj: parseFecha(l.fecha) }))
-        .filter(l => l.fechaObj && l.estado === "programado")
-        .sort((a, b) => a.fechaObj - b.fechaObj);
-
-      const contenedor = document.getElementById('proximo-lanzamiento');
-      const seccion = document.querySelector('section.nextLaunch');
-
-      if (proximos.length === 0) {
-        if (seccion) seccion.style.display = 'none';
+      if (!visibles.length) {
+        nextLaunchContainer.innerHTML = "<p>No hay lanzamientos registrados.</p>";
         return;
-      } else {
-        if (seccion) seccion.style.display = 'block';
       }
 
-      const proximo = proximos[0];
+      // Ordenamos por fecha para sacar último y próximo
+      const lanzamientosConFecha = visibles
+        .filter(l => l.fecha.match(/\d{2}\/\d{2}\/\d{4}/))
+        .sort((a, b) => {
+          const [d1, m1, y1] = a.fecha.split('/');
+          const [d2, m2, y2] = b.fecha.split('/');
+          return new Date(`${y1}-${m1}-${d1}`) - new Date(`${y2}-${m2}-${d2}`);
+        });
 
-      const div = document.createElement('div');
-      div.className = 'launch-info';
+      const ahora = new Date();
 
-      const titulo = document.createElement('h5');
-      titulo.textContent = proximo.nombre;
+      // Próximo lanzamiento: primer lanzamiento futuro
+      const proximo = lanzamientosConFecha.find(l => {
+        const [d, m, y] = l.fecha.split('/');
+        return new Date(`${y}-${m}-${d}`) >= ahora && l.estado === "programado";
+      }) || lanzamientosConFecha[lanzamientosConFecha.length - 1];
 
-      const vehiculo = document.createElement('p');
-      vehiculo.innerHTML = `<strong>Vehículo:</strong> ${proximo.vehiculo}`;
+      // Último lanzamiento: último lanzamiento pasado
+      const ultimo = [...lanzamientosConFecha].reverse().find(l => {
+        const [d, m, y] = l.fecha.split('/');
+        return new Date(`${y}-${m}-${d}`) < ahora;
+      }) || lanzamientosConFecha[0];
 
-      const fechaTexto = document.createElement('p');
-      fechaTexto.innerHTML = `<strong>Fecha:</strong> NET ${formatearFecha(proximo.fecha)}`;
+      function crearTarjeta(lanzamiento, tipo) {
+        const tarjeta = document.createElement("div");
+        tarjeta.classList.add("launch-info");
+        tarjeta.innerHTML = `
+          <h4>${tipo}:</h4>
+          <img src="${lanzamiento.imagen}" alt="${lanzamiento.alt || lanzamiento.nombre}">
+          <h5>${lanzamiento.nombre}</h5>
+          <p>Fecha: ${lanzamiento.fecha}</p>
+          ${lanzamiento.detalleUrl ? `<a href="${lanzamiento.detalleUrl}">Más info</a>` : ""}
+          ${lanzamiento.stream && tipo === "Próximo lanzamiento" ? `<a href="${lanzamiento.stream}" target="_blank" class="btn-stream">Ver Stream</a>` : ""}
+        `;
 
-      const imagen = document.createElement('img');
-      imagen.src = proximo.imagen.startsWith('/') ? proximo.imagen.slice(1) : proximo.imagen;
-      imagen.alt = proximo.alt || proximo.nombre;
+        // Countdown solo para próximo
+        if (tipo === "Próximo lanzamiento" && lanzamiento.fecha.match(/\d{2}\/\d{2}\/\d{4}/)) {
+          const fechaParts = lanzamiento.fecha.split('/');
+          const launchDate = new Date(`${fechaParts[2]}-${fechaParts[1]}-${fechaParts[0]}`);
+          const countdown = document.createElement("p");
+          countdown.classList.add("countdown");
+          tarjeta.appendChild(countdown);
 
-      div.append(titulo, vehiculo, fechaTexto, imagen);
+          setInterval(() => {
+            const diff = launchDate - new Date();
+            if (diff <= 0) { countdown.textContent = "¡Hoy es el lanzamiento!"; return; }
+            const days = Math.ceil(diff / (1000*60*60*24));
+            countdown.textContent = `${days} día${days>1?'s':''} restante${days>1?'s':''}`;
+          }, 1000);
+        }
 
-      if (proximo.detalleUrl) {
-        const link = document.createElement('p');
-        const a = document.createElement('a');
-        a.href = proximo.detalleUrl;
-        a.textContent = 'Ver detalles';
-        link.appendChild(a);
-        div.appendChild(link);
+        return tarjeta;
       }
 
-      contenedor.appendChild(div);
+      nextLaunchContainer.innerHTML = "";
+      nextLaunchContainer.appendChild(crearTarjeta(ultimo, "Último lanzamiento"));
+      nextLaunchContainer.appendChild(crearTarjeta(proximo, "Próximo lanzamiento"));
 
     } catch (error) {
-      // Error sin mostrar en consola, se podría manejar aquí si querés
+      console.error("Error cargando lanzamientos:", error);
+      nextLaunchContainer.innerHTML = "<p>Error cargando los lanzamientos.</p>";
     }
   }
 
-  obtenerProximoLanzamiento();
+  cargarLanzamientos();
+});

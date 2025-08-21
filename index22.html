@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halcon Space</title>
+    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Erbaum:wght@400;500;600&display=Erbaum" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <meta property="og:title" content="Halcon Space">
+    <meta property="og:description" content="Web oficial de Halcon Space">
+    <meta property="og:url" content="https://halconspace.site/">
+    <meta property="og:image" content="https://halconspace.site/img/fotos/Falcon%209%20en%20SLC-40.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <style>
+        .nextLaunch {
+            background-color: #2a2a2e; /* Fondo oscuro para las tarjetas */
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #ddd; /* Texto claro dentro de las tarjetas */
+            text-align: center;
+            max-width: 50%;
+        }
+        .nextLaunch h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .launch-info h5 {
+            font-size: 1rem;
+        }
+
+        .launch-info p {
+            font-size: 0.8rem;
+        }
+
+        .launch-info img {
+            max-width: 50%;
+            height: auto;
+            aspect-ratio: 16/9;
+            border-radius: 10px;
+        }
+
+        .launch-info a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #C1272D; /* Color distintivo para destacar */
+    text-decoration: none;
+    font-family: 'Erbaum', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.launch-info a:hover {
+    background-color: #A31F24; /* Oscurecer el color al pasar el cursor */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+    </style>
+</head>
+<body>
+    <div id="menu-container"></div>
+    <script src="js/menu.js"></script>
+
+    <main>
+        <div class="espaciado"></div>
+        <section class="hero">
+            <h2>Conectando el universo desde Kerbin</h2>
+            <p>Halcon Space es líder en exploración y conectividad espacial. Con tecnología de vanguardia y misiones visionarias, seguimos expandiendo los horizontes del espacio.</p>
+        </section>
+
+        <section class="nextLaunch">
+            <h3>Próximo Lanzamiento</h3>
+            <div class="nextLaunch-grid" id="proximo-lanzamiento">
+            </div>
+              <script src="js/inicio.js"></script>
+        </section>
+
+        <section class="gallery">
+            <h3>Algunas Imágenes</h3>
+            <div class="gallery-grid">
+                <img src="img/fotos/Falcon 9 en SLC-40.jpg" alt="Foto 1">
+                <img src="img/fotos/image 1.png" alt="Foto 2">
+                <img src="img/fotos/image 3.png" alt="Foto 3">
+                <img src="img/fotos/image2.png" alt="Foto 4">
+                <img src="img/fotos/Falcon 9 aterrizaje [1].png" alt="Foto 5">
+                <img src="img/misiones/Crew Demo 2/Falcon 9 Crew.jpg" alt="Foto 6">
+                <img src="img/misiones/NROL-12/Landing.jpg" alt="Foto 7">
+                <img src="img/vehiculos/Falcon Heavy/Falcon Heavy 1.jpg" alt="Foto 8">
+                <img src="img/misiones/MoonRadar-1/Falcon 9 en plataforma.jpg" alt="Foto 9">
+            </div>
+        </section>
+    </main>
+
+    <section class="services">
+        <h3>Servicios</h3>
+        <div class="service">
+            <h4>Lanzamientos Espaciales</h4>
+            <p>Ofrecemos lanzamientos de cohetes para misiones comerciales, científicas y exploración espacial.</p>
+        </div>
+        <div class="service">
+            <h4>Sistemas de Comunicación Satelital</h4>
+            <p>Instalamos y mantenemos satélites en órbita para ofrecer conectividad global.</p>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <a href="lanzamientos" class="btn">Lanzamientos</a>
+        <a href="vehiculos" class="btn">Vehículos</a>
+        <a href="contacto" class="btn">Contáctanos</a>
+        <a href="contratar" class="btn">Contratar</a>
+        <a href="discord" class="btn">Discord</a>
+    </section>
+</body>
+</html>
