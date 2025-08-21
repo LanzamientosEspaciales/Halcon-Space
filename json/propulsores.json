@@ -42,7 +42,7 @@
             }
         },
         "B1061": {
-            "estado": "activo",
+            "estado": "destruido",
             "img": "https://halconspace.site/img/propulsores/B1061.png",
             "tipo": "Falcon 9",
             "vuelos": {
@@ -50,6 +50,11 @@
                     "mision": "NROL-13",
                     "fecha": "02/05/2025",
                     "url": "https://halconspace.site/lanzamientos/NROL-13"
+                },
+                "B1061.2": {
+                    "mision": "EAGLE CONNECT",
+                    "fecha": "21/08/2025",
+                    "url": "https://halconspace.site/lanzamientos/ev-02"
                 }
             }
         },
