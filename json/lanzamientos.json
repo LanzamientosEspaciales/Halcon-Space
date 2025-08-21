@@ -44,7 +44,8 @@
       "estado": "programado",
       "imagen": "/img/misiones/EV-02/En_espera.png",
       "alt": "En espera EV-02",
-      "detalleUrl": "/lanzamientos/ev-02"
+      "detalleUrl": "/lanzamientos/ev-02",
+      "stream": "https://www.youtube.com/live/0B18MIpVkE4"
     },
     {
       "nombre": "CRS-2 return",
