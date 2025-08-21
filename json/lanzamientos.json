@@ -50,7 +50,7 @@
       "nombre": "CRS-2 return",
       "fecha": "20/08/2025",
       "vehiculo": "Cargo Dragon",
-      "estado": "programado",
+      "estado": "exito",
       "imagen": "/img/misiones/CRS-2/Dragon in orbit.png",
       "alt": "En espera CRS-2",
       "detalleUrl": "/lanzamientos/crs-2"
