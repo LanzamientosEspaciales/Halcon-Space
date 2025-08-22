@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       function crearTarjeta(lanzamiento, tipo) {
         const tarjeta = document.createElement("div");
         tarjeta.classList.add("launch-info");
+        tarjeta.classList.add("lanzamiento-status-" + lanzamiento.estado.toLowerCase());
 
         tarjeta.innerHTML = `
           <h4>${tipo}:</h4>
