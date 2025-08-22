@@ -51,8 +51,8 @@
     .stat-numbers div { flex:1; padding:10px; border-radius:8px; font-weight:bold; font-size:1.1rem; text-align:center; background:#272727; color:#fff; box-shadow:0 0 15px rgba(0,0,0,0.5); }
     .stat-numbers .exito { border: 1px solid #14ff14; }
     .stat-numbers .fallo { border: 1px solid #C1272D; }
-    .stat-numbers .vehiculo-f9 { border: 1px solid #555; }
-    .stat-numbers .vehiculo-fh { border: 1px solid #555; }
+    .stat-numbers .vehiculo-f9 { border: 1px solid #372AAC; }
+    .stat-numbers .vehiculo-fh { border: 1px solid #1E1A4D; }
 
     .stat-numbers div span:first-child { display:block; font-size:0.9rem; color:#ccc; margin-bottom:5px; }
     .stat-numbers div span:last-child { display:block; font-size:1.5rem; }
@@ -194,7 +194,7 @@ async function cargarEstadisticas() {
   // Vehículos
   new Chart(document.getElementById('vuelosChart'), {
     type:'doughnut',
-    data:{ labels:['F9','FH'], datasets:[{ data:[data.vuelosVehiculos.falcon9, data.vuelosVehiculos.falconHeavy], backgroundColor:['#14ff14','#555'] }]},
+    data:{ labels:['F9','FH'], datasets:[{ data:[data.vuelosVehiculos.falcon9, data.vuelosVehiculos.falconHeavy], backgroundColor:['#372AAC','#1E1A4D'] }]},
     options:{ plugins:{ legend:{ labels:{ color:'#fff' }}}}
   });
   document.getElementById('falcon9Count').textContent = data.vuelosVehiculos.falcon9;
