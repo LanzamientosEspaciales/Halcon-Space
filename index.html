@@ -89,6 +89,71 @@
     object-fit: cover;
     transition: transform 0.3s;
   }
+
+  #proximo-lanzamiento {
+    display: flex;
+    overflow-x: auto;
+    padding: 15px;
+    gap: 15px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Tarjeta móvil nueva */
+  .launch-info {
+    flex: 0 0 80%;             /* ancho de cada tarjeta */
+    scroll-snap-align: start;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+
+  .launch-info:hover {
+    transform: scale(1.03);
+  }
+
+  .launch-info img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .launch-info h4, .launch-info h5 {
+    margin: 8px 0;
+    color: #fff;
+  }
+
+  .launch-info p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin: 3px 0;
+  }
+
+  .launch-info .countdown {
+    color: #C1272D;
+    font-weight: bold;
+    margin-top: 6px;
+  }
+
+  .launch-info a {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 16px;
+    background: #C1272D;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .launch-info a:hover {
+    background: #A31F24;
+  }
 }
 
   </style>
@@ -120,6 +185,7 @@
   <p>Halcon Space es líder en exploración y conectividad espacial. Con tecnología de vanguardia y misiones visionarias, seguimos expandiendo los horizontes del espacio.</p>
 </section>
 <div class="nextLaunch-grid" id="proximo-lanzamiento"></div>
+  
 <script src="js/inicio.js"></script>
 
 <section>
