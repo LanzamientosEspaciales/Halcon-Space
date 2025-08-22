@@ -40,13 +40,15 @@ document.addEventListener("DOMContentLoaded", () => {
       function crearTarjeta(lanzamiento, tipo) {
         const tarjeta = document.createElement("div");
         tarjeta.classList.add("launch-info");
+
         tarjeta.innerHTML = `
           <h4>${tipo}:</h4>
           <img src="${lanzamiento.imagen}" alt="${lanzamiento.alt || lanzamiento.nombre}">
           <h5>${lanzamiento.nombre}</h5>
           <p>Fecha: ${lanzamiento.fecha}</p>
+          <p>Estado: <strong>${lanzamiento.estado.charAt(0).toUpperCase() + lanzamiento.estado.slice(1)}</strong></p>
           ${lanzamiento.detalleUrl ? `<a href="${lanzamiento.detalleUrl}">Más info</a>` : ""}
-          ${lanzamiento.stream && tipo === "Próximo lanzamiento" ? `<a href="${lanzamiento.stream}" target="_blank" class="btn-stream">Ver Stream</a>` : ""}
+          ${lanzamiento.stream ? `<a href="${lanzamiento.stream}" target="_blank" class="btn-stream">Ver Stream</a>` : ""}
         `;
 
         // Countdown solo para próximo
@@ -59,7 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
           setInterval(() => {
             const diff = launchDate - new Date();
-            if (diff <= 0) { countdown.textContent = "¡Hoy es el lanzamiento!"; return; }
+            if (diff <= 0) {
+              countdown.textContent = "¡Hoy es el lanzamiento!";
+              return;
+            }
             const days = Math.ceil(diff / (1000*60*60*24));
             countdown.textContent = `${days} día${days>1?'s':''} restante${days>1?'s':''}`;
           }, 1000);

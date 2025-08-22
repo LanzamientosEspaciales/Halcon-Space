@@ -35,7 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="lanzamientos">Lanzamientos</a> | 
             <a href="vehiculos">Vehículos</a> | 
             <a href="contacto">Contacto</a> | 
-            <a href="discord">Discord</a>
+            <a href="discord">Discord</a> | 
+            <a href="https://www.youtube.com/@HalconSpace" target="_blank">YouTube</a>
         </nav>
     `;
     document.body.appendChild(footer);
