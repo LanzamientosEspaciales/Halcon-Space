@@ -51,8 +51,8 @@
     .stat-numbers div { flex:1; padding:10px; border-radius:8px; font-weight:bold; font-size:1.1rem; text-align:center; background:#272727; color:#fff; box-shadow:0 0 15px rgba(0,0,0,0.5); }
     .stat-numbers .exito { border: 1px solid #14ff14; }
     .stat-numbers .fallo { border: 1px solid #C1272D; }
-    .stat-numbers .vehiculo-f9 { border: 1px solid #372AAC; }
-    .stat-numbers .vehiculo-fh { border: 1px solid #1E1A4D; }
+    .stat-numbers .vehiculo-f9 { border: 1px solid #193CB8; white-space: nowrap; }
+    .stat-numbers .vehiculo-fh { border: 1px solid #1e1a4d; white-space: nowrap; }
 
     .stat-numbers div span:first-child { display:block; font-size:0.9rem; color:#ccc; margin-bottom:5px; }
     .stat-numbers div span:last-child { display:block; font-size:1.5rem; }
@@ -151,8 +151,8 @@
     <div class="chart-container chart-vehiculos">
       <canvas id="vuelosChart"></canvas>
       <div class="stat-numbers">
-        <div class="vehiculo-f9"><span>F9</span><span id="falcon9Count">0</span></div>
-        <div class="vehiculo-fh"><span>FH</span><span id="falconHeavyCount">0</span></div>
+        <div class="vehiculo-f9"><span>Falcon 9</span><span id="falcon9Count">0</span></div>
+        <div class="vehiculo-fh"><span>Falcon Heavy</span><span id="falconHeavyCount">0</span></div>
       </div>
     </div>
   </div>
@@ -194,7 +194,7 @@ async function cargarEstadisticas() {
   // Vehículos
   new Chart(document.getElementById('vuelosChart'), {
     type:'doughnut',
-    data:{ labels:['F9','FH'], datasets:[{ data:[data.vuelosVehiculos.falcon9, data.vuelosVehiculos.falconHeavy], backgroundColor:['#372AAC','#1E1A4D'] }]},
+    data:{ labels:['F9','FH'], datasets:[{ data:[data.vuelosVehiculos.falcon9, data.vuelosVehiculos.falconHeavy], backgroundColor:['#193CB8','#1e1a4d'] }]},
     options:{ plugins:{ legend:{ labels:{ color:'#fff' }}}}
   });
   document.getElementById('falcon9Count').textContent = data.vuelosVehiculos.falcon9;
