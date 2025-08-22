@@ -49,8 +49,8 @@
     /* Números debajo de cada gráfico */
     .stat-numbers { display:flex; justify-content:center; gap:15px; margin-top:15px; flex-wrap:wrap; }
     .stat-numbers div { flex:1; padding:10px; border-radius:8px; font-weight:bold; font-size:1.1rem; text-align:center; background:#272727; color:#fff; box-shadow:0 0 15px rgba(0,0,0,0.5); }
-    .stat-numbers .exito { border: 1px solid #14ff14; }
-    .stat-numbers .fallo { border: 1px solid #C1272D; }
+    .stat-numbers .exito { border: 1px solid #178236; }
+    .stat-numbers .fallo { border: 1px solid #A50C36; }
     .stat-numbers .vehiculo-f9 { border: 1px solid #193CB8; white-space: nowrap; }
     .stat-numbers .vehiculo-fh { border: 1px solid #1e1a4d; white-space: nowrap; }
 
@@ -67,10 +67,30 @@
     footer a:hover { color:#fff; }
 
     @media(max-width:768px){
-      .hero h2{ font-size:2.2rem; }
-      .hero p{ font-size:1rem; }
-      .stat-numbers { flex-direction:column; }
-    }
+  .hero h2 { font-size: 2.2rem; }
+  .hero p { font-size: 1rem; }
+  .stat-numbers { 
+    flex-direction: row;  /* horizontal */
+    flex-wrap: wrap;      /* permite que no se desborden */
+    gap: 15px;            /* mantiene separación */
+  }
+  .gallery-grid {
+    display: flex;           /* cambia a flex */
+    overflow-x: auto;        /* scroll horizontal */
+    scroll-snap-type: x mandatory; /* para que se "encaje" cada imagen */
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .gallery-grid img {
+    flex: 0 0 80%;           /* ancho de cada imagen */
+    scroll-snap-align: center;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+}
+
   </style>
   <!-- Open Graph (Facebook, WhatsApp, LinkedIn, etc.) -->
 <meta property="og:title" content="Halcon Space - Exploración y conectividad espacial">
@@ -117,6 +137,21 @@
   </div>
 </section>
 
+<script>
+  if(window.innerWidth <= 768){
+    const gallery = document.querySelector('.gallery-grid');
+    let scrollPos = 0;
+    const imgWidth = gallery.querySelector('img').clientWidth + 10; // ancho + gap
+  
+    setInterval(() => {
+      scrollPos += imgWidth;
+      if(scrollPos >= gallery.scrollWidth) scrollPos = 0;
+      gallery.scrollTo({ left: scrollPos, behavior: 'smooth' });
+    }, 3000); // cambia cada 3 segundos
+  }
+  </script>
+  
+
 <section>
   <h2>Servicios</h2>
   <div class="services">
@@ -135,20 +170,23 @@
   <h2>Estadísticas</h2>
   <div class="statistics">
     <div class="chart-container">
+      <h4>Lanzamientos</h4>
       <canvas id="lanzamientosChart"></canvas>
       <div class="stat-numbers">
-        <div class="exito"><span>Éxitosos</span><span id="lanzamientosExitosos">0</span></div>
+        <div class="exito"><span>Exitosos</span><span id="lanzamientosExitosos">0</span></div>
         <div class="fallo"><span>Fallidos</span><span id="lanzamientosFallidos">0</span></div>
       </div>
     </div>
     <div class="chart-container">
+      <h4>Aterrizajes</h4>
       <canvas id="aterrizajesChart"></canvas>
       <div class="stat-numbers">
-        <div class="exito"><span>Éxitosos</span><span id="aterrizajesExitosos">0</span></div>
+        <div class="exito"><span>Exitosos</span><span id="aterrizajesExitosos">0</span></div>
         <div class="fallo"><span>Fallidos</span><span id="aterrizajesFallidos">0</span></div>
       </div>
     </div>
     <div class="chart-container chart-vehiculos">
+      <h4>Vehículos</h4>
       <canvas id="vuelosChart"></canvas>
       <div class="stat-numbers">
         <div class="vehiculo-f9"><span>Falcon 9</span><span id="falcon9Count">0</span></div>
@@ -176,7 +214,7 @@ async function cargarEstadisticas() {
   // Lanzamientos
   new Chart(document.getElementById('lanzamientosChart'), {
     type:'doughnut',
-    data:{ labels:['Éxitosos','Fallidos'], datasets:[{ data:[data.lanzamientos.exitosos, data.lanzamientos.fallidos], backgroundColor:['#14ff14','#C1272D'] }]},
+    data:{ labels:['Exitosos','Fallidos'], datasets:[{ data:[data.lanzamientos.exitosos, data.lanzamientos.fallidos], backgroundColor:['#178236','#A50C36'] }]},
     options:{ plugins:{ legend:{ labels:{ color:'#fff' }}}}
   });
   document.getElementById('lanzamientosExitosos').textContent = data.lanzamientos.exitosos;
@@ -185,7 +223,7 @@ async function cargarEstadisticas() {
   // Aterrizajes
   new Chart(document.getElementById('aterrizajesChart'), {
     type:'doughnut',
-    data:{ labels:['Éxitosos','Fallidos'], datasets:[{ data:[data.aterrizajes.exitosos, data.aterrizajes.fallidos], backgroundColor:['#14ff14','#C1272D'] }]},
+    data:{ labels:['Exitosos','Fallidos'], datasets:[{ data:[data.aterrizajes.exitosos, data.aterrizajes.fallidos], backgroundColor:['#178236','#A50C36'] }]},
     options:{ plugins:{ legend:{ labels:{ color:'#fff' }}}}
   });
   document.getElementById('aterrizajesExitosos').textContent = data.aterrizajes.exitosos;
