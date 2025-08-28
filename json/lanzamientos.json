@@ -12,13 +12,13 @@
   },
 {
     "nombre": "NROL-420",
-    "fecha": "28/08/2025",
+    "fecha": "29/08/2025",
     "vehiculo": "Falcon 9 Block 5",
     "estado": "programado",
     "plataforma": "SLC-40",
     "imagen": "/img/fotos/Falcon 9 en SLC-40.jpg",
     "alt": "Falcon 9 en SLC-40",
-    "detalleUrl": null,
+    "detalleUrl": "https://halconspace.site/lanzamientos/NROL-420",
     "stream": null
   },
   {
