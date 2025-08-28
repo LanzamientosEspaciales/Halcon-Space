@@ -76,7 +76,7 @@
             }
         },
         "B1065": {
-            "estado": "activo",
+            "estado": "retirado",
             "img": "https://halconspace.site/img/propulsores/B1065.png",
             "tipo": "Falcon 9",
             "vuelos": {
@@ -88,8 +88,7 @@
                 "B1065.2": {
                     "mision": "NROL-420",
                     "fecha": "28/08/2025",
-                    "url": "https://halconspace.site/lanzamientos/NROL-420",
-                    "programado": true
+                    "url": "https://halconspace.site/lanzamientos/NROL-420"
                 }
             }
         },

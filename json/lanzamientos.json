@@ -1,7 +1,7 @@
 [
   {
     "nombre": "EV-03",
-    "fecha": "2025",
+    "fecha": "01/09/2025",
     "vehiculo": "Falcon 9 Block 5",
     "estado": "programado",
     "plataforma": "SLC-40",
@@ -14,9 +14,9 @@
     "nombre": "NROL-420",
     "fecha": "28/08/2025",
     "vehiculo": "Falcon 9 Block 5",
-    "estado": "programado",
+    "estado": "exito",
     "plataforma": "SLC-40",
-    "imagen": "/img/fotos/Falcon 9 en SLC-40.jpg",
+    "imagen": "/img/misiones/NROL-420/Reentry2.png",
     "alt": "Falcon 9 en SLC-40",
     "detalleUrl": "https://halconspace.site/lanzamientos/NROL-420",
     "stream": "https://www.youtube.com/live/Vbx8Q1qVqDM"
