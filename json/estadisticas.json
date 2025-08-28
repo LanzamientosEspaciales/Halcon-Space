@@ -8,7 +8,13 @@
         "fallidos": 6
     },
     "vuelosVehiculos": {
-        "falcon9": 31,
-        "falconHeavy": 2
+        "falcon9": {
+            "exitosos": 31,
+            "fallidos": 0
+        },
+        "falconHeavy": {
+            "exitosos": 2,
+            "fallidos": 0
+        }
     }
 }

@@ -298,14 +298,16 @@ async function cargarEstadisticas() {
   document.getElementById('aterrizajesExitosos').textContent = data.aterrizajes.exitosos;
   document.getElementById('aterrizajesFallidos').textContent = data.aterrizajes.fallidos;
 
+  let vuelosF9Total = data.vuelosVehiculos.falcon9.exitosos + data.vuelosVehiculos.falcon9.fallidos;
+  let vuelosFHTotal = data.vuelosVehiculos.falconHeavy.exitosos + data.vuelosVehiculos.falconHeavy.fallidos;
   // Vehículos
   new Chart(document.getElementById('vuelosChart'), {
     type:'doughnut',
-    data:{ labels:['F9','FH'], datasets:[{ data:[data.vuelosVehiculos.falcon9, data.vuelosVehiculos.falconHeavy], backgroundColor:['#193CB8','#1e1a4d'] }]},
+    data:{ labels:['F9','FH'], datasets:[{ data:[vuelosF9Total, vuelosFHTotal], backgroundColor:['#193CB8','#1e1a4d'] }]},
     options:{ plugins:{ legend:{ labels:{ color:'#fff' }}}}
   });
-  document.getElementById('falcon9Count').textContent = data.vuelosVehiculos.falcon9;
-  document.getElementById('falconHeavyCount').textContent = data.vuelosVehiculos.falconHeavy;
+  document.getElementById('falcon9Count').textContent = vuelosF9Total;
+  document.getElementById('falconHeavyCount').textContent = vuelosFHTotal;
 }
 cargarEstadisticas();
 </script>

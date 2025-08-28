@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
             let aterrizajesTotales = data.aterrizajes.exitosos + data.aterrizajes.fallidos;
             let porcentajeAterrizajes = aterrizajesTotales > 0 ? (data.aterrizajes.exitosos / aterrizajesTotales) * 100 : 0;
 
-            let vuelosFalcon9 = data.vuelosVehiculos.falcon9;
-            let vuelosFalconHeavy = data.vuelosVehiculos.falconHeavy;
+            let vuelosFalcon9 = data.vuelosVehiculos.falcon9.exitosos + data.vuelosVehiculos.falcon9.fallidos;
+            let vuelosFalconHeavy = data.vuelosVehiculos.falconHeavy.exitosos + data.vuelosVehiculos.falconHeavy.fallidos;
             
 
             // Actualizar valores en la página
