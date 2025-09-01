@@ -56,7 +56,7 @@
   },
   {
     "nombre": "SI-SAT 2",
-    "fecha": "03/09/2025",
+    "fecha": "02/09/2025",
     "vehiculo": "Falcon 9 Block 5",
     "estado": "programado",
     "plataforma": "LC-39A",
@@ -67,11 +67,11 @@
   },
   {
     "nombre": "EAGLE COMING",
-    "fecha": "01/09/2025",
+    "fecha": "02/09/2025",
     "vehiculo": "Falcon 9 Block 5",
     "estado": "programado",
     "plataforma": "SLC-40",
-    "imagen": "/img/fotos/image 1.png",
+    "imagen": "/img/ev-03/falcon-9-en-espera.png",
     "alt": "Falcon 9 en SLC-40",
     "detalleUrl": "https://halconspace.site/lanzamientos/ev-03",
     "stream": "https://www.youtube.com/live/t9xO5UPK_1o"
