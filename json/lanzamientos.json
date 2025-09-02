@@ -67,14 +67,13 @@
   },
   {
     "nombre": "EAGLE COMING",
-    "fecha": "02/09/2025",
+    "fecha": "05/09/2025",
     "vehiculo": "Falcon 9 Block 5",
     "estado": "programado",
     "plataforma": "SLC-40",
-    "imagen": "/img/misiones/ev-03/falcon-9-en-espera.png",
+    "imagen": "https://halconspace.site/img/misiones/EV-03/Falcon-9-en-espera.png",
     "alt": "Falcon 9 en SLC-40",
-    "detalleUrl": "https://halconspace.site/lanzamientos/ev-03",
-    "stream": "https://www.youtube.com/live/t9xO5UPK_1o"
+    "detalleUrl": "https://halconspace.site/lanzamientos/ev-03"
   },
 {
     "nombre": "NROL-420",
