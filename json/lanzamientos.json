@@ -44,6 +44,16 @@
     "stream": null
   },
   {
+    "nombre": "EAGLE COMING",
+    "fecha": "05/09/2025",
+    "vehiculo": "Falcon 9 Block 5",
+    "estado": "programado",
+    "plataforma": "SLC-40",
+    "imagen": "https://halconspace.site/img/misiones/EV-03/Falcon-9-en-espera.png",
+    "alt": "Falcon 9 en SLC-40",
+    "detalleUrl": "https://halconspace.site/lanzamientos/ev-03"
+  },
+  {
     "nombre": "Phoenix Ascension",
     "fecha": "03/09/2025",
     "vehiculo": "Falcon 9 Block 5",
@@ -66,16 +76,6 @@
     "stream": null
   },
   {
-    "nombre": "EAGLE COMING",
-    "fecha": "05/09/2025",
-    "vehiculo": "Falcon 9 Block 5",
-    "estado": "programado",
-    "plataforma": "SLC-40",
-    "imagen": "https://halconspace.site/img/misiones/EV-03/Falcon-9-en-espera.png",
-    "alt": "Falcon 9 en SLC-40",
-    "detalleUrl": "https://halconspace.site/lanzamientos/ev-03"
-  },
-{
     "nombre": "NROL-420",
     "fecha": "28/08/2025",
     "vehiculo": "Falcon 9 Block 5",
