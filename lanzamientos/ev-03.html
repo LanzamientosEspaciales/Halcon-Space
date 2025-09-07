@@ -45,15 +45,15 @@
         <section class="mision-header">
             <h2>EAGLE COMING</h2>
             <p><strong>Vehículo:</strong> Falcon 9 Block 5</p>
-            <p><strong>Fecha:</strong> 05 de septiembre de 2025</p>
-            <p><strong>Estado:</strong> Programado</p>
-            <img src="../img/misiones/EV-03/Falcon-9-en-espera.png" alt="Falcon 9 en espera">
+            <p><strong>Fecha:</strong> 06 de septiembre de 2025</p>
+            <p><strong>Estado:</strong> Éxito</p>
+            <img src="../img/misiones/EV-03/Falcon-9-ascenso.png" alt="Falcon 9 en espera">
         </section>
 
         <!-- Introducción -->
         <section class="introduccion">
             <h3>Introducción</h3>
-            <p>Halcon Space llevó a cabo con éxito el lanzamiento de la misión <a href="../img/misiones/EV-03/Eagle-Comming-mission-patch.png" target="_blank">EAGLE COMING</a> donde viajo el segundo modulo para la futura estación espacial <strong>Sodium Eagle</strong> a bordo del Falcon 9 Block 5. La estación se encontrará situada en una órbita ecuatorial de 550km.</p>
+            <p>Halcon Space llevó a cabo con éxito el lanzamiento de la misión <a href="../img/misiones/EV-03/Eagle-Comming-mission-patch.png" target="_blank">EAGLE COMING</a> donde viajo el tercer modulo para la futura estación espacial <strong>Sodium Eagle</strong> a bordo del Falcon 9 Block 5. La estación se encontrará situada en una órbita ecuatorial de 550km.</p>
         </section>
 
         <!-- Detalles técnicos -->
@@ -69,33 +69,21 @@
             </ul>
         </section>
 
-        <!-- Detalles del scrub-->
-         <section class="scrub-detalles">
-            <h3>Informe sobre el scrub del 01 de septiembre de 2025</h3>
-            <p>
-            El intento de lanzamiento programado para el día de hoy, 01 de septiembre de 2025, fue <strong>cancelado</strong> debido a que uno de los sensores 
-            detectó que el <strong>motor número cinco</strong> no realizó la secuencia de encendido de manera correcta, 
-            lo que provocó la <em>activación automática</em> del sistema de aborto.
-            </p>
-
-            <p>
-            Tras una revisión más detallada, se identificó una <strong>anomalía en la temperatura</strong> de dicho motor, 
-            la cual se encontraba fuera de los parámetros establecidos. Actualmente, el equipo técnico se encuentra 
-            realizando las investigaciones correspondientes para determinar la <em>causa raíz</em> de la incidencia.
-            </p>
-         </section>
-
-        <!-- Transmisión en directo -->
-        <section class="video-directo">
-            <h3>Transmisión del lanzamiento</h3>
-            <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/t9xO5UPK_1o" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen>
-                </iframe>
+        <!-- Imágenes destacadas -->
+        <section class="imagenes">
+            <h3>Imágenes de la misión</h3>
+            <div class="galeria">
+                <video src="../img/misiones/EV-03/tormenta.mp4" autoplay muted loop></video>
+                <img src="../img/misiones/EV-03/Ascenso.png" alt="Launch">
+                <img src="../img/misiones/EV-03/Stage-sep.png" alt="Stage sep" id="stage-sep">
+                <video src="../img/misiones/EV-03/Stage-sep.mp4" autoplay muted loop oncanplay="document.getElementById('stage-sep').style.display='none';"></video>
+                <img src="../img/misiones/EV-03/fairing.png" alt="Fairing sep">
+                <img src="../img/misiones/EV-03/landing.png" alt="Landing">
+                <img src="../img/misiones/EV-03/sep.png" alt="Separation" id="sep">
+                <video src="../img/misiones/EV-03/ses-2.mp4" autoplay muted loop oncanplay="document.getElementById('sep').style.display='none';"></video>
+                <img src="../img/misiones/EV-03/orbit.png" alt="Orbit" id="orbit">
+                <video src="../img/misiones/EV-03/sep.mp4" autoplay muted loop oncanplay="document.getElementById('orbit').style.display='none';"></video>
+                
             </div>
         </section>
 

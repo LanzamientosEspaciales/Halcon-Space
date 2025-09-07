@@ -34,7 +34,7 @@
   },
   {
     "nombre": "Artemis Echo",
-    "fecha": "08/09/2025",
+    "fecha": "09/09/2025",
     "vehiculo": "Falcon 9 Block 5",
     "estado": "programado",
     "plataforma": "SLC-40",
@@ -45,7 +45,7 @@
   },
   {
     "nombre": "Phoenix Ascension",
-    "fecha": "06/09/2025",
+    "fecha": "08/09/2025",
     "vehiculo": "Falcon 9 Block 5",
     "estado": "programado",
     "plataforma": "SLC-40",
@@ -56,11 +56,11 @@
   },
   {
     "nombre": "EAGLE COMING",
-    "fecha": "05/09/2025",
+    "fecha": "06/09/2025",
     "vehiculo": "Falcon 9 Block 5",
-    "estado": "programado",
+    "estado": "exito",
     "plataforma": "SLC-40",
-    "imagen": "https://halconspace.site/img/misiones/EV-03/Falcon-9-en-espera.png",
+    "imagen": "https://halconspace.site/img/misiones/EV-03/Falcon-9-ascenso.png",
     "alt": "Falcon 9 en SLC-40",
     "detalleUrl": "https://halconspace.site/lanzamientos/ev-03"
   },
