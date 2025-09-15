@@ -49,7 +49,7 @@
     "vehiculo": "Falcon 9 Block 5",
     "estado": "exito",
     "plataforma": "SLC-40",
-    "imagen": "https://halconspace.site/img/misiones/PhoenixAscension/Despegue.png",
+    "imagen": "https://halconspace.site/img/misiones/PhoenixAscension/despegue.png",
     "alt": "Falcon 9 en SLC-40",
     "detalleUrl": "/lanzamientos/phoenix-ascension",
     "stream": null
