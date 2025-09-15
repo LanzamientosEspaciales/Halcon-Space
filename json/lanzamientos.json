@@ -37,7 +37,7 @@
     "fecha": "15/09/2025",
     "vehiculo": "Falcon 9 Block 5",
     "estado": "programado",
-    "plataforma": "SLC-40",
+    "plataforma": "LC-39A",
     "imagen": "https://halconspace.site/img/fotos/Falcon%209%20en%20SLC-40.jpg",
     "alt": "Falcon 9 en SLC-40",
     "detalleUrl": "/lanzamientos/artemis-echo",
@@ -45,7 +45,7 @@
   },
   {
     "nombre": "Phoenix Ascension",
-    "fecha": "12/09/2025",
+    "fecha": "15/09/2025",
     "vehiculo": "Falcon 9 Block 5",
     "estado": "programado",
     "plataforma": "SLC-40",
