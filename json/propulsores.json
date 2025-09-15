@@ -1,5 +1,17 @@
 {
     "propulsores": {
+        "B1055": {
+            "estado": "destruido",
+            "img": "https://halconspace.site/img/propulsores/B1055.png",
+            "tipo": "Falcon 9",
+            "vuelos": {
+                "B1055.1": {
+                    "mision": "Phoenix Ascention",
+                    "fecha": "15/09/2025",
+                    "url": "https://halconspace.site/lanzamientos/phoenix-ascention"
+                }
+            }
+        },
         "B1056": {
             "estado": "destruido",
             "img": "https://halconspace.site/img/propulsores/B1056.png",
