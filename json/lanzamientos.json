@@ -95,7 +95,17 @@
     "imagen": "/img/misiones/EV-02/Despegue.png",
     "alt": "EV-02",
     "detalleUrl": "/lanzamientos/ev-02",
-    "stream": "https://www.youtube.com/live/0B18MIpVkE4"
+    "stream": "https://www.youtube.com/live/0B18MIpVkE4",
+    "streams": [
+      {
+        "titulo": "Lanzamiento",
+        "url": "https://www.youtube.com/live/0B18MIpVkE4"
+      },
+      {
+        "titulo": "Acoplamiento",
+        "url": "https://www.youtube.com/live/Hje45cm8QPs"
+      }
+    ]
   },
   {
     "nombre": "CRS-2 return",
