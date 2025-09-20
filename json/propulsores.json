@@ -336,6 +336,11 @@
                     "mision": "USSF-101",
                     "fecha": "01/08/2025",
                     "url": "https://halconspace.site/lanzamientos/USSF-101"
+                },
+                "B1075.7": {
+                    "mision": "GPS-12",
+                    "fecha": "28/04/2025",
+                    "url": "https://halconspace.site/lanzamientos/gps-12"
                 }
             }
         },
