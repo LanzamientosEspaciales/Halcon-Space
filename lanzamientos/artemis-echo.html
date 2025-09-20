@@ -20,7 +20,7 @@
   <meta property="og:url" content="https://halconspace.site/lanzamientos/artemis-echo">
   
   <!-- Imagen para el embed (recomendado 1200x630 píxeles) -->
-  <meta property="og:image" content="https://halconspace.site/img/fotos/Falcon%209%20en%20LC-39A.png">
+  <meta property="og:image" content="https://halconspace.site/img/misiones/artemisEcho/despegue.png">
   
   <!-- Tipo de contenido (website, article, video, etc.) -->
   <meta property="og:type" content="article">
@@ -42,9 +42,9 @@
         <section class="mision-header">
             <h2>Artemis Echo</h2>
             <p><strong>Vehículo:</strong> Falcon 9 Block 5</p>
-            <p><strong>Fecha:</strong> 16 de septiembre de 2025</p>
-            <p><strong>Estado:</strong> Programado</p>
-            <img src="https://halconspace.site/img/fotos/Falcon%209%20en%20LC-39A.png" alt="Falcon 9 en LC-39A">
+            <p><strong>Fecha:</strong> 19 de septiembre de 2025</p>
+            <p><strong>Estado:</strong> Éxito</p>
+            <img src="../img/misiones/artemisEcho/despegue.png" alt="Falcon 9 en LC-39A">
         </section>
 
         <!-- Detalles técnicos -->
@@ -53,10 +53,10 @@
             <ul>
                 <li><strong>Vehículo:</strong> Falcon 9 Block 5</li>
                 <li><strong>Altura del cohete:</strong> 70 m</li>
-                <li><strong>Propulsor:</strong> Por confirmar</li>
+                <li><strong>Propulsor:</strong> B1054</li>
                 <li><strong>Carga útil:</strong> Satélite Artemis Echo</li>
                 <li><strong>Órbita:</strong> 600 km y 97.8°</li>
-                <li><strong>Recuperación:</strong> Por confirmar</li>
+                <li><strong>Recuperación:</strong> Desechable</li>
             </ul>
         </section>
 
@@ -64,17 +64,31 @@
         <section class="introduccion">
             <h3>Introducción</h3>
             <p>
-                Halcon Space realizará el lanzamiento de la misión <b>Artemis Echo</b>, 
-                cuyo objetivo será colocar el satélite del mismo nombre en una órbita heliosincrónica (SSO) 
+                Halcon Space realizó con éxito el lanzamiento de la misión <b>Artemis Echo</b>, 
+                cuyo objetivo fue colocar el satélite del mismo nombre en una órbita heliosincrónica (SSO) 
                 de <b>600 km</b> de altitud con una inclinación de <b>97.8°</b>, en colaboración con el cliente 
                 Lunar Vision.
                 </p>
                 
                 <p>
-                El satélite <b>Artemis Echo</b> será diseñado para observación climática y monitoreo ambiental. 
-                Esta misión formará parte de un esfuerzo estratégico por parte de <b>Lunar Vision</b> para recopilar datos que optimicen la gestión de recursos naturales.
+                El satélite <b>Artemis Echo</b> fue diseñado para observación climática y monitoreo ambiental. 
+                Esta misión forma parte de un esfuerzo estratégico por parte de <b>Lunar Vision</b> para recopilar datos que optimicen la gestión de recursos naturales.
             </p>                   
             </section>
+
+        <!-- Imágenes destacadas -->
+        <section class="imagenes">
+            <h3>Imágenes Destacadas</h3>
+            <div class="galeria">
+                <img src="../img/misiones/artemisEcho/espera.png" alt="Lanzamiento de SI-SAT 1">
+                <img src="../img/misiones/artemisEcho/ascenso.png" alt="Lanzamiento de SI-SAT 1">
+                <img src="../img/misiones/artemisEcho/orbita.png" alt="Lanzamiento de Artemis Echo" id="orbita-img">
+                <video src="../img/misiones/artemisEcho/orbita.mp4" controls muted loop oncanplay="document.getElementById('orbita-img').style.display='none';"></video>
+                <video src="../img/misiones/artemisEcho/despegue.mp4" controls muted loop></video>
+                <video src="../img/misiones/artemisEcho/ascenso.mp4" controls muted loop></video>
+                <video src="../img/misiones/artemisEcho/sat-sep.mp4" controls muted loop></video>
+            </div>
+        </section>
     </main>
 </body>
 </html>

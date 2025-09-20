@@ -1,5 +1,17 @@
 {
     "propulsores": {
+        "B1054": {
+          "estado": "destruido",
+          "img": "https://halconspace.site/img/propulsores/B1054.png",
+          "tipo": "Falcon 9",
+          "vuelos": {
+              "B1054.1": {
+                  "mision": "Artemis Echo",
+                  "fecha": "19/09/2025",
+                  "url": "https://halconspace.site/lanzamientos/artemis-echo"
+              }
+          }  
+        },
         "B1055": {
             "estado": "destruido",
             "img": "https://halconspace.site/img/propulsores/B1055.png",
@@ -37,7 +49,7 @@
             }
         },
         "B1058": {
-            "estado": "activo",
+            "estado": "destruido",
             "img": "https://halconspace.site/img/propulsores/B1058.png",
             "tipo": "Falcon 9",
             "vuelos": {
@@ -45,6 +57,11 @@
                     "mision": "Eagle Arrival",
                     "fecha": "06/08/2025",
                     "url": "https://halconspace.site/lanzamientos/ev-01"
+                },
+                "B1058.2": {
+                    "mision": "Orion Trail",
+                    "fecha": "19/09/2025",
+                    "url": "https://halconspace.site/lanzamientos/sentinel-1A"
                 }
             }
         },
