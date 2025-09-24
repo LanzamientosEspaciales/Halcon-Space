@@ -1,5 +1,16 @@
 [
   {
+    "nombre": "Nebula Quest",
+    "fecha": "28/09/2025",
+    "vehiculo": "Falcon 9 Block 5",
+    "estado": "programado",
+    "plataforma": "SLC-40",
+    "imagen": "https://halconspace.site/img/fotos/Falcon%209%20en%20SLC-40.jpg",
+    "alt": "Falcon 9 en SLC-40",
+    "detalleUrl": "/lanzamientos/nebula-quest",
+    "stream": null
+  },
+  {
     "nombre": "Vega Express",
     "fecha": "28/09/2025",
     "vehiculo": "Falcon 9 Block 5",
@@ -30,17 +41,6 @@
     "imagen": "https://halconspace.site/img/fotos/Falcon%209%20en%20SLC-40.jpg",
     "alt": "Falcon 9 en SLC-40",
     "detalleUrl": "/lanzamientos/ev-04",
-    "stream": null
-  },
-  {
-    "nombre": "Nebula Quest",
-    "fecha": "24/09/2025",
-    "vehiculo": "Falcon 9 Block 5",
-    "estado": "programado",
-    "plataforma": "LC-39A",
-    "imagen": "https://halconspace.site/img/fotos/Falcon%209%20en%20LC-39A.png",
-    "alt": "Falcon 9 en LC-39A",
-    "detalleUrl": "/lanzamientos/nebula-quest",
     "stream": null
   },
   {
